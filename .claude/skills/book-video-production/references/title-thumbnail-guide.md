@@ -6,7 +6,7 @@ How to create the YouTube packaging for each book video: up to three thumbnails,
 
 | Document | Used for |
 | --- | --- |
-| **Book Video Scenario Guide.md** | The source of every hook: opening quote, author hook, origins hook, takeaways, reflective question, scene timings for chapters. |
+| **Book Video Scenario Guide.md** | The source of every hook: opening hook, author hook, origins hook, takeaways, reflective question, scene timings for chapters. |
 | **Visual Style.md** | The master style prompt for thumbnail images, and typography for thumbnail text. |
 | **Book Style Sheet — [Book].md** | The book's palette, motifs, character descriptors and anchor image. |
 | **Narrator.md** | Whether and how the narrator appears in thumbnails. |
@@ -32,7 +32,7 @@ Every hook comes from material already gathered for the scenario (Book Video Sce
 | Hook type | Where it comes from | Faust example |
 | --- | --- | --- |
 | **The dilemma** | The protagonist's central choice or bargain | A man bets his soul that nothing can ever satisfy him |
-| **The paradox** | The opening quote, or another riddle-like line | The devil who "always wills the Bad, and always works the Good" |
+| **The paradox** | The opening hook when it is a quote or bold claim, or another riddle-like line | The devil who "always wills the Bad, and always works the Good" |
 | **The reversal** | The origins hook: how the author broke with expectation | For centuries Faust was damned. Goethe saved him. |
 | **The striking image** | The most visually powerful scene | Signing a contract in a single drop of blood |
 | **The quote** | The most famous line, if widely known | "Stay, thou art so fair!" |
@@ -192,7 +192,7 @@ Add each video to two or three playlists, for example: the channel's main series
 
 Cut 2–3 vertical Shorts (under 60 seconds) from each video to bring new viewers to it:
 
-- **The riddle**: the opening quote and the narrator's promise, ending on "Remember those words." Link the full video.
+- **The hook**: the opening hook and the narrator's promise, ending on the promise. Link the full video.
 - **One quote scene**: the most powerful quote scene with its illustration.
 - **One lesson**: the strongest takeaway, as a standalone thought.
 

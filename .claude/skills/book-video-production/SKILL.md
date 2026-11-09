@@ -5,7 +5,7 @@ description: Produce the complete production package for a 20–25 minute YouTub
 
 # Book Video Production
 
-This skill turns one book into a ready-to-produce video package for the channel. The channel retells books as fairy tales: a narrator opens with a riddle-like quote, a storyteller tells the plot scene by scene, the narrator returns with two to five takeaways and closes by answering the riddle. Every scene has one illustration in a fixed colored-pencil style, and each book gets its own palette and character designs.
+This skill turns one book into a ready-to-produce video package for the channel. The channel retells books as fairy tales: a narrator opens cold with a hook (a riddle-like quote, a vivid moment, a question, a surprising fact, a mystery or a bold claim, varied between books), a storyteller tells the plot scene by scene, and the narrator returns with two to five takeaways and closes by paying off the hook. Every scene has one illustration in a fixed colored-pencil style, and each book gets its own palette and character designs.
 
 Three guides in `references/` hold the method. This file says how to run it and what to output.
 
@@ -48,7 +48,7 @@ The guides were written with their own document names. They map onto these files
 
 Read each guide in full before the step that needs it. They are the source of truth; this file only adds output formats and workflow.
 
-- `references/scenario-guide.md` — structure, running order, opening-quote technique, narrator introduction beats, fairy-tale voice, quote scenes, takeaways, outro, illustration content rules. Read before planning (step 3).
+- `references/scenario-guide.md` — structure, running order, opening hook types, narrator introduction beats, fairy-tale voice, quote scenes, takeaways, outro, illustration content rules. Read before planning (step 3).
 - `references/visual-style.md` — channel constants, the master style prompt, flat equivalents for lighting words, palette structure, and the process for building a book's palette and characters. Read before writing `01-palette.md`.
 - `references/title-thumbnail-guide.md` — hooks, three thumbnail types, title formulas, description, chapters, tags, Shorts. Read before writing `04-titles-and-thumbnails.md`.
 - `references/elevenlabs-v4.md` — how to write spoken text for the Eleven v4 voice model: audio tags (which, how many, where), pauses, emphasis, pronunciation, and the tagging pass. Read before writing `05-narrator.md` (step 6) and `03-script.md` (step 7).
@@ -97,7 +97,7 @@ If you cannot confirm a line number, give the scene or chapter only. Keep the so
 
 ### 3. Plan
 
-Follow `references/scenario-guide.md` steps 1–3: plot beats, 5–7 key quotes, the opening quote (riddle-like, speaker hidden, paid off by the story), 2–5 takeaways (as many as the book genuinely supports), author and origins hooks, recurring characters, the chronological timeline with quote scenes placed where they are spoken, and 35–40 scenes.
+Follow `references/scenario-guide.md` steps 1–3: plot beats, 5–7 key quotes, the opening hook (scenario guide section 4: pick the type that suits the book, not the type the previous book in `narration-history.md` used; a quote keeps its speaker hidden; every hook is paid off in the outro), 2–5 takeaways (as many as the book genuinely supports), author and origins hooks, recurring characters, the chronological timeline with quote scenes placed where they are spoken, and 35–40 scenes.
 
 Use **one numbering for everything**: scene 07 in the script is image 07 in the plan, `07-*.png` in `images/` and `07.*` in `voice/`. The Faust guide shows illustration numbers in brackets because that project was renumbered later; new books do not need brackets.
 
@@ -253,7 +253,7 @@ The narrator is the channel's host. His look is fixed by the pose images in `ass
 **On screen.** The narrator is on screen in every scene he voices: the introduction, the takeaways and the outro. He is never on screen during the story. While he is on screen, the user overlays his pose image on part of the frame, with the scene's illustration playing in the background. This file only says which pose to use when; it does not change the illustrations.
 
 - **Change pose at each beat** (the introduction beats in scenario guide section 5, each takeaway's claim, evidence and application, the outro steps in section 7), roughly every 15–30 seconds. Never change mid-sentence, and do not repeat the same pose twice in a row.
-- **Match the EMOTION to the line.** For example, `fullbody-1.png` or `fullbody-11.png` for the welcome, `fullbody-6.png` or `halfbody-4.png` for the riddle, `fullbody-12.png` for numbering the takeaways, `fullbody-13.png` for the personal moment, `fullbody-9.png` for an ironic aside, and `halfbody-14.png` (pointing at the viewer) for the subscribe call.
+- **Match the EMOTION to the line.** For example, `fullbody-1.png` or `fullbody-11.png` for the welcome, `fullbody-6.png` or `halfbody-4.png` for the opening hook and its promise, `fullbody-12.png` for numbering the takeaways, `fullbody-13.png` for the personal moment, `fullbody-9.png` for an ironic aside, and `halfbody-14.png` (pointing at the viewer) for the subscribe call.
 
 ````markdown
 # [Book] — Narrator
@@ -291,7 +291,7 @@ Please subscribe to the channel and click the bell button, so you never miss a n
 ## On screen
 | Scene | From (first words) | Pose image | Why this pose |
 | --- | --- | --- | --- |
-| 01 | "[opening quote…]" | fullbody-6.png | Reflective, sets the riddle |
+| 01 | "[opening hook…]" | fullbody-6.png | Reflective, sets the puzzle |
 | 02 | "[welcome…]" | fullbody-1.png | Welcoming host |
 | … | | | |
 | [last] | "Please subscribe…" | halfbody-14.png | Addresses the viewer directly |
@@ -317,12 +317,12 @@ The script is turned into speech scene by scene with ElevenLabs (step 12), so th
 
 ## Introduction
 
-### 01 · Opening quote
-- Image: 01 · Voice: NARRATOR · ~[seconds] s
+### 01 · [Hook title]
+- Image: 01 · Voice: NARRATOR · ~[seconds] s · Hook: [riddle quote / cold image / question / surprising fact / mystery object / bold claim]
 ```text
-"[Opening quote.]"
+[The hook. A quote goes in quotation marks, followed by the author and book.]
 [long pause]
-[Riddle and promise …]
+[Framing and promise …]
 ```
 
 ## [Part or act title]
@@ -344,7 +344,7 @@ Writing for the ear:
 - Put every name or foreign word a voice tool might mispronounce in the pronunciation guide.
 - Seconds per scene = words ÷ 140 × 60, rounded.
 - The narrator's welcome, invitation and sign-off come from `05-narrator.md` and go where the scenario guide places them.
-- The opening quote is credited to the author, never the character, until the story reveals the speaker. The outro repeats it word for word.
+- The outro returns to the opening hook and pays it off (scenario guide section 7). If the hook is a quote, it is credited to the author, never the character, until the story reveals the speaker, and the outro repeats it word for word.
 - Links to earlier videos appear only where `05-narrator.md` places them, word for word, and must read as part of the narrator's thought, not as an inserted ad.
 - The final scene always ends with, in this order: the creative comments-and-likes invitation, the direct "Please subscribe to the channel and click the bell button" call to action, then the invitation and sign-off, all word for word from `05-narrator.md`.
 
@@ -376,7 +376,8 @@ It reports word counts per voice, estimated runtime, scene and illustration coun
 - the narrator's lines and calls to action, including their audio tags, are identical in `03-script.md` and `05-narrator.md`, and every "From" in its on-screen table appears in that scene's spoken text;
 - narrator poses are planned for every introduction, takeaway and outro scene and for no story scene;
 - every pose image named in `05-narrator.md` exists in `assets/narrator/` and is not marked "do not use yet";
-- no intro, takeaway or outro line repeats or closely paraphrases a line in `narration-history.md`, and the outro callback approach differs from the last three books there;
+- no intro, takeaway or outro line repeats or closely paraphrases a line in `narration-history.md`; the opening hook type differs from the previous book's, and the outro callback approach differs from the last three books there;
+- the opening hook is true to the book, does not spoil the ending, and is paid off in the outro;
 - every link to an earlier video is a strong echo or a telling contrast, points to a published video in `video-library.md`, sits in a takeaway or the outro, does not spoil that book, reads naturally when the scene is read aloud, and has a matching card or end screen element in the packaging.
 
 ### 10. Deliver
@@ -400,7 +401,8 @@ Do this only when the user says the script is approved (for example "approved", 
 ```markdown
 ## [Book] · [book-slug] · approved [YYYY-MM-DD]
 - Vlogger touch: [light / medium / high]
-- Riddle framing (first line after the opening quote): "[…]"
+- Opening hook: [type, from scenario guide section 4]: "[the hook]"
+- Framing and promise (right after the hook): "[…]"
 - Welcome: "[…]"
 - Line before "Once upon a time": "[…]"
 - Takeaway transition: "[…]"
@@ -479,4 +481,4 @@ Suggest these when the user asks how to fill the folders, so assets line up with
 
 ## Worked example
 
-The appendices of all three guides show *Faust*: opening quote, palette, Faust and Mephistopheles descriptors, 37 scenes, about 3,100 words, and complete packaging. Use it to calibrate depth and tone, not as a template to copy: each book needs its own palette, motifs, hooks and takeaways.
+The appendices of all three guides show *Faust*: opening hook (a riddle quote), palette, Faust and Mephistopheles descriptors, 37 scenes, about 3,100 words, and complete packaging. Use it to calibrate depth and tone, not as a template to copy: each book needs its own palette, motifs, hooks and takeaways.

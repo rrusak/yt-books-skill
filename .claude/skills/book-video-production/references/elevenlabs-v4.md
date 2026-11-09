@@ -43,7 +43,7 @@ A tag goes immediately before the words it colours and affects that phrase or se
 | --- | --- |
 | Warmth, welcome, sincerity | `[warmly]`, `[softly]`, `[gently]` |
 | Light humour, irony | `[chuckles]`, `[laughs softly]`, `[mischievously]`, `[dryly]` |
-| The riddle, a secret, a twist | `[whispers]`, `[curious]`, `[conspiratorially]` |
+| The opening hook, a secret, a twist | `[whispers]`, `[curious]`, `[conspiratorially]` |
 | The personal moment, a heavy truth | `[sighs]`, `[thoughtfully]`, `[quietly]` |
 
 **STORYTELLER** (story scenes): the fairy-tale voice stays even, so tags are rare: `[softly]`, `[whispers]`, `[sighs]`, `[hushed]`. When a character's line needs a different colour, describe the voice quality rather than naming an emotion. ElevenLabs recommends this because it is less likely to be read as a sound effect. For example: `[low, gravelly voice] "Sign here."`
@@ -69,8 +69,8 @@ Never put two tags side by side. If two qualities are needed, combine them in on
 **Lines that stay plain:**
 
 - The subscribe line stays plain and literal. At most it may start with `[warmly]`.
-- The opening quote is read straight; a tag may come after it, on the riddle.
-- The quote repeated in the outro is read the same way as in the opening.
+- An opening hook that is a quote is read straight; a tag may come after it, on the framing.
+- A hook repeated in the outro is read the same way as in the opening.
 
 ## 5. Emphasis with capitals
 

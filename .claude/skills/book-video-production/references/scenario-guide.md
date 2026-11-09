@@ -33,7 +33,7 @@ Wherever this guide says "see Narrator.md", "see Visual Style.md" or "see Book S
 | Words per scene | 60–100 for story scenes; 80–150 for narrator scenes |
 | Voices | **Narrator** (introduction, takeaways, outro) and **storyteller** (the story itself) |
 | Order | Strictly chronological within the story, with key quotes placed where they are spoken |
-| Structural devices | Opening riddle quote, "Once upon a time" handoff, 2–5 takeaways, callback ending |
+| Structural devices | Opening hook (a riddle quote or another type, varied between books), "Once upon a time" handoff, 2–5 takeaways, callback ending |
 
 Timing formula: `illustrations ≈ runtime in seconds ÷ 37`. Words ≈ `runtime in minutes × 140`.
 
@@ -43,11 +43,11 @@ Timing formula: `illustrations ≈ runtime in seconds ÷ 37`. Words ≈ `runtime
 
 | # | Block | Voice | Runtime | Scenes | Purpose |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Opening quote | Narrator | 0:00–0:30 | 1 | Hook. A line that sounds like a riddle out of context. |
+| 1 | Opening hook | Narrator | 0:00–0:30 | 1 | A riddle quote, cold image, question, surprising fact, mystery object or bold claim that raises one question the video answers (section 4). |
 | 2 | Introduction | Narrator | 0:30–2:30 | 3–4 | Welcome, logline, author, origins, structure. Ends with "Once upon a time…" |
 | 3 | The story | Storyteller | 2:30–19:00 or later | 24–31 | The plot in fairy-tale voice, chronologically, with 4–6 key quotes woven in. |
 | 4 | Takeaways | Narrator | 19:00–22:30 or shorter | 2–5 | Two to five lessons, each grounded in the story. Fewer takeaways leave more time for the story. |
-| 5 | Outro | Narrator | 22:30–23:30 | 1 | Callback to the opening quote, reflective question, call to action, sign-off. |
+| 5 | Outro | Narrator | 22:30–23:30 | 1 | Callback to the opening hook, reflective question, call to action, sign-off. |
 
 For a book in two or more parts (or with a clear midpoint), split block 3 into sub-headings (e.g. "Part One: from Heaven to the devil's door", "Part One: the pact and Gretchen", "Part Two: the great world"). Give each part a share of screen time proportional to its importance to a general audience, not its page count. In *Faust*, Part One got ~19 scenes and the much longer Part Two got 8.
 
@@ -61,7 +61,7 @@ Before writing anything, list:
 
 - **Plot beats**: 20–28 moments that carry the story. Each must be visually distinct (a different place, action or character). Merge beats that would produce near-identical images.
 - **Key quotes**: 5–7 famous or meaningful lines. For each, record the speaker, the location (part, act/scene, line number), the original-language text, and the English translation used.
-- **The opening quote**: one of the key quotes, chosen with the criteria in section 4.
+- **The opening hook**: its type and wording, chosen with section 4 and of a different type from the previous book. If it is a quote, it is one of the key quotes.
 - **Takeaways, 2–5**: lessons a modern viewer can apply. Each must be supported by at least one concrete event in the story. Choose the number from the book: a tight fable may carry two strong lessons, a sprawling epic five. Never pad with a weak or repeated lesson to reach a number; give the time it frees to the story.
 - **Author hook**: one surprising fact about how, when or why the book was written (Goethe: sixty years, from his twenties to months before his death).
 - **Origins hook**: what existed before the book and what everyone expected (Faust: the puppet-play legend in which the doctor is always damned), and how the author broke with it.
@@ -95,24 +95,60 @@ Run the checklist in section 11. Update the word count and runtime in the script
 
 ---
 
-## 4. The opening quote technique
+## 4. The opening hook
 
-The video opens cold on a quote, spoken by the narrator, before any welcome.
+The video opens cold on a hook, spoken by the narrator, before any welcome. These first 10–30 seconds decide whether a viewer stays, so the hook raises one question that the video answers by the end. A riddle-like quote is one way to do it, not the only one. Choose the type that suits the book, and vary it between books.
 
-**Choosing the quote.** It should:
+**Hook types.**
+
+| Type | The narrator opens with | The outro pays it off by | Example |
+| --- | --- | --- | --- |
+| **Riddle quote** | A line from the book that sounds like a riddle or paradox out of context, speaker hidden | Repeating the quote word for word, naming the speaker, answering the riddle | *Faust*: "Part of that Power, not understood, which always wills the Bad, and always works the Good." |
+| **Cold image** | One vivid moment from the story, told in two or three sentences without context | Returning to that moment, now that the viewer understands it | *Dorian Gray*: a man climbs to the top of his own house at night, unlocks a door no one else may open, and lifts a cloth from a painting |
+| **Question to the viewer** | A personal "what would you do" dilemma the book turns on | Asking it again, now that the viewer has seen what the hero chose | "If you could stay exactly as you are tonight, forever, what would you be willing to give up?" |
+| **Surprising fact** | A true fact about the book, its author or its afterlife that sounds impossible | Explaining what the fact meant, once the story is known | *Dorian Gray*: this novel was once read aloud in a courtroom, as evidence against the man who wrote it |
+| **Mystery object** | One object, place or rule at the heart of the story, presented as a puzzle | Revealing what it was, or what it cost | "There's a painting in this story that no one is allowed to see. Not even the man in it, most days." |
+| **Bold claim** | A belief held by a character, stated as if it were true, for the viewer to test | Judging the claim with the whole story in view | "Beauty is the only thing worth having. One man in this story believed that completely." |
+
+The examples show the shape of each type only; write every hook fresh from the book.
+
+**Every hook must:**
+
+- raise one clear question that the outro answers: who said it, what it meant, what it cost, or what you would choose;
+- come from the book and be true. Never invent a fact or a scene;
+- not spoil the ending. A cold image or mystery object from late in the story is fine only if it hides what it means;
+- run 10–30 seconds with its framing, about 25–70 words;
+- lead toward the book's central question, so the outro's reflective question grows out of it.
+
+**Choosing the type.** Start from the strongest material gathered in step 1:
+
+- a famous line that sounds like a paradox suggests a riddle quote;
+- a single striking picture suggests a cold image;
+- a dilemma everyone has felt suggests a question to the viewer;
+- a strange true story about the book suggests a surprising fact;
+- a central object such as a portrait, ring, letter or locked door suggests a mystery object;
+- a seductive but wrong idea suggests a bold claim.
+
+Read `narration-history.md` (the "Opening hook" line of each book). Do not use the same type as the previous book. When two types fit equally well, take the one used least recently. If the hook is a surprising fact, the author hook (section 5, beat d) uses a different fact.
+
+**Framing and promise.** After the hook and a pause, the narrator says in a sentence or two why it is strange or worth keeping in mind, and promises the answer by the end. Write the framing fresh for each book. Do not reuse a framing from the narration history.
+
+**The three-step arc**, for every type:
+
+1. **Plant (scene 1).** The hook, a pause, then the framing and promise.
+2. **Recurrence (story).** The story reaches the hook: the quote is spoken in its own quote scene, the cold image happens, the object appears, or the hero faces the question or acts on the claim. A surprising fact about the book has no recurrence; it goes straight from plant to callback.
+3. **Callback (outro).** The narrator returns to the hook and answers the promise (section 7, outro).
+
+Scene 01's illustration shows the hook when it can be drawn: the moment of a cold image, the mystery object, or a symbol for a question, fact or claim. Follow the illustration rules in section 8.
+
+**When the hook is a quote.** The quote should:
 
 - sound like a riddle or paradox out of context ("which always wills the Bad, and always works the Good");
 - be spoken by a character whose identity is itself a small reveal;
 - be paid off by the story, so the ending can answer it;
 - be short enough to read slowly in 10–15 seconds.
 
-**Hiding the speaker.** On screen and in the script, credit the quote to the **author and book**, not the character (e.g. "— Johann Wolfgang von Goethe, *Faust*, Part One"). The character is revealed when the quote recurs in the story.
-
-**The three-step arc:**
-
-1. **Opening (scene 1).** The narrator speaks the quote, pauses, then frames it as a puzzle and makes a promise: by the end, you will know who said it and whether they were telling the truth.
-2. **Recurrence (story scene).** The quote appears where it is spoken, as its own scene. The viewer now hears it in context.
-3. **Callback (outro).** The narrator repeats the quote word for word, names the speaker, and answers the promise ("The devil was telling the truth after all").
+On screen and in the script, credit the quote to the **author and book**, not the character (e.g. "— Johann Wolfgang von Goethe, *Faust*, Part One"). The character is revealed when the quote recurs in the story. The outro repeats it word for word, names the speaker and answers the riddle ("The devil was telling the truth after all").
 
 ---
 
@@ -122,8 +158,8 @@ The introduction is the narrator speaking directly to the viewer. It runs 400–
 
 | Beat | Content | Example (Faust) |
 | --- | --- | --- |
-| a. Quote | The opening quote, then *(pause)*. | "Part of that Power, not understood…" |
-| b. Riddle and promise | Comment on why the line is strange; tell the viewer to remember it; promise the answer by the end. | "A strange thing to say about yourself, isn't it?… by the end you'll know who he was, and whether he was telling the truth." |
+| a. Hook | The opening hook (section 4), then *(pause)*. | "Part of that Power, not understood…" |
+| b. Framing and promise | Say why the hook is strange or worth keeping in mind; ask the viewer to hold on to it; promise the answer by the end. | "A strange thing to say about yourself, isn't it?… by the end you'll know who he was, and whether he was telling the truth." |
 | c. Welcome and logline | The narrator's welcome (see Narrator.md), then the protagonist's lack + the temptation or inciting offer + the title. | "Tonight's story is about a man who knew everything written in books and still felt he knew nothing at all… This is the tale of Doctor Faust." |
 | d. Author hook | One surprising fact that makes the author human and the book special. | "He spent almost his whole life telling it… Sixty years." |
 | e. Origins and expectation | What the story or genre was before, what everyone expected, and the line "X dared to change it." | "Every audience knew how this story ended. Goethe was the one who dared to change it." |
@@ -145,7 +181,7 @@ The narrator speaks to camera like a real person, a YouTube host rather than a r
 | --- | --- |
 | **Light** (default) | The current narrator, spoken rather than recited. Contractions throughout ("you'll", "wasn't"). A few spoken openers ("Okay", "So", "Now"). One or two short personal asides per block ("And I'll be honest, that bit hit close to home"). At most one light joke in the introduction and one in the outro. A casual welcome and goodbye ("Hi, and welcome back", "take care"). The fairy-tale warmth and cadence stay in front. |
 | **Medium** | Clearly a host talking to you. Everything in light, plus: a personal aside or reaction in most narrator scenes, short fragments for rhythm ("Rich. Charming. Barely more than a boy."), two or three light jokes across the narrator blocks, a few direct check-ins with the viewer ("be honest", "you know the type"), and modern everyday comparisons in the takeaways. Up to three rhetorical questions in the introduction. |
-| **High** | Openly vlog-style, still warm and never loud. Everything in medium, plus: a quick, chatty rhythm, frequent direct address, small self-aware moments about the video itself ("stick with me, this part's worth it"), reactions to the story ("I mean, come on, Dorian"), and humour in every narrator block. Up to four rhetorical questions in the introduction. The callback, the answer to the riddle and the last takeaway still land sincerely. |
+| **High** | Openly vlog-style, still warm and never loud. Everything in medium, plus: a quick, chatty rhythm, frequent direct address, small self-aware moments about the video itself ("stick with me, this part's worth it"), reactions to the story ("I mean, come on, Dorian"), and humour in every narrator block. Up to four rhetorical questions in the introduction. The callback, the payoff of the opening hook and the last takeaway still land sincerely. |
 
 The examples show the register only; do not reuse them as lines.
 
@@ -197,13 +233,13 @@ Typical takeaway types to draw from: the central virtue or drive; the cost to ot
 
 ### Outro (1 scene, ~150–180 words; up to ~200 with a link to an earlier video)
 
-1. **Callback**: bring the opening quote back word for word, through a lead-in written for this book. Do not use a stock opener such as "Do you remember the words we began with?" in every video: it quickly sounds mechanical. Ways in, to vary between books:
-   - return to the place or moment where the line was spoken ("Somewhere in that sunlit studio, the words are still hanging in the air…");
-   - start from the story's final image and let the quote surface from it;
-   - say the quote cold, after a pause, and only then step back and comment;
-   - name the speaker first, then give the quote as the surprise;
-   - turn the riddle back on the viewer ("At the start, I asked you to keep a line in mind…").
-2. **Reveal**: name the speaker.
+1. **Callback**: return to the opening hook through a lead-in written for this book. A quote comes back word for word. An image, question, fact, object or claim comes back in the same words where possible. Do not use a stock opener such as "Do you remember the words we began with?" in every video: it quickly sounds mechanical. Ways in, to vary between books:
+   - return to the place or moment of the hook ("Somewhere in that sunlit studio, the words are still hanging in the air…");
+   - start from the story's final image and let the hook surface from it;
+   - repeat the hook cold, after a pause, and only then step back and comment;
+   - for a quote, name the speaker first, then give the quote as the surprise;
+   - turn the hook back on the viewer ("At the start, I asked you to keep something in mind…").
+2. **Reveal**: for a quote, name the speaker. For other types, say what the hook really meant: what the cloth was hiding, what the hero chose, what the fact cost the author.
 3. **Answer**: resolve the promise from the introduction in one or two sentences.
 4. *(pause)*
 5. **Reflective question** for the viewer, drawn from the book's central dilemma ("what would you give to feel that your life was truly complete?"). Vary how it is introduced; do not open it with the same "So here is a question…" every time.
@@ -280,7 +316,7 @@ Example:
 - Use the same English wording everywhere the quote appears: illustration plan, script, opening, callback.
 - In the Illustration Plan, record for each quote: English text, original text in italics, speaker, and location (part, scene, line), e.g.:
   `"Two souls, alas! reside within my breast." (Zwei Seelen wohnen, ach! in meiner Brust, Part One, "Outside the City Gate", line 1112.)`
-- Hide the speaker of the opening quote (credit the author) until it recurs in the story.
+- If the opening hook is a quote, hide its speaker (credit the author) until it recurs in the story.
 
 ---
 
@@ -297,13 +333,13 @@ The script tells [Book] as a fairy tale, one passage per scene in timeline order
 
 *Spoken by the narrator. Scene numbers mark where each illustration cuts in.*
 
-### 1 · Opening quote [01]
+### 1 · Opening hook [01]
 
-"[Opening quote]"
+[Opening hook: the quote in quotation marks, or the image, question, fact, object or claim.]
 
 *(pause)*
 
-[Riddle and promise.]
+[Framing and promise.]
 
 [Narrator's welcome, from Narrator.md.] [Logline.] This is the tale of [title/protagonist].
 
@@ -333,7 +369,7 @@ The first: [claim]. [Evidence]. [Application].
 The second: … / … / And the last: …
 
 ### [last] · Outro: [closing image] [..]
-[Lead-in written for this book.] "[Opening quote]" [Reveal of the speaker.] [Answer to the promise.]
+[Lead-in written for this book.] [The hook again: the quote word for word, or the image, question, fact, object or claim.] [Reveal: the speaker, or what the hook really meant.] [Answer to the promise.]
 
 *(pause)*
 
@@ -373,12 +409,12 @@ Each description below is written to paste directly as a prompt. Append the styl
 
 **Narration**
 
-- [ ] The script opens with the quote, credited to the author, not the character.
-- [ ] The introduction contains: riddle and promise, welcome and logline, author hook, origins and "dared to change it", structure map, "Once upon a time…"
+- [ ] The script opens cold on a hook (section 4) of a different type from the previous book. If it is a quote, it is credited to the author, not the character.
+- [ ] The introduction contains: framing and promise, welcome and logline, author hook, origins and "dared to change it", structure map, "Once upon a time…"
 - [ ] Every story scene orients, shows one event, and ends on a turn.
 - [ ] Every quote scene: setup → quote → plain meaning → link.
 - [ ] Two to five takeaways, as many as the book supports, each with evidence from the story; one personal moment from the narrator.
-- [ ] The outro repeats the opening quote word for word, reveals the speaker and answers the promise.
+- [ ] The outro returns to the opening hook (a quote word for word), reveals the speaker or the hook's meaning, and answers the promise.
 - [ ] The outro asks for comments and likes in the book's own imagery, then gives a direct, literal "subscribe to the channel and click the bell button" call to action.
 - [ ] The narrator's welcome, invitation, calls to action and sign-off match Narrator.md.
 - [ ] Facts, names, dates and line references checked against the source.
@@ -399,7 +435,7 @@ Each description below is written to paste directly as a prompt. Append the styl
 
 | Element | Faust |
 | --- | --- |
-| Opening quote | "Part of that Power, not understood, which always wills the Bad, and always works the Good." (Mephistopheles, credited to Goethe) |
+| Opening hook (riddle quote) | "Part of that Power, not understood, which always wills the Bad, and always works the Good." (Mephistopheles, credited to Goethe) |
 | Author hook | Written over sixty years, from Goethe's twenties to months before his death in 1832 |
 | Origins hook | The puppet-play legend in which the doctor is always dragged to hell; Goethe dared to save him |
 | Structure map | Part One: a story of the heart. Part Two: a story of the world. "One long road." |
