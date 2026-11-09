@@ -107,7 +107,7 @@ If you cannot confirm a line number, give the scene or chapter only. Keep the so
 
 Follow `references/scenario-guide.md` steps 1–3: plot beats, 5–7 key quotes, the opening hook (scenario guide section 4: pick the type that suits the book, not the type the previous book in `narration-history.md` used; a quote keeps its speaker hidden; every hook is paid off in the outro), 2–5 takeaways (as many as the book genuinely supports) in a takeaway shape (scenario guide section 7: separate lessons, one big idea, one question with several answers, where it turned, or two sides; not the previous book's shape unless the book clearly needs it), author and origins hooks, the intro shape (scenario guide section 5: about 90 seconds, at most one context fact, not the previous book's shape), recurring characters, the chronological timeline with quote scenes placed where they are spoken, and 35–40 scenes.
 
-Use **one numbering for everything**: scene 07 in the script is image 07 in the plan, `07-*.png` in `images/` and `07.*` in `voice/`. The Faust guide shows illustration numbers in brackets because that project was renumbered later; new books do not need brackets.
+Use **one numbering for everything**: scene 07 in the script is image 07 in the plan, `07-*.png` in `images/` and `07.*` in `voice/`. A narrator cut-in after scene 14 is `14a` (scenario guide section 6). It has a script scene and `voice/14a.*`, but no illustration: it holds image 14. The Faust guide shows illustration numbers in brackets because that project was renumbered later; new books do not need brackets.
 
 Also pick the three hooks for packaging now (title-thumbnail guide, section 2), so the script and the packaging promise the same things.
 
@@ -166,7 +166,7 @@ Draft. Lock after the anchor image and 2–3 test scenes match (Visual Style gui
 
 ### 5. Write `02-illustrations.md`
 
-This file is what the user pastes into the image generator, so every prompt sits in its own ```text fence for one-click copying, and every scene prompt is self-contained apart from the master prompt.
+This file is what the user pastes into the image generator, so every prompt sits in its own ```text fence for one-click copying, and every scene prompt is self-contained apart from the master prompt. Narrator cut-ins (`14a`) get no prompt; they hold the image of the scene they follow.
 
 ````markdown
 # [Book] — Characters and Scenes
@@ -268,7 +268,7 @@ The narrator is the channel's host. His look is fixed by the pose images in `ass
 1. **Comments and likes, said creatively.** Invite the viewer to answer the outro's reflective question in the comments and to leave a like, phrased in this book's own imagery and motifs and written fresh for every book. *Faust* examples: "Write your answer in the comments, and sign it in ink, not in blood." / "If this tale lit a small candle for you, leave a like so it can light the way for the next traveller."
 2. **Subscribe and bell, said directly.** A plain, literal call to action with no metaphor: "Please subscribe to the channel and click the bell button, so you never miss a new tale." Keep this wording or a close, equally direct variant. It is never left out, never turned into a figure of speech, and never folded into the sign-off.
 
-**On screen.** The narrator is on screen in every scene he voices: the introduction, the takeaways, the verdict and the outro. He is never on screen during the story. While he is on screen, the user overlays his pose image on part of the frame, with the scene's illustration playing in the background. This file only says which pose to use when; it does not change the illustrations.
+**On screen.** The narrator is on screen in every scene he voices: the introduction, the takeaways, the verdict, the outro, and his cut-ins during the story. Otherwise he is never on screen during the story. During a cut-in, the held image of the scene before stays behind him. Optionally, the user can mark every cut-in the same way in editing (for example by dimming the image slightly), so viewers learn to recognise it. While he is on screen, the user overlays his pose image on part of the frame, with the scene's illustration playing in the background. This file only says which pose to use when; it does not change the illustrations.
 
 - **Change pose at each beat** (the introduction beats in scenario guide section 5, each takeaway's claim, evidence and application, the outro steps in section 7), roughly every 15–30 seconds. Never change mid-sentence, and do not repeat the same pose twice in a row.
 - **Match the EMOTION to the line.** For example, `fullbody-1.png` or `fullbody-11.png` for the welcome, `fullbody-6.png` or `halfbody-4.png` for the opening hook and its promise, `fullbody-12.png` for signposting the takeaways, `fullbody-13.png` for the personal moment, `fullbody-9.png` for an ironic aside, and `halfbody-14.png` (pointing at the viewer) for the subscribe call.
@@ -311,6 +311,7 @@ Please subscribe to the channel and click the bell button, so you never miss a n
 | --- | --- | --- | --- |
 | 01 | "[opening hook…]" | fullbody-6.png | Reflective, sets the puzzle |
 | 02 | "[welcome…]" | fullbody-1.png | Welcoming host |
+| 09a | "[cut-in…]" | halfbody-4.png | Leans in to share an aside |
 | … | | | |
 | [last] | "Please subscribe…" | halfbody-14.png | Addresses the viewer directly |
 ````
@@ -349,6 +350,12 @@ The script is turned into speech scene by scene with ElevenLabs (step 12), so th
 - Image: 04 · Voice: STORYTELLER · ~[seconds] s
 ```text
 [Orient. Event. Turn.]
+```
+
+### 09a · Cut-in: [short title]
+- Image: 09 (held) · Voice: NARRATOR · ~[seconds] s
+```text
+[One job, 25–45 words.] [Handback to the story.]
 ```
 
 ## Takeaways and outro
@@ -398,7 +405,8 @@ It reports word counts per voice, estimated runtime, scene and illustration coun
 - the spoken text passes the checklist in `references/spoken-style.md` section 7, and every style warning from `check_book.py` was either fixed or is a deliberate choice;
 - audio tags, capitals and pauses follow the checklist in `references/elevenlabs-v4.md` section 9, with the narrator's tag count matching the book's vlogger level;
 - the narrator's lines and calls to action, including their audio tags, are identical in `03-script.md` and `05-narrator.md`, and every "From" in its on-screen table appears in that scene's spoken text;
-- narrator poses are planned for every introduction, takeaway, verdict and outro scene and for no story scene;
+- narrator poses are planned for every introduction, takeaway, verdict, outro and cut-in scene, and for no other story scene;
+- 1–3 cut-ins follow scenario guide section 6 (`check_book.py` checks count, length, timing and placement). Each has one job and its own handback, and no cut-in sits inside a quote scene, before a reveal, or spoils what comes next;
 - honest asides (at most two) and the verdict follow scenario guide section 7. Their facts about reception, translation and editions come from the research, and any personal judgement is in `narrator-bible.md` or marked `[CONFIRM: …]`;
 - every pose image named in `05-narrator.md` exists in `assets/narrator/` and is not marked "do not use yet";
 - no intro, takeaway or outro line repeats or closely paraphrases a line in `narration-history.md`; the opening hook type differs from the previous book's, and the outro callback approach differs from the last three books there;
@@ -440,6 +448,7 @@ Do this only when the user says the script is approved (for example "approved", 
 - Personal moment: [what the narrator admitted, in a few words]
 - Honest asides: [kind: "line"; …] or [none]
 - Verdict: "[…]"
+- Cut-ins: [scene, kind: "first words…"; …]; handbacks: "[…]"
 - Outro callback approach: [which way in, from scenario guide section 7]; lead-in: "[…]"
 - Question lead-in and question: "[…]"
 - Comments invitation: "[…]"
@@ -509,7 +518,7 @@ When the user says a video is live, or gives its title or URL, update its `video
 Suggest these when the user asks how to fill the folders, so assets line up with scene numbers:
 
 - `images/NN-short-title.png` (e.g. `images/07-the-earth-spirit.png`), plus `images/anchor.png` and `images/sheet-<character>.png`
-- `voice/NN.mp3` (one file per scene, written by step 12) and `voice/voice-log.json`
+- `voice/NN.mp3` (one file per scene, written by step 12), `voice/NNa.mp3` for cut-ins, and `voice/voice-log.json`
 - `thumbnails/thumb-a.png` … `thumb-c.png`
 - `music/` — background tracks with their license notes
 - `videos/<book-slug>-final.mp4`, plus Shorts as `videos/short-1.mp4` …

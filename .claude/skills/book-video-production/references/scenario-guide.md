@@ -57,7 +57,7 @@ Everything else is a beat, not a phrase. That covers the welcome, the framing of
 | --- | --- | --- | --- | --- | --- |
 | 1 | Opening hook | Narrator | 0:00–0:30 | 1 | A riddle quote, cold image, question, surprising fact, mystery object or bold claim that raises one question the video answers (section 4). |
 | 2 | Introduction | Narrator | 0:30–1:30 | 1–2 | Welcome and logline, plus at most one context fact or a structure map, in one of the intro shapes (section 5). Ends with "Once upon a time…". Blocks 1 and 2 together: about 90 seconds, 200–230 words, 2–3 scenes. |
-| 3 | The story | Storyteller | 1:30–19:30 or later | 26–33 | The plot in fairy-tale voice, chronologically, with 4–6 key quotes woven in. |
+| 3 | The story | Storyteller | 1:30–19:30 or later | 26–33 | The plot in fairy-tale voice, chronologically, with 4–6 key quotes woven in, and 1–3 short narrator cut-ins (section 6). |
 | 4 | Takeaways | Narrator | 19:30–22:00 or shorter | 2–5 | Two to five takeaway scenes in one takeaway shape, each grounded in the story, with up to two honest asides (section 7). Fewer takeaways leave more time for the story. |
 | 5 | Verdict | Narrator | 22:00–22:30 | 1 | Should you read it, who it is for, and which edition or translation (section 7). |
 | 6 | Outro | Narrator | 22:30–23:30 | 1 | Callback to the opening hook, reflective question, call to action, sign-off. |
@@ -87,13 +87,14 @@ Before writing anything, list:
 - Insert each key quote **at the moment it is spoken**, as its own scene, immediately next to the plot scene it belongs to.
 - When a quote is set up early and paid off later (e.g. "Stay, thou art so fair!" is the wager's condition in Part One and Faust's last words in Part Two), place the quote scene at the first occurrence and repeat the line inside the narration of the payoff scene.
 - Number scenes 1…N in final running order. Keep the illustration number in brackets beside each scene so the plan and the script can always be matched, e.g. `### 11 · Quote: "Two souls…" [26]`.
+- A narrator cut-in (section 6) takes the number of the scene it follows plus a letter: `14a` comes after scene 14. It is not counted among the 1…N scenes, so adding or removing one never renumbers anything.
 
 ### Step 3 — Allocate illustrations
 
 - One illustration per scene. Introduction 2–3 (including the hook), story ≈ 26–33 (more when there are fewer takeaways), takeaways 2–5, verdict 1, outro 1.
 - If the total exceeds ~40, merge adjacent minor beats. If it falls below ~33, split the densest scenes.
 - Optional extra quotes can reuse an existing image with a slow zoom rather than a new illustration.
-- Every scene gets a full book illustration. The narrator is on screen in the introduction, takeaways and outro as an overlay the user adds in editing, with the illustration behind him; Narrator.md plans his poses. In the story he is heard, not seen.
+- Every numbered scene gets a full book illustration. The narrator is on screen in the introduction, takeaways, verdict and outro as an overlay the user adds in editing, with the illustration behind him; Narrator.md plans his poses. In the story he is heard, not seen, except during his cut-ins. A cut-in has no illustration of its own: it holds the image of the scene it follows, with the narrator overlay on top.
 
 ### Step 4 — Write the Illustration Plan
 
@@ -245,6 +246,36 @@ The examples show the register only; do not reuse them as lines. How many self-c
 
 **Motifs.** Repeat a few images throughout (in *Faust*: the study, the candle, light from above, the road) so the introduction, story and outro feel like one piece.
 
+### Narrator cut-ins (1–3 per video)
+
+Now and then a real host pauses the story to talk to the viewer directly. A **cut-in** is that moment: the narrator steps out of the tale for 10–20 seconds (25–45 words), then hands back to the storyteller. It breaks the pattern at the point where attention usually dips, and it is where the narrator's personality shows during the long middle of the video.
+
+**What a cut-in is for.** Each one does exactly one job:
+
+| Kind | Example |
+| --- | --- |
+| **Misremembered moment** | "Quick pause. Everyone remembers the portrait, but almost nobody remembers when it first changes. It's right here." |
+| **Context moved out of the introduction** | A context fact that passed the test in section 5 but did not fit the 90 seconds: the author's life at the time this part was written. |
+| **Honest aside** (section 7) | "This next stretch is honestly hard going in the book. I've trimmed it to the parts that matter." |
+| **Reaction** (medium and high vlogger touch only) | "I mean, come on. Who signs anything in blood without reading it first?" |
+| **The early soft ask** (section 7, outro) | At most one per video, usually in the first cut-in. |
+
+**Rules:**
+
+- **Count and timing.** 1–3 per video. The first comes around minutes 3–5. The others go at natural breaks, such as between parts of the book or after a big turn, and at least 4 minutes after the previous cut-in.
+- **Never** inside a quote scene or between a quote's setup and the quote, right before a reveal, in the last four story scenes (the climax), or as a spoiler of anything still to come. Never link an earlier video in a cut-in.
+- **Handback.** Each cut-in ends with a short return to the story, worded differently every time ("Okay. Back to the theatre.", "Anyway, where were we? Ah yes, the attic."). Never the same handback twice in a video, nor one from the narration history.
+- **Voice.** It is a narrator scene: the book's vlogger level, the read-aloud pass (`spoken-style.md`), the tag palette for the narrator (`elevenlabs-v4.md`), and the narrator bible's truth rules for anything personal.
+- **Budget.** Cut-in words come out of the story's word budget, so the total runtime does not change.
+- **Format.** Its own scene, numbered after the scene it follows (`14a`), with the image held from that scene and the narrator overlay on top:
+
+```
+### 14a · Cut-in: the first change
+- Image: 14 (held) · Voice: NARRATOR · ~15 s
+```
+
+At most one cut-in after any story scene. Do not put cut-ins in consecutive gaps (after 14 and after 15).
+
 ---
 
 ## 7. Takeaways and outro
@@ -349,7 +380,7 @@ A shared theme tag is only a reason to look. The test is whether a viewer who ha
 **How to link.**
 
 - 0–2 links per video: at most one inside a takeaway and one in the outro. Zero is a perfectly good answer, and the usual one while the library is small.
-- Only in the takeaways or the outro, never in the introduction or the story.
+- Only in the takeaways or the outro, never in the introduction, the story or a cut-in.
 - Put it where the overlap actually is: inside the takeaway whose lesson the books share, or in the outro next to the invitation if the link is about the book as a whole.
 - One or two sentences that add something: a detail from the earlier book that shines a new light on this one ("Faust at least had to sign in blood. Dorian didn't even need ink."). Name the book plainly so the viewer can find it ("our Faust video").
 - Never spoil the earlier book's ending or twist; the library entry says what to avoid.
@@ -441,6 +472,10 @@ The script tells [Book] as a fairy tale, one passage per scene in timeline order
 ### 4 · [Scene title] [04]
 [Orient. Event. Turn.]
 
+### Na · Cut-in: [short title] [NN held]
+*Narrator, 25–45 words, 1–3 per video (section 6).*
+[One job: a misremembered moment, moved context, an honest aside, a reaction, or the early soft ask.] [Handback to the story, worded for this cut-in.]
+
 ### N · Quote: "[quote]" [NN]
 [Setup. "Quote." Plain meaning. Link to character.]
 
@@ -505,6 +540,7 @@ Each description below is written to paste directly as a prompt. Append the styl
 - [ ] The introduction follows one intro shape (section 5), different from the previous book's. It has hook, framing and promise, welcome and logline, at most one context fact, and ends on "Once upon a time…". It runs about 90 seconds (200–230 words, never over 240) across 2–3 scenes.
 - [ ] The three rituals (section 1, "Channel signature") are in place. Apart from them, no line is a fixed phrase shared with an earlier video.
 - [ ] Every story scene orients, shows one event, and ends on a turn.
+- [ ] 1–3 narrator cut-ins (section 6), each 25–45 words with one job and its own handback. The first comes at minutes 3–5, the rest 4+ minutes apart, none in the last four story scenes, inside a quote scene or before a reveal.
 - [ ] Every quote scene: setup → quote → plain meaning → link.
 - [ ] Two to five takeaway scenes, as many as the book supports, in one takeaway shape (section 7), different from the previous book's unless the book clearly needs the same one. Each scene has evidence from the story; one personal moment from the narrator.
 - [ ] Honest asides, if any: at most two, true and sourced, generous, of a different kind from the previous book's. The narrator's own judgements are in the narrator bible or marked `[CONFIRM: …]`.

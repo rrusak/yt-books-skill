@@ -7,9 +7,11 @@ Usage:
 
 Reads the ```text fences and Voice lines of 03-script.md (the same parsing as
 check_book.py) and writes voice/NN.<ext> for each scene, plus voice/voice-log.json.
+A narrator cut-in such as scene 14a is written to voice/14a.<ext>.
 
 - --dry-run   no API calls; lists scenes, voices and characters to be billed.
-- --scenes    only these scene numbers (comma list, ranges allowed).
+- --scenes    only these scenes: a comma list such as 7,12-14,14a. A range includes
+              the cut-ins inside it.
 - --force     regenerate scenes whose file already exists (default: skip them).
 - --config    voice settings; default is ../assets/voice-config.json.
 
@@ -30,7 +32,7 @@ from elevenlabs import ElevenLabs, VoiceSettings
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
-from check_book import CONFIRM, parse_scenes  # noqa: E402
+from check_book import CONFIRM, SceneId, parse_scenes  # noqa: E402
 
 DEFAULT_CONFIG = SCRIPT_DIR.parent / "assets" / "voice-config.json"
 LONG_PAUSE = re.compile(r"\[long pause[^\]]*\]", re.IGNORECASE)
@@ -53,18 +55,28 @@ def load_env_file(start_dirs):
                     return
 
 
-def parse_scene_list(spec):
-    wanted = set()
+def select_scenes(spec, scenes):
+    """Scenes named in a list like "7,12-14,14a". A range includes the cut-ins inside it."""
+    chosen, missing = set(), []
     for part in spec.split(","):
-        part = part.strip()
+        part = part.strip().lower()
         if not part:
             continue
-        if "-" in part:
-            a, b = part.split("-", 1)
-            wanted.update(range(int(a), int(b) + 1))
+        rng = re.fullmatch(r"(\d+)-(\d+)", part)
+        if rng:
+            a, b = int(rng.group(1)), int(rng.group(2))
+            hits = {k for k in scenes if a <= k.number <= b}
+            chosen |= hits
+            if not hits:
+                missing.append(part)
+            continue
+        one = re.fullmatch(r"(\d+)([a-z]?)", part)
+        key = SceneId(one.group(1), one.group(2)) if one else None
+        if key in scenes:
+            chosen.add(key)
         else:
-            wanted.add(int(part))
-    return wanted
+            missing.append(part)
+    return chosen, missing
 
 
 def supports_tags(model_id):
@@ -125,10 +137,9 @@ def main() -> int:
 
     scenes = parse_scenes(script_path.read_text(encoding="utf-8"))
     if options["--scenes"]:
-        wanted = parse_scene_list(options["--scenes"])
-        missing = sorted(wanted - set(scenes))
+        wanted, missing = select_scenes(options["--scenes"], scenes)
         if missing:
-            print(f"Scenes not in the script: {', '.join(f'{n:02d}' for n in missing)}")
+            print(f"Scenes not in the script: {', '.join(missing)}")
             return 1
     else:
         wanted = set(scenes)

@@ -14,17 +14,21 @@ Reads 02-illustrations.md and 03-script.md from the folder root and reports:
 - personal lines still marked [CONFIRM: ...] (narrator-bible.md, truth rules);
 - the "Once upon a time" handoff ending the introduction, and the introduction's length
   (about 90 seconds: 200-230 words, never over 240, in 2-3 scenes);
+- the verdict scene just before the outro;
+- narrator cut-ins in the story (scenes like 14a): 1-3, 25-45 words each, the first at
+  minutes 3-5, 4+ minutes apart, none in the last four story scenes;
 - style warnings from references/spoken-style.md: banned phrases, lists of three,
   "not X, but Y", long narrator sentences and written connectors.
 
 Spoken text is the content of the ```text fences in 03-script.md.
 Scene headings in both files look like: "## 05 · Title" or "### 05 · Title".
+A narrator cut-in after scene 14 is "### 14a · Cut-in: Title" and has no illustration.
 """
 import re
 import sys
 from pathlib import Path
 
-HEADING = re.compile(r"^#{2,4}\s+(\d{1,3})\s*[·\-—]\s*(.+)$")
+HEADING = re.compile(r"^#{2,4}\s+(\d{1,3})([a-z])?\s*[·\-—]\s*(.+)$")
 VOICE = re.compile(r"\bVoice\**\s*:\s*\**\s*([A-Za-z]+)", re.IGNORECASE)
 PAUSE = re.compile(r"\[(?:long )?pause[^\]]*\]", re.IGNORECASE)
 TAG = re.compile(r"\[[^\]]*\]")  # pause markers and audio tags are not spoken words
@@ -44,8 +48,34 @@ SENTENCE_END = re.compile(r"(?<=[.!?])\s+|\n+")
 LONG_SENTENCE = 25  # words; narrator sentences longer than this are flagged
 
 
+class SceneId(tuple):
+    """A scene number such as 14, or a narrator cut-in such as 14a (after scene 14).
+
+    Sorts as 14 < 14a < 15 and formats like a number: f"{SceneId(14, 'a'):02d}" == "14a".
+    """
+
+    def __new__(cls, number, suffix=""):
+        return super().__new__(cls, (int(number), (suffix or "").lower()))
+
+    @property
+    def number(self):
+        return self[0]
+
+    @property
+    def is_cutin(self):
+        return bool(self[1])
+
+    def __format__(self, spec):
+        return format(self[0], spec or "02d") + self[1]
+
+    def __str__(self):
+        return format(self, "02d")
+
+    __repr__ = __str__
+
+
 def parse_scenes(text: str):
-    """Return {scene_number: {"title", "voice", "spoken"}} in file order."""
+    """Return {SceneId: {"title", "voice", "spoken"}} in file order."""
     scenes = {}
     current = None
     in_fence = False
@@ -62,8 +92,8 @@ def parse_scenes(text: str):
             continue
         m = HEADING.match(stripped)
         if m:
-            current = int(m.group(1))
-            scenes[current] = {"title": m.group(2).strip(), "voice": "", "spoken": []}
+            current = SceneId(m.group(1), m.group(2))
+            scenes[current] = {"title": m.group(3).strip(), "voice": "", "spoken": []}
             continue
         if stripped.startswith("#"):
             current = None  # a non-scene heading (e.g. a character) ends the scene
@@ -162,6 +192,9 @@ def main() -> int:
             problems.append(f"Scene {num:02d}: no Voice line")
         if words == 0:
             problems.append(f"Scene {num:02d}: no spoken text in a ```text fence")
+        elif num.is_cutin:
+            if not 20 <= words <= 50:
+                problems.append(f"Cut-in {num:02d}: {words} words (expected 25-45, 10-20 seconds)")
         elif words < 40 or words > 200:
             problems.append(f"Scene {num:02d}: {words} words (expected roughly 60-150)")
 
@@ -215,6 +248,34 @@ def main() -> int:
         if not 40 <= script[v]["words"] <= 95:
             problems.append(f"Verdict scene {v:02d}: {script[v]['words']} words (expected 50-80)")
 
+    # Narrator cut-ins during the story: scenes like 14a (scenario guide section 6).
+    cutins = [n for n in order if n.is_cutin]
+    if story:
+        story_scenes = [n for n in order if script[n]["voice"] == "STORYTELLER" and not n.is_cutin]
+        start = {}
+        elapsed = 0
+        for n in order:
+            start[n] = elapsed
+            elapsed += script[n]["words"]
+        if not 1 <= len(cutins) <= 3:
+            problems.append(f"{len(cutins)} narrator cut-ins in the story (expected 1-3)")
+        for i, n in enumerate(cutins):
+            if SceneId(n.number) not in script:
+                problems.append(f"Cut-in {n:02d} follows no scene {n.number:02d}")
+            if script[n]["voice"] != "NARRATOR":
+                problems.append(f"Cut-in {n:02d} should be voiced by the NARRATOR")
+            if not story_scenes[0] < n < story_scenes[-1]:
+                problems.append(f"Cut-in {n:02d} is outside the story")
+            elif len(story_scenes) >= 4 and n > story_scenes[-4]:
+                problems.append(f"Cut-in {n:02d} is in the last four story scenes (the climax); move it earlier")
+            minute = start[n] / wpm
+            if i == 0 and not 3 <= minute <= 5.5:
+                problems.append(f"First cut-in {n:02d} starts at ~{minute:.1f} min (aim for minutes 3-5)")
+            if i > 0:
+                gap = (start[n] - start[cutins[i - 1]]) / wpm
+                if gap < 4:
+                    problems.append(f"Cut-in {n:02d} is only ~{gap:.1f} min after cut-in {cutins[i - 1]:02d} (keep them 4+ min apart)")
+
     for num, s in script.items():
         for m in CONFIRM.finditer("\n".join(s["spoken"])):
             problems.append(f"Scene {num:02d}: unconfirmed personal line, settle before approval: \"{m.group(1).strip()}\"")
@@ -224,9 +285,10 @@ def main() -> int:
 
     if plan_path.exists():
         plan = parse_scenes(plan_path.read_text(encoding="utf-8"))
-        # Only count numbered scene prompts, not character entries.
-        plan_nums = set(plan)
-        script_nums = set(script)
+        # Only count numbered scene prompts, not character entries. Cut-ins (14a) hold
+        # the previous scene's image, so they have no prompt of their own.
+        plan_nums = {n for n in plan if not n.is_cutin}
+        script_nums = {n for n in script if not n.is_cutin}
         print(f"Illustrations: {len(plan_nums)} numbered scene prompts")
         if not 33 <= len(plan_nums) <= 42:
             problems.append(f"{len(plan_nums)} illustrations (expected 35-40)")
