@@ -10,7 +10,9 @@ Reads 02-illustrations.md and 03-script.md from the folder root and reports:
 - scene numbers that appear in one file but not the other;
 - scenes whose spoken text is far outside the target length;
 - whether the five production subfolders and 05-narrator.md exist;
-- whether the final scene invites comments and asks viewers to subscribe and click the bell;
+- whether the final scene invites comments and uses one approved subscribe line (scenario
+  guide section 1), different from the previous book's in ../narration-history.md;
+- one early soft ask for a like around minutes 3-5, not repeated in the outro;
 - personal lines still marked [CONFIRM: ...] (narrator-bible.md, truth rules);
 - the "Once upon a time" handoff ending the introduction, and the introduction's length
   (about 90 seconds: 200-230 words, never over 240, in 2-3 scenes);
@@ -35,6 +37,8 @@ TAG = re.compile(r"\[[^\]]*\]")  # pause markers and audio tags are not spoken w
 CONFIRM = re.compile(r"\[CONFIRM:\s*([^\]]*)\]", re.IGNORECASE)  # personal line awaiting the creator
 SUBFOLDERS = ["images", "voice", "thumbnails", "music", "videos"]
 STYLE_GUIDE = Path(__file__).resolve().parent.parent / "references" / "spoken-style.md"
+SCENARIO_GUIDE = Path(__file__).resolve().parent.parent / "references" / "scenario-guide.md"
+LIKE_ASK = re.compile(r"\b(?:a like|leave a like|like button|hit like|tap like|give it a like|giving it a like|hit the like)\b", re.IGNORECASE)
 NOT_BUT = re.compile(
     r"\bnot (?:just |only |merely |even )?[^.!?;\n]{1,60}?\bbut\b"
     r"|\bit'?s not about\b[^.!?]*[.!?]\s+it'?s about\b",
@@ -129,6 +133,41 @@ def load_banned_phrases():
     return phrases
 
 
+def normalise(text):
+    """Lower-case spoken text without tags, curly quotes or extra spaces, for comparing lines."""
+    text = TAG.sub(" ", unwrap_confirm(text)).replace("’", "'").replace("“", '"').replace("”", '"')
+    return " ".join(text.lower().split())
+
+
+def load_subscribe_lines():
+    """Numbered wordings under '#### Approved subscribe lines' in scenario-guide.md."""
+    if not SCENARIO_GUIDE.exists():
+        return {}
+    lines, in_section = {}, False
+    for line in SCENARIO_GUIDE.read_text(encoding="utf-8").splitlines():
+        if line.startswith("#"):
+            in_section = line.strip().lower() == "#### approved subscribe lines"
+            continue
+        m = re.match(r'^(\d+)\.\s+"(.+)"\s*$', line.strip())
+        if in_section and m:
+            lines[int(m.group(1))] = normalise(m.group(2))
+    return lines
+
+
+def previous_subscribe_line(history_path, slug):
+    """The approved wording number used by the most recent other book in narration-history.md."""
+    if not history_path.exists():
+        return None, None
+    previous = (None, None)
+    for entry in re.split(r"^## ", history_path.read_text(encoding="utf-8"), flags=re.MULTILINE)[1:]:
+        parts = [p.strip() for p in entry.splitlines()[0].split("·")]
+        if len(parts) > 1 and parts[1] == slug:
+            continue
+        m = re.search(r"^- Subscribe line:\s*(\d+)", entry, re.MULTILINE)
+        previous = (parts[0], int(m.group(1)) if m else None)
+    return previous
+
+
 def style_warnings(script):
     """Warnings from spoken-style.md. They are for review, not hard errors."""
     warnings = []
@@ -204,6 +243,12 @@ def main() -> int:
     if not 2800 <= total <= 3500:
         problems.append(f"Total {total} words is outside the 3,000-3,300 target (20-25 min)")
 
+    order = sorted(script)
+    start, elapsed = {}, 0
+    for n in order:
+        start[n] = elapsed
+        elapsed += script[n]["words"]
+
     if script:
         last = max(script)
         final_text = " ".join(script[last]["spoken"]).lower()
@@ -212,8 +257,32 @@ def main() -> int:
         if "comment" not in final_text:
             problems.append(f"Final scene {last:02d}: no invitation to comment")
 
+        # The subscribe line: one approved wording, word for word, not the previous book's.
+        approved = load_subscribe_lines()
+        final_norm = normalise("\n".join(script[last]["spoken"]))
+        used = [k for k, v in approved.items() if v in final_norm]
+        if approved and not used:
+            problems.append(f"Final scene {last:02d}: the subscribe line is not one of the approved wordings (scenario guide section 1)")
+        elif used:
+            print(f"Subscribe line: approved wording {used[0]}")
+            prev_book, prev_line = previous_subscribe_line(root.resolve().parent / "narration-history.md", root.resolve().name)
+            if prev_line == used[0]:
+                problems.append(f"Subscribe line {used[0]} is the same as the previous book's ({prev_book}); rotate to another")
+
+        # The early soft ask: one like-ask around minutes 3-5; the outro does not repeat it.
+        early = [n for n in order if n != last and LIKE_ASK.search(" ".join(script[n]["spoken"]))]
+        if not early:
+            problems.append("No early soft ask for a like (around minutes 3-5, usually the first cut-in)")
+        else:
+            if len(early) > 1:
+                problems.append(f"{len(early)} like-asks before the outro ({', '.join(f'{n:02d}' for n in early)}); keep one")
+            minute = start[early[0]] / wpm
+            if not 2.5 <= minute <= 6:
+                problems.append(f"Early soft ask in scene {early[0]:02d} starts at ~{minute:.1f} min (aim for minutes 3-5)")
+            if LIKE_ASK.search(final_text):
+                problems.append(f"Final scene {last:02d} asks for a like again; it was already asked in scene {early[0]:02d}")
+
     # Ritual: "Once upon a time" ends the introduction, just before the first story scene.
-    order = sorted(script)
     handoff = [n for n in order if "once upon a time" in " ".join(script[n]["spoken"]).lower()]
     story = [n for n in order if script[n]["voice"] == "STORYTELLER"]
     if not handoff:
@@ -252,11 +321,6 @@ def main() -> int:
     cutins = [n for n in order if n.is_cutin]
     if story:
         story_scenes = [n for n in order if script[n]["voice"] == "STORYTELLER" and not n.is_cutin]
-        start = {}
-        elapsed = 0
-        for n in order:
-            start[n] = elapsed
-            elapsed += script[n]["words"]
         if not 1 <= len(cutins) <= 3:
             problems.append(f"{len(cutins)} narrator cut-ins in the story (expected 1-3)")
         for i, n in enumerate(cutins):

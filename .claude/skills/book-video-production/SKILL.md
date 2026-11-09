@@ -259,14 +259,16 @@ The narrator is the channel's host. His look is fixed by the pose images in `ass
 
 **Delivery for the voice model.** The narrator's lines are spoken by ElevenLabs, so write them for the model set in `assets/voice-config.json`, following `references/elevenlabs-v4.md` (by default Eleven v4). Write the words first. Then, in a separate pass, add the audio tags, the ellipses and dashes, and the occasional capitalised word that give the delivery, without changing a word. The narrator's tag density follows the vlogger level. A light touch means a few tags across the whole video, such as a `[chuckles]` on the joke or a `[softly]` on the personal moment. The subscribe line stays plain. Every line in this file carries exactly the tags it will have in the script.
 
-**Avoid repetition.** Before writing any narrator line, read `<base-dir>/narration-history.md` if it exists. In this book's welcome, intro, takeaways, outro, invitation and sign-off, do not reuse any line recorded there or a close paraphrase of it, and use a different outro callback approach (scenario guide, section 7) from the last three books. The subscribe line is the one exception; it stays the same. If the file does not exist yet, this is the first recorded book and nothing needs to be avoided.
+**Avoid repetition.** Before writing any narrator line, read `<base-dir>/narration-history.md` if it exists. In this book's welcome, intro, takeaways, outro, invitation and sign-off, do not reuse any line recorded there or a close paraphrase of it, and use a different outro callback approach (scenario guide, section 7) from the last three books. The subscribe line is the one exception: it is one of the approved wordings (scenario guide section 1), word for word, and rotates so that it differs from the previous book's. If the file does not exist yet, this is the first recorded book and nothing needs to be avoided.
 
 **Welcome, invitation and sign-off.** Write these for each book, in that book's tone and imagery, so they sound like part of this tale and not a stock formula. Each is short enough to say in one breath. The welcome greets the viewer and leads into the logline, the invitation points to the next tale, and the sign-off is a short, warm goodbye.
 
+**Early soft ask.** One light line asking for a like, after the first real payoff around minutes 3–5, usually in the first cut-in (scenario guide section 7, "The early soft ask"). It is one sentence of 15 words at most, grateful and never pushy, written fresh for this book and different from the previous book's.
+
 **Final-scene calls to action.** The final scene always contains both, in this order, before the invitation and sign-off:
 
-1. **Comments and likes, said creatively.** Invite the viewer to answer the outro's reflective question in the comments and to leave a like, phrased in this book's own imagery and motifs and written fresh for every book. *Faust* examples: "Write your answer in the comments, and sign it in ink, not in blood." / "If this tale lit a small candle for you, leave a like so it can light the way for the next traveller."
-2. **Subscribe and bell, said directly.** A plain, literal call to action with no metaphor: "Please subscribe to the channel and click the bell button, so you never miss a new tale." Keep this wording or a close, equally direct variant. It is never left out, never turned into a figure of speech, and never folded into the sign-off.
+1. **Comments, said creatively.** Invite the viewer to answer the outro's reflective question in the comments, phrased in this book's own imagery and motifs and written fresh for every book. *Faust* example: "Write your answer in the comments, and sign it in ink, not in blood." The like was asked for early, so it is not repeated here.
+2. **Subscribe and bell, said directly.** One wording from the approved list in scenario guide section 1, word for word: not the previous book's (narration history), and preferably the one used least recently. It is never left out, never turned into a figure of speech, and never folded into the sign-off.
 
 **On screen.** The narrator is on screen in every scene he voices: the introduction, the takeaways, the verdict, the outro, and his cut-ins during the story. Otherwise he is never on screen during the story. During a cut-in, the held image of the scene before stays behind him. Optionally, the user can mark every cut-in the same way in editing (for example by dimming the image slightly), so viewers learn to recognise it. While he is on screen, the user overlays his pose image on part of the frame, with the scene's illustration playing in the background. This file only says which pose to use when; it does not change the illustrations.
 
@@ -290,14 +292,18 @@ Vlogger touch: [light / medium / high]
 | Invitation to the next tale | […] |
 | Sign-off | […] |
 
-## Final-scene calls to action
-Comments and likes, in this book's imagery:
+## Calls to action
+Early soft ask (scene [NNa], ~minute [m]):
 ```text
-[creative invitation]
+[one light line asking for a like]
 ```
-Subscribe and bell, direct:
+Comments, in this book's imagery:
 ```text
-Please subscribe to the channel and click the bell button, so you never miss a new tale.
+[creative invitation to answer the question]
+```
+Subscribe and bell, direct (approved wording [1–4]):
+```text
+[the approved wording, word for word]
 ```
 
 ## Links to earlier videos
@@ -313,7 +319,7 @@ Please subscribe to the channel and click the bell button, so you never miss a n
 | 02 | "[welcome…]" | fullbody-1.png | Welcoming host |
 | 09a | "[cut-in…]" | halfbody-4.png | Leans in to share an aside |
 | … | | | |
-| [last] | "Please subscribe…" | halfbody-14.png | Addresses the viewer directly |
+| [last] | "[subscribe line…]" | halfbody-14.png | Addresses the viewer directly |
 ````
 
 ### 7. Write `03-script.md`
@@ -374,7 +380,8 @@ Writing for the ear:
 - The outro returns to the opening hook and pays it off (scenario guide section 7). If the hook is a quote, it is credited to the author, never the character, until the story reveals the speaker, and the outro repeats it word for word.
 - Links to earlier videos appear only where `05-narrator.md` places them, word for word, and must read as part of the narrator's thought, not as an inserted ad.
 - The verdict is its own NARRATOR scene, just before the outro, with a heading that starts with "Verdict:" (for example `### 36 · Verdict: read Part One first`), so `check_book.py` can find it.
-- The final scene always ends with, in this order: the creative comments-and-likes invitation, the direct "Please subscribe to the channel and click the bell button" call to action, then the invitation and sign-off, all word for word from `05-narrator.md`.
+- The early soft ask (a like) sits where `05-narrator.md` places it, around minutes 3–5, usually in the first cut-in.
+- The final scene always ends with, in this order: the creative comments invitation, the approved subscribe line, then the invitation and sign-off, all word for word from `05-narrator.md`.
 
 ### 8. Write `04-titles-and-thumbnails.md`
 
@@ -400,7 +407,8 @@ It reports word counts per voice, estimated runtime, scene and illustration coun
 - every color named in a prompt exists in the palette;
 - no lighting words from visual-style.md section 2.4 slipped into prompts;
 - every hook in the packaging is answered in the script;
-- the three rituals (scenario guide section 1, "Channel signature") are in place: "Once upon a time…" ends the introduction, the outro asks the closing question, and the final scene has the direct subscribe line. Apart from these, no line's wording, including takeaway signposts, the welcome and the sign-off, matches the same beat in any book in `narration-history.md`;
+- the three rituals (scenario guide section 1, "Channel signature") are in place: "Once upon a time…" ends the introduction, the outro asks the closing question, and the final scene has an approved subscribe line word for word, not the previous book's. Apart from these, no line's wording, including takeaway signposts, the welcome and the sign-off, matches the same beat in any book in `narration-history.md`;
+- there is exactly one early soft ask (a like) at minutes 3–5, and the outro does not ask for a like again;
 - every personal line is covered by `narrator-bible.md` or marked `[CONFIRM: …]`; nothing contradicts the bible or its anecdote log, and nothing states or hints at its "Background";
 - the spoken text passes the checklist in `references/spoken-style.md` section 7, and every style warning from `check_book.py` was either fixed or is a deliberate choice;
 - audio tags, capitals and pauses follow the checklist in `references/elevenlabs-v4.md` section 9, with the narrator's tag count matching the book's vlogger level;
@@ -452,7 +460,8 @@ Do this only when the user says the script is approved (for example "approved", 
 - Outro callback approach: [which way in, from scenario guide section 7]; lead-in: "[…]"
 - Question lead-in and question: "[…]"
 - Comments invitation: "[…]"
-- Like invitation: "[…]"
+- Early soft ask: "[…]" (scene [NNa])
+- Subscribe line: [approved wording number 1–4]
 - Invitation to the next tale: "[…]"
 - Sign-off: "[…]"
 - Links to earlier videos: [none] or [book: "line"]

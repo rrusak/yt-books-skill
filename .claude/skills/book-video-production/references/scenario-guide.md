@@ -45,7 +45,16 @@ Three rituals appear in every video, always in the same place, so regular viewer
 | --- | --- | --- | --- |
 | **"Once upon a time…"** | The last words of the introduction, handing over to the storyteller | These exact words | The line that leads into them |
 | **The closing question** | The outro, after the hook's payoff (section 7, outro step 5) | One reflective question to the viewer, drawn from the book's central dilemma, which the comments invitation then asks them to answer | The question itself and how it is introduced |
-| **The direct subscribe line** | The final scene (section 7, outro step 7) | A plain, literal call to subscribe and click the bell, with no metaphor | Currently one fixed wording |
+| **The direct subscribe line** | The final scene (section 7, outro step 7) | A plain, literal call to subscribe and click the bell, with no metaphor, taken word for word from the approved list below | Which approved wording, rotated between books |
+
+#### Approved subscribe lines
+
+The same sentence word for word in every video is itself a sign of a template, so the subscribe line rotates between these equally direct wordings. Use one exactly as written. Do not use the previous book's wording (the "Subscribe line" in `narration-history.md`), and prefer the one used least recently. Only the creator adds, edits or removes wordings here. Each must contain "subscribe" and "bell", which `check_book.py` relies on.
+
+1. "Please subscribe to the channel and click the bell button, so you never miss a new tale."
+2. "If you haven't yet, please subscribe and tap the bell, so you'll know as soon as the next tale is out."
+3. "Please subscribe to the channel and turn on the bell notifications, so you hear about the next story first."
+4. "Subscribe to the channel and click the bell, and every new tale will reach you the day it's released."
 
 Everything else is a beat, not a phrase. That covers the welcome, the framing of the hook, the transitions, the takeaway signposts, the callback lead-in, the invitation and the sign-off. Write each one for this book, and do not let a phrase become a habit across videos. If a line could open or close any video on the channel, rewrite it for this one. Do not add a fourth ritual unless the creator decides to.
 
@@ -207,7 +216,7 @@ Do not use the same shape as the previous book (the "Intro shape" line in `narra
 
 ### Vlogger touch
 
-The narrator speaks to camera like a real person, a YouTube host rather than a reciting voice. How strongly is set per book with one of three levels; the default is **light**. The level applies to everything the narrator says (introduction, takeaways, outro) and never to the storyteller: the story stays in the fairy-tale voice of section 6 at every level. At every level the facts, beats and word counts stay the same, the subscribe line stays word for word, and there is no slang, no profanity and no hype ("smash that like button", "you won't believe what happens next").
+The narrator speaks to camera like a real person, a YouTube host rather than a reciting voice. How strongly is set per book with one of three levels; the default is **light**. The level applies to everything the narrator says (introduction, takeaways, outro) and never to the storyteller: the story stays in the fairy-tale voice of section 6 at every level. At every level the facts, beats and word counts stay the same, the subscribe line is one of the approved wordings, word for word, and there is no slang, no profanity and no hype ("smash that like button", "you won't believe what happens next").
 
 | Level | What it sounds like |
 | --- | --- |
@@ -258,7 +267,7 @@ Now and then a real host pauses the story to talk to the viewer directly. A **cu
 | **Context moved out of the introduction** | A context fact that passed the test in section 5 but did not fit the 90 seconds: the author's life at the time this part was written. |
 | **Honest aside** (section 7) | "This next stretch is honestly hard going in the book. I've trimmed it to the parts that matter." |
 | **Reaction** (medium and high vlogger touch only) | "I mean, come on. Who signs anything in blood without reading it first?" |
-| **The early soft ask** (section 7, outro) | At most one per video, usually in the first cut-in. |
+| **The early soft ask** (section 7, "The early soft ask") | "If you're enjoying this so far, a like really helps the video find other readers." One per video, usually in the first cut-in. |
 
 **Rules:**
 
@@ -357,9 +366,20 @@ Rules:
 3. **Answer**: resolve the promise from the introduction in one or two sentences.
 4. *(pause)*
 5. **Reflective question** for the viewer, drawn from the book's central dilemma ("what would you give to feel that your life was truly complete?"). Vary how it is introduced; do not open it with the same "So here is a question…" every time.
-6. **Comments and likes, said creatively**: ask the viewer to answer the question in the comments and to leave a like, but put it in the book's own world and motifs rather than as a stock request. Write it fresh for every book. Examples for *Faust*: "Write your answer in the comments, and sign it in ink, not in blood." / "If this tale lit a small candle for you, leave a like so it can light the way for the next traveller."
-7. **Subscribe and bell, said directly**: always include a plain, literal call to subscribe and turn on notifications, with no metaphor, e.g. "Please subscribe to the channel and click the bell button, so you never miss a new tale." It is never left out and never folded into the sign-off.
+6. **Comments, said creatively**: ask the viewer to answer the question in the comments, put in the book's own world and motifs rather than as a stock request. Write it fresh for every book. The like was already asked for in the early soft ask (below), so do not ask again here. Only if the video has no early ask may the outro add a like, in the same creative sentence. Example for *Faust*: "Write your answer in the comments, and sign it in ink, not in blood."
+7. **Subscribe and bell, said directly**: one wording from the approved list (section 1, "Approved subscribe lines"), word for word, not the previous book's. It is never left out, never turned into a figure of speech, and never folded into the sign-off.
 8. **Invitation and sign-off**: the narrator's invitation to the next tale and sign-off, from Narrator.md. If an earlier video is linked in the outro (below), the link goes here, just before the invitation.
+
+The end of the video therefore asks for three things at most: a comment, a subscription, and the next tale (plus a link, when one fits). The like has moved earlier, to where viewers still are.
+
+### The early soft ask
+
+Most viewers never reach the outro, so one light ask comes early, after the video has given them something.
+
+- **Where:** after the first real payoff, around minutes 3–5. Usually it is the job of the first narrator cut-in (section 6). If that cut-in has another job, add the ask at the very end of a narrator scene, never in the middle of a story scene.
+- **What:** one short sentence, 15 words at most, asking for a like as a way to help the channel or the video find other readers ("If you're enjoying this so far, a like really helps the video find other readers."). It asks for a like only, not a subscription or comments; those come at the end.
+- **How:** light and grateful, never pushy, and with no metaphor needed. Written fresh for each book at its vlogger level, and different from the previous book's (the "Early soft ask" line in `narration-history.md`). Then hand back to the story at once.
+- **Once only.** One early ask per video, and the outro does not repeat the like.
 
 ### Pointing to earlier videos
 
@@ -500,7 +520,7 @@ The script tells [Book] as a fairy tale, one passage per scene in timeline order
 
 *(pause)*
 
-[Lead-in to the question, varied.] [Question]? [Creative invitation to comment and like, in the book's own imagery.] Please subscribe to the channel and click the bell button, so you never miss a new tale. [Narrator's invitation and sign-off, from Narrator.md.]
+[Lead-in to the question, varied.] [Question]? [Creative invitation to comment, in the book's own imagery.] [One approved subscribe line, word for word, not the previous book's.] [Narrator's invitation and sign-off, from Narrator.md.]
 ```
 
 ### Illustration Plan skeleton
@@ -546,7 +566,8 @@ Each description below is written to paste directly as a prompt. Append the styl
 - [ ] Honest asides, if any: at most two, true and sourced, generous, of a different kind from the previous book's. The narrator's own judgements are in the narrator bible or marked `[CONFIRM: …]`.
 - [ ] A verdict scene just before the outro, 50–80 words: who the book is for, which edition or translation (confirmed in the research), and no call to action or rating.
 - [ ] The outro returns to the opening hook (a quote word for word), reveals the speaker or the hook's meaning, and answers the promise.
-- [ ] The outro asks for comments and likes in the book's own imagery, then gives a direct, literal "subscribe to the channel and click the bell button" call to action.
+- [ ] One early soft ask for a like, at minutes 3–5 (usually the first cut-in), 15 words at most, not repeated in the outro.
+- [ ] The outro asks for comments in the book's own imagery, then uses one approved subscribe line word for word, different from the previous book's.
 - [ ] The narrator's welcome, invitation, calls to action and sign-off match Narrator.md.
 - [ ] Facts, names, dates and line references checked against the source.
 
