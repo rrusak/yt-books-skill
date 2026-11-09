@@ -9,7 +9,8 @@ Reads 02-illustrations.md and 03-script.md from the folder root and reports:
 - the number of scenes in the script and of scene prompts in the plan;
 - scene numbers that appear in one file but not the other;
 - scenes whose spoken text is far outside the target length;
-- whether the five production subfolders exist.
+- whether the five production subfolders and 05-narrator.md exist;
+- whether the final scene invites comments and asks viewers to subscribe and click the bell.
 
 Spoken text is the content of the ```text fences in 03-script.md.
 Scene headings in both files look like: "## 05 · Title" or "### 05 · Title".
@@ -101,6 +102,17 @@ def main() -> int:
         print(f"  {voice}: {words} words (~{words / wpm:.1f} min)")
     if not 2800 <= total <= 3500:
         problems.append(f"Total {total} words is outside the 3,000-3,300 target (20-25 min)")
+
+    if script:
+        last = max(script)
+        final_text = " ".join(script[last]["spoken"]).lower()
+        if "subscribe" not in final_text or "bell" not in final_text:
+            problems.append(f"Final scene {last:02d}: no direct 'subscribe to the channel and click the bell button' call to action")
+        if "comment" not in final_text:
+            problems.append(f"Final scene {last:02d}: no invitation to comment")
+
+    if not (root / "05-narrator.md").exists():
+        problems.append("05-narrator.md not found")
 
     if plan_path.exists():
         plan = parse_scenes(plan_path.read_text(encoding="utf-8"))

@@ -186,7 +186,7 @@ Add each video to two or three playlists, for example: the channel's main series
 ### 5.7 End screen and cards
 
 - **End screen** (last 20 seconds, over the outro): the next or a related tale, a playlist, and a subscribe element. The outro narration already invites the next tale, so link it.
-- **Cards**: one or two during the video where a related tale is relevant (another book by the same author, or with the same theme). No more than one per five minutes.
+- **Cards**: one or two during the video where a related tale is relevant (another book by the same author, or with the same theme). No more than one per five minutes. When the narrator links an earlier video (see Narrator.md), place a card for it at that line, and use the end screen for an outro link.
 
 ### 5.8 Shorts
 

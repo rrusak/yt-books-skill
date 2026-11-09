@@ -5,7 +5,7 @@ Usage:
     python init_book_folder.py <book-slug> [base-dir]
 
 Creates <base-dir>/<book-slug>/ with the empty production subfolders
-images/, voice/, thumbnails/, music/ and videos/. The four main documents
+images/, voice/, thumbnails/, music/ and videos/. The five main documents
 are written by Claude into the root of <book-slug>/ afterwards.
 Existing folders and files are left untouched.
 """

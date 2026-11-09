@@ -13,7 +13,7 @@ This guide covers **structure and scenario development only**. All stylistic dec
 
 | Document | Contains |
 | --- | --- |
-| **Narrator.md** | The narrator's appearance, persona, tone of voice, recurring phrases (welcome, invitation, sign-off), reference sheet and rules for which scenes the narrator appears in. |
+| **Narrator.md** | Written for each book (`05-narrator.md` in the book folder). The narrator's persona and tone, his welcome, invitation and sign-off, the final-scene calls to action, and which pose is on screen during the introduction and outro. |
 | **Visual Style.md** | The channel's master style: the master prompt for every image, words and effects that prompts must avoid, and the process for building each book's style sheet. |
 | **Book Style Sheet — [Book].md** | One per book, built with the process in Visual Style.md: the book's palette, motifs, and fixed descriptors and reference sheets for its recurring characters. |
 
@@ -33,7 +33,7 @@ Wherever this guide says "see Narrator.md", "see Visual Style.md" or "see Book S
 | Words per scene | 60–100 for story scenes; 80–150 for narrator scenes |
 | Voices | **Narrator** (introduction, takeaways, outro) and **storyteller** (the story itself) |
 | Order | Strictly chronological within the story, with key quotes placed where they are spoken |
-| Structural devices | Opening riddle quote, "Once upon a time" handoff, five takeaways, callback ending |
+| Structural devices | Opening riddle quote, "Once upon a time" handoff, 2–5 takeaways, callback ending |
 
 Timing formula: `illustrations ≈ runtime in seconds ÷ 37`. Words ≈ `runtime in minutes × 140`.
 
@@ -43,10 +43,10 @@ Timing formula: `illustrations ≈ runtime in seconds ÷ 37`. Words ≈ `runtime
 
 | # | Block | Voice | Runtime | Scenes | Purpose |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Opening quote | Narrator | 0:00–0:30 | 1 (shared with title card) | Hook. A line that sounds like a riddle out of context. |
+| 1 | Opening quote | Narrator | 0:00–0:30 | 1 | Hook. A line that sounds like a riddle out of context. |
 | 2 | Introduction | Narrator | 0:30–2:30 | 3–4 | Welcome, logline, author, origins, structure. Ends with "Once upon a time…" |
-| 3 | The story | Storyteller | 2:30–19:00 | 24–28 | The plot in fairy-tale voice, chronologically, with 4–6 key quotes woven in. |
-| 4 | Takeaways | Narrator | 19:00–22:30 | 5 | Five lessons, each grounded in the story. |
+| 3 | The story | Storyteller | 2:30–19:00 or later | 24–31 | The plot in fairy-tale voice, chronologically, with 4–6 key quotes woven in. |
+| 4 | Takeaways | Narrator | 19:00–22:30 or shorter | 2–5 | Two to five lessons, each grounded in the story. Fewer takeaways leave more time for the story. |
 | 5 | Outro | Narrator | 22:30–23:30 | 1 | Callback to the opening quote, reflective question, call to action, sign-off. |
 
 For a book in two or more parts (or with a clear midpoint), split block 3 into sub-headings (e.g. "Part One: from Heaven to the devil's door", "Part One: the pact and Gretchen", "Part Two: the great world"). Give each part a share of screen time proportional to its importance to a general audience, not its page count. In *Faust*, Part One got ~19 scenes and the much longer Part Two got 8.
@@ -62,7 +62,7 @@ Before writing anything, list:
 - **Plot beats**: 20–28 moments that carry the story. Each must be visually distinct (a different place, action or character). Merge beats that would produce near-identical images.
 - **Key quotes**: 5–7 famous or meaningful lines. For each, record the speaker, the location (part, act/scene, line number), the original-language text, and the English translation used.
 - **The opening quote**: one of the key quotes, chosen with the criteria in section 4.
-- **Five takeaways**: lessons a modern viewer can apply. Each must be supported by at least one concrete event in the story.
+- **Takeaways, 2–5**: lessons a modern viewer can apply. Each must be supported by at least one concrete event in the story. Choose the number from the book: a tight fable may carry two strong lessons, a sprawling epic five. Never pad with a weak or repeated lesson to reach a number; give the time it frees to the story.
 - **Author hook**: one surprising fact about how, when or why the book was written (Goethe: sixty years, from his twenties to months before his death).
 - **Origins hook**: what existed before the book and what everyone expected (Faust: the puppet-play legend in which the doctor is always damned), and how the author broke with it.
 - **Characters**: the book characters who will appear in several images. Make sure each has fixed descriptors in Book Style Sheet — [Book].md before writing prompts.
@@ -76,10 +76,10 @@ Before writing anything, list:
 
 ### Step 3 — Allocate illustrations
 
-- One illustration per scene. Introduction ≈ 4, story ≈ 24–28, takeaways 5, outro 1.
+- One illustration per scene. Introduction ≈ 4, story ≈ 24–31 (more when there are fewer takeaways), takeaways 2–5, outro 1.
 - If the total exceeds ~40, merge adjacent minor beats. If it falls below ~33, split the densest scenes.
 - Optional extra quotes can reuse an existing image with a slow zoom rather than a new illustration.
-- Which intro, takeaway and outro scenes show the narrator instead of a book illustration is decided by Narrator.md.
+- Every scene gets a full book illustration. The narrator is on screen in the introduction, takeaways and outro as an overlay the user adds in editing, with the illustration behind him; Narrator.md plans his poses. In the story he is heard, not seen.
 
 ### Step 4 — Write the Illustration Plan
 
@@ -118,7 +118,7 @@ The video opens cold on a quote, spoken by the narrator, before any welcome.
 
 ## 5. The narrator introduction
 
-The introduction is the narrator speaking directly to the viewer. It runs 400–500 words across 4 scenes. The narrator's persona, tone and recurring phrases come from Narrator.md; this section defines only the beats and their order.
+The introduction is the narrator speaking directly to the viewer. It runs 400–500 words across 4 scenes. The narrator's persona, tone and welcome come from Narrator.md; this section defines only the beats and their order.
 
 | Beat | Content | Example (Faust) |
 | --- | --- | --- |
@@ -133,9 +133,21 @@ The introduction is the narrator speaking directly to the viewer. It runs 400–
 Writing rules:
 
 - Speak to "you"; use "we" for the shared journey ("what we will discover together").
-- Use one or two rhetorical questions, never more.
+- Use one or two rhetorical questions, never more (a few more are allowed at the medium and high vlogger touch, below).
 - Each scene ends on a turn or open question that pulls into the next.
 - Do not summarise the plot. Tease the central conflict only.
+
+### Vlogger touch
+
+The narrator speaks to camera like a real person, a YouTube host rather than a reciting voice. How strongly is set per book with one of three levels; the default is **light**. The level applies to everything the narrator says (introduction, takeaways, outro) and never to the storyteller: the story stays in the fairy-tale voice of section 6 at every level. At every level the facts, beats and word counts stay the same, the subscribe line stays word for word, and there is no slang, no profanity and no hype ("smash that like button", "you won't believe what happens next").
+
+| Level | What it sounds like |
+| --- | --- |
+| **Light** (default) | The current narrator, spoken rather than recited. Contractions throughout ("you'll", "wasn't"). A few spoken openers ("Okay", "So", "Now"). One or two short personal asides per block ("And I'll be honest, that bit hit close to home"). At most one light joke in the introduction and one in the outro. A casual welcome and goodbye ("Hi, and welcome back", "take care"). The fairy-tale warmth and cadence stay in front. |
+| **Medium** | Clearly a host talking to you. Everything in light, plus: a personal aside or reaction in most narrator scenes, short fragments for rhythm ("Rich. Charming. Barely more than a boy."), two or three light jokes across the narrator blocks, a few direct check-ins with the viewer ("be honest", "you know the type"), and modern everyday comparisons in the takeaways. Up to three rhetorical questions in the introduction. |
+| **High** | Openly vlog-style, still warm and never loud. Everything in medium, plus: a quick, chatty rhythm, frequent direct address, small self-aware moments about the video itself ("stick with me, this part's worth it"), reactions to the story ("I mean, come on, Dorian"), and humour in every narrator block. Up to four rhetorical questions in the introduction. The callback, the answer to the riddle and the last takeaway still land sincerely. |
+
+The examples show the register only; do not reuse them as lines.
 
 ---
 
@@ -170,26 +182,61 @@ Writing rules:
 
 ## 7. Takeaways and outro
 
-### Takeaways (5 scenes, ~80–100 words each)
+**Beats, not set phrases.** The beats below are fixed; the wording is not. Example lines in this section and in the skeleton show one way to say a beat, and should not be reused as is. Write each transition, callback and question lead-in for this book, out of its last story image, its motifs or the line just spoken, so that no two videos open the takeaways or the outro the same way. Where a narration history of earlier approved books exists, avoid every line recorded there as well. Only the subscribe line (step 7 of the outro) stays word for word the same.
 
-- **Transition** (start of the first takeaway): a pause, then a line that turns from story to meaning ("And there our tale ends. *(pause)* … let me leave five things in your hands.").
-- **Numbered openers**: "The first:", "The second:", … "And the fifth:". This gives the viewer a clear map.
+### Takeaways (2–5 scenes, ~80–100 words each)
+
+- **Transition** (start of the first takeaway): a pause, then a line that turns from story to meaning and names the actual number of takeaways (e.g. "And there our tale ends. *(pause)* … let me leave three things in your hands."). Vary it: start from the story's final image, from the narrator's own reaction, or from a question the ending leaves open.
+- **Numbered openers**: "The first:", "The second:", … and "And the last:" for the final one. This gives the viewer a clear map.
 - **Each takeaway**: claim in one sentence → evidence from one or two specific events or characters → a universal application to the viewer's life.
 - **Callbacks**: reuse earlier quotes inside takeaways where they fit, and point out a surprising detail ("And notice who gave that advice to the young student: the devil himself.").
 - **One personal moment**: once per video, the narrator admits sharing the feeling being discussed.
-- **The fifth takeaway** is the book's deepest or most surprising meaning, and connects to how the author changed the expected ending (the origins hook from the introduction).
+- **The last takeaway** is the book's deepest or most surprising meaning, and connects to how the author changed the expected ending (the origins hook from the introduction).
 
 Typical takeaway types to draw from: the central virtue or drive; the cost to others; the gap between knowledge and life; the divided self; the role of grace, chance or love; the danger of a specific temptation; what the ending reveals.
 
-### Outro (1 scene, ~130–150 words)
+### Outro (1 scene, ~150–180 words; up to ~200 with a link to an earlier video)
 
-1. **Callback**: "Do you remember the words we began with?" + the opening quote word for word.
+1. **Callback**: bring the opening quote back word for word, through a lead-in written for this book. Do not use a stock opener such as "Do you remember the words we began with?" in every video: it quickly sounds mechanical. Ways in, to vary between books:
+   - return to the place or moment where the line was spoken ("Somewhere in that sunlit studio, the words are still hanging in the air…");
+   - start from the story's final image and let the quote surface from it;
+   - say the quote cold, after a pause, and only then step back and comment;
+   - name the speaker first, then give the quote as the surprise;
+   - turn the riddle back on the viewer ("At the start, I asked you to keep a line in mind…").
 2. **Reveal**: name the speaker.
 3. **Answer**: resolve the promise from the introduction in one or two sentences.
 4. *(pause)*
-5. **Reflective question** for the viewer, drawn from the book's central dilemma ("what would you give to feel that your life was truly complete?").
-6. **Call to action**: invite comments.
-7. **Invitation and sign-off**: the narrator's recurring invitation to the next tale and signature sign-off, word for word from Narrator.md.
+5. **Reflective question** for the viewer, drawn from the book's central dilemma ("what would you give to feel that your life was truly complete?"). Vary how it is introduced; do not open it with the same "So here is a question…" every time.
+6. **Comments and likes, said creatively**: ask the viewer to answer the question in the comments and to leave a like, but put it in the book's own world and motifs rather than as a stock request. Write it fresh for every book. Examples for *Faust*: "Write your answer in the comments, and sign it in ink, not in blood." / "If this tale lit a small candle for you, leave a like so it can light the way for the next traveller."
+7. **Subscribe and bell, said directly**: always include a plain, literal call to subscribe and turn on notifications, with no metaphor, e.g. "Please subscribe to the channel and click the bell button, so you never miss a new tale." It is never left out and never folded into the sign-off.
+8. **Invitation and sign-off**: the narrator's invitation to the next tale and sign-off, from Narrator.md. If an earlier video is linked in the outro (below), the link goes here, just before the invitation.
+
+### Pointing to earlier videos
+
+A good host connects episodes: "if this one got you thinking, the video on X goes even further". Done well, it helps the viewer and keeps them on the channel. Done by formula, it sounds like an ad. So links to earlier videos are **optional**, made only when two books really share something, and never forced.
+
+**Where the memory lives.** The video library (`video-library.md`, next to the book folders) holds one entry per approved video: its theme tags, central question, takeaways, archetypes, the spoiler to avoid, and whether it is published.
+
+**Finding an overlap.** While choosing the takeaways (step 1), compare this book with every library entry and sort each into one of three kinds:
+
+| Kind | What it means | Example | Link? |
+| --- | --- | --- | --- |
+| **Strong echo** | Same central dilemma or archetype, so the earlier video adds a second angle on the same lesson. | *Dorian Gray* and *Faust*: both trade a soul for what they desire. | Yes, if it fits a takeaway or the outro naturally. |
+| **Telling contrast** | Same question, opposite answer, and the contrast sharpens this book's point. | Faust is saved by striving; a hero destroyed by the same striving. | Only if the contrast makes the takeaway better. |
+| **Surface only** | A broad shared theme ("love", "death", "power") or the same period, with nothing more specific. | Two books that simply both have a love story. | No. |
+
+A shared theme tag is only a reason to look. The test is whether a viewer who has just finished this video would honestly want to watch that one next.
+
+**How to link.**
+
+- 0–2 links per video: at most one inside a takeaway and one in the outro. Zero is a perfectly good answer, and the usual one while the library is small.
+- Only in the takeaways or the outro, never in the introduction or the story.
+- Put it where the overlap actually is: inside the takeaway whose lesson the books share, or in the outro next to the invitation if the link is about the book as a whole.
+- One or two sentences that add something: a detail from the earlier book that shines a new light on this one ("Faust at least had to sign in blood. Dorian didn't even need ink."). Name the book plainly so the viewer can find it ("our Faust video").
+- Never spoil the earlier book's ending or twist; the library entry says what to avoid.
+- Write it in this book's vlogger-touch level, and vary the wording between videos like every other narrator line.
+- Link only to videos marked published. If the best match is approved but not yet published, leave it out and mention it to the user.
+- Do not link the same earlier video from two videos in a row unless it is clearly the strongest match.
 
 ---
 
@@ -216,14 +263,13 @@ Example:
 - Describe **content only**: setting, characters, action, props, emotion, composition. Everything about the look of the image comes from Visual Style.md.
 - Check each description against Visual Style.md and avoid any words or effects it rules out.
 - For recurring characters, paste their fixed descriptors from Book Style Sheet — [Book].md every time they appear. Name famous people only where the image needs it (the author portrait).
-- Narrator scenes follow Narrator.md.
 - One clear moment per image. Avoid "and then" sequences; if two moments are essential, compose them as two planes or a split frame and say so.
 - Recurring locations reuse the same description so they look like the same place (the Gothic study in images 06, 07, 10 and 37).
 - **Story scenes** are literal depictions of the moment.
-- **Quote scenes** are **symbolic**, never a repeat of a plot image: a visual metaphor for the line (two figures pulling in opposite directions for "two souls", a gray library split by a green tree for "gray are all theories"). Leave open space for the quote as a text overlay; state where ("open sky at the top of the frame").
+- **Quote scenes** are **symbolic**, never a repeat of a plot image: a visual metaphor for the line (two figures pulling in opposite directions for "two souls", a gray library split by a green tree for "gray are all theories").
 - **Takeaway scenes** are modern, universal metaphors (a climber, a tower beside a small cottage, a mirror, two hands reaching).
 - **Book-ends**: the first and last images mirror each other (the scholar's study at night → the same study, empty, at dawn).
-- Never ask the image to render text. Titles and quotes are overlays added in editing.
+- Never ask the image to render text.
 - Avoid copyrighted characters, identifiable modern people and existing artworks.
 
 ---
@@ -251,7 +297,7 @@ The script tells [Book] as a fairy tale, one passage per scene in timeline order
 
 *Spoken by the narrator. Scene numbers mark where each illustration cuts in.*
 
-### 1 · Opening quote and title card [01]
+### 1 · Opening quote [01]
 
 "[Opening quote]"
 
@@ -280,18 +326,18 @@ The script tells [Book] as a fairy tale, one passage per scene in timeline order
 *Spoken by the narrator, returning after the story ends.*
 
 ### [n] · [Takeaway 1] [..]
-And there our tale ends. *(pause)* … let me leave five things in your hands.
+[Transition from story to meaning, written for this book, naming the number of takeaways.] *(pause)*
 The first: [claim]. [Evidence]. [Application].
 
-### [n+1…n+4] · [Takeaways 2–5]
-The second: … / The third: … / The fourth: … / And the fifth: …
+### [n+1…] · [Remaining takeaways, up to five in all]
+The second: … / … / And the last: …
 
 ### [last] · Outro: [closing image] [..]
-Do you remember the words we began with? "[Opening quote]" Now you know who spoke them: [speaker]. [Answer to the promise.]
+[Lead-in written for this book.] "[Opening quote]" [Reveal of the speaker.] [Answer to the promise.]
 
 *(pause)*
 
-So here is a question to take with you tonight: [question]? [Comment invitation.] [Narrator's invitation and sign-off, from Narrator.md.]
+[Lead-in to the question, varied.] [Question]? [Creative invitation to comment and like, in the book's own imagery.] Please subscribe to the channel and click the bell button, so you never miss a new tale. [Narrator's invitation and sign-off, from Narrator.md.]
 ```
 
 ### Illustration Plan skeleton
@@ -308,7 +354,7 @@ The video needs **[N] illustrations**, one roughly every 35–40 seconds across 
 | … | … | … | … |
 | **Total** | … | **[N]** | |
 
-Each description below is written to paste directly as a prompt. Append the style block from Visual Style.md to every prompt, and the fixed descriptors from Book Style Sheet — [Book].md wherever a recurring character appears. Quote illustrations leave open space for the quote as a text overlay.
+Each description below is written to paste directly as a prompt. Append the style block from Visual Style.md to every prompt, and the fixed descriptors from Book Style Sheet — [Book].md wherever a recurring character appears.
 
 ## Segment 1: Introduction
 1. **01 — [Title].** [Description.]
@@ -331,18 +377,19 @@ Each description below is written to paste directly as a prompt. Append the styl
 - [ ] The introduction contains: riddle and promise, welcome and logline, author hook, origins and "dared to change it", structure map, "Once upon a time…"
 - [ ] Every story scene orients, shows one event, and ends on a turn.
 - [ ] Every quote scene: setup → quote → plain meaning → link.
-- [ ] Exactly five takeaways, each with evidence from the story; one personal moment from the narrator.
+- [ ] Two to five takeaways, as many as the book supports, each with evidence from the story; one personal moment from the narrator.
 - [ ] The outro repeats the opening quote word for word, reveals the speaker and answers the promise.
-- [ ] The narrator's welcome, invitation and sign-off match Narrator.md.
+- [ ] The outro asks for comments and likes in the book's own imagery, then gives a direct, literal "subscribe to the channel and click the bell button" call to action.
+- [ ] The narrator's welcome, invitation, calls to action and sign-off match Narrator.md.
 - [ ] Facts, names, dates and line references checked against the source.
 
 **Illustrations**
 
 - [ ] Prompts describe content only; the style block from Visual Style.md is appended to each.
 - [ ] No descriptions conflict with Visual Style.md.
-- [ ] Recurring characters use their fixed descriptors from Book Style Sheet — [Book].md; narrator scenes follow Narrator.md.
+- [ ] Recurring characters use their fixed descriptors from Book Style Sheet — [Book].md.
 - [ ] Recurring locations use identical descriptions.
-- [ ] Quote and takeaway images are symbolic and leave space for text.
+- [ ] Quote and takeaway images are symbolic.
 - [ ] First and last images mirror each other.
 - [ ] No text rendered inside images; no copyrighted characters or real modern people.
 

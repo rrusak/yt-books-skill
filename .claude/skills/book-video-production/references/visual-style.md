@@ -10,7 +10,7 @@ The style was established on Goethe's *Faust*. The reference image `gothic_barga
 | --- | --- |
 | **Visual Style.md** (this document) | Channel-wide technique, rendering rules, composition, the master prompt, and the process for building a Book Style Sheet. |
 | **Book Style Sheet — [Book].md** | One per book: palette, motif vocabulary, setting notes, character descriptions, anchor image and reference sheets. Built with the process in section 7. |
-| **Narrator.md** | The narrator's appearance, colors and rules. The narrator follows this document's technique, but its own design is defined there. |
+| **Narrator.md** | Written for each book (`05-narrator.md`): the narrator's lines and which finished pose image from `assets/narrator/` is overlaid when. The narrator is never generated in scene prompts. |
 | **Book Video Scenario Guide.md** | Structure, scenes and image-prompt content. Prompts written under that guide get this style appended. |
 
 ---
@@ -78,7 +78,7 @@ Content descriptions in image prompts must avoid realistic lighting language. Us
 
 - **Format:** wide 16:9 horizontal, for YouTube. If the tool outputs another ratio, crop to 16:9 and keep important elements away from the top and bottom edges.
 - **Theatrical framing:** scenes are often framed like a stage set, with curtains, arches, doorways, window frames or foliage at the left and right edges.
-- **Clear silhouettes and balanced negative space.** Include one calm, open area (usually bare or lightly shaded paper) where the eye can rest and where a title or quote can be overlaid.
+- **Clear silhouettes and balanced negative space.** Include one calm, open area (usually bare or lightly shaded paper) where the eye can rest.
 - **Duality through the frame:** contrasts in the story can be shown as contrasts across the frame (warm/cool, day/night, interior/exterior, left/right).
 - **Decorative but not crowded:** ornamental borders, patterned textiles, stylized plants, stars and small symbolic props fill the edges; the centre stays readable.
 - **Small symbolic details** reward a second look (in *Faust*: a skull, an hourglass, an armillary sphere, a black cat, a gargoyle).
@@ -231,7 +231,7 @@ Make characters distinguishable **by silhouette and color pairing**, so they rea
 
 ### Step 5 — Create the book anchor image
 
-Generate one key scene, usually the title-card scene, using the master prompt, the new palette and motifs, the main characters' descriptors, and the channel technique reference. Iterate until it fully matches the channel style and the book's identity. This image becomes the book's **primary style reference**.
+Generate one key scene, usually the opening scene (01), using the master prompt, the new palette and motifs, the main characters' descriptors, and the channel technique reference. Iterate until it fully matches the channel style and the book's identity. This image becomes the book's **primary style reference**.
 
 ### Step 6 — Create character reference sheets
 
@@ -315,7 +315,7 @@ The channel technique reference doubles as the *Faust* anchor image.
 
 **Motif vocabulary:** Gothic arches and window tracery, cathedral spires on the skyline, heavy red curtains with fleur-de-lis, patterned table runners, climbing ivy, stars and a crescent moon, skull, hourglass, armillary sphere, quills and parchment, a black cat, gargoyles.
 
-**Composition in the anchor image:** the frame is split into warm (left, the scholar's world of books and candlelight) and cool (right, night, spires and the devil). A large open ivory sky in the centre leaves room for the title. Curtains and arches frame the scene like a stage.
+**Composition in the anchor image:** the frame is split into warm (left, the scholar's world of books and candlelight) and cool (right, night, spires and the devil). A large open ivory sky fills the centre. Curtains and arches frame the scene like a stage.
 
 **Characters (from the anchor image)**
 

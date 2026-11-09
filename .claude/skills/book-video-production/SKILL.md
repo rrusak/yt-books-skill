@@ -1,11 +1,11 @@
 ---
 name: book-video-production
-description: Produce the complete production package for a 20–25 minute YouTube book video told as a fairy tale in the channel's naïve colored-pencil style — a book folder with the color palette, character and scene image prompts, the narration script for voice generation, and title/thumbnail options, plus empty images/, voice/, thumbnails/, music/ and videos/ folders. Use this whenever the user names a book (novel, play, epic, classic) and asks for a video, episode, script, storyboard, illustration prompts, palette, voiceover text, thumbnails or titles for it, or says things like "do the next book", "let's make [book]", "prepare [book] for the channel", even if they ask for only part of the package.
+description: Produce the complete production package for a 20–25 minute YouTube book video told as a fairy tale in the channel's naïve colored-pencil style — a book folder with the color palette, character and scene image prompts, the narration script for voice generation, and title/thumbnail options, plus empty images/, voice/, thumbnails/, music/ and videos/ folders. Use this whenever the user names a book (novel, play, epic, classic) and asks for a video, episode, script, storyboard, illustration prompts, palette, voiceover text, thumbnails or titles for it, or says things like "do the next book", "let's make [book]", "prepare [book] for the channel", even if they ask for only part of the package. Also use it when the user says a book's script is approved (to record it in the narration history and video library), or that a video is published.
 ---
 
 # Book Video Production
 
-This skill turns one book into a ready-to-produce video package for the channel. The channel retells books as fairy tales: a narrator opens with a riddle-like quote, a storyteller tells the plot scene by scene, the narrator returns with five takeaways and closes by answering the riddle. Every scene has one illustration in a fixed colored-pencil style, and each book gets its own palette and character designs.
+This skill turns one book into a ready-to-produce video package for the channel. The channel retells books as fairy tales: a narrator opens with a riddle-like quote, a storyteller tells the plot scene by scene, the narrator returns with two to five takeaways and closes by answering the riddle. Every scene has one illustration in a fixed colored-pencil style, and each book gets its own palette and character designs.
 
 Three guides in `references/` hold the method. This file says how to run it and what to output.
 
@@ -19,6 +19,7 @@ One folder per book, named with a lowercase kebab-case slug of the title (`faust
 ├── 02-illustrations.md            # master prompt, characters, scene prompts
 ├── 03-script.md                   # narration script for voice generation
 ├── 04-titles-and-thumbnails.md    # titles, thumbnails, description, promotion
+├── 05-narrator.md                 # narrator lines, calls to action, on-screen poses
 ├── images/                        # empty
 ├── voice/                         # empty
 ├── thumbnails/                    # empty
@@ -26,7 +27,12 @@ One folder per book, named with a lowercase kebab-case slug of the title (`faust
 └── videos/                        # empty
 ```
 
-The four main documents sit in the root of the book folder. The five subfolders are created empty; the user fills them during production.
+The five main documents sit in the root of the book folder. The five subfolders are created empty; the user fills them during production.
+
+Next to the book folders, in the same base directory, sit two shared files, both written only after the user approves a script (step 11):
+
+- `narration-history.md`: the key narrator lines of every approved book, so later books do not repeat them. Read it before writing narrator lines (step 6).
+- `video-library.md`: the channel's memory of its videos, with each book's themes, central question, takeaways, archetypes, spoiler to avoid and published status. Read it while planning (step 3) to find earlier videos worth pointing viewers to.
 
 The guides were written with their own document names. They map onto these files as follows:
 
@@ -36,6 +42,7 @@ The guides were written with their own document names. They map onto these files
 | Book Style Sheet — [Book].md: characters; Illustration Plan | `02-illustrations.md` |
 | Narration Script | `03-script.md` |
 | Packaging Sheet | `04-titles-and-thumbnails.md` |
+| Narrator.md | `05-narrator.md` |
 
 ## Reference files
 
@@ -44,25 +51,24 @@ Read each guide in full before the step that needs it. They are the source of tr
 - `references/scenario-guide.md` — structure, running order, opening-quote technique, narrator introduction beats, fairy-tale voice, quote scenes, takeaways, outro, illustration content rules. Read before planning (step 3).
 - `references/visual-style.md` — channel constants, the master style prompt, flat equivalents for lighting words, palette structure, and the process for building a book's palette and characters. Read before writing `01-palette.md`.
 - `references/title-thumbnail-guide.md` — hooks, three thumbnail types, title formulas, description, chapters, tags, Shorts. Read before writing `04-titles-and-thumbnails.md`.
+- `assets/narrator/` — the channel narrator's finished pose images (`fullbody-N.png`, `halfbody-N.png`), character sheets, and `narrator_image_description.md`, which describes each pose's framing, gesture and EMOTION. Read the description file before writing `05-narrator.md`. Poses marked "do not use yet" are off limits.
 - `assets/gothic_bargain_at_midnight.png` — the channel's technique reference image (from *Faust*). Look at it once so your scene descriptions match what the style can draw. The user attaches it in the image generator; it is not copied into the book folder.
 
 ## Channel documents that are not in this skill
 
-Some decisions live in separate channel documents the user keeps:
-
-- **Narrator.md**: the narrator's persona, appearance, welcome line, invitation to the next tale, sign-off, and which scenes show the narrator instead of a book illustration.
-- **Thumbnail typography**: typeface and text treatment for thumbnail text.
-
-If the user has attached these, or they are in the project or a connected folder, use them. If not, do not invent them. Write placeholders exactly as `{{NARRATOR_WELCOME}}` and `{{NARRATOR_INVITATION_AND_SIGNOFF}}` in the script, give every scene a book illustration, and mention the placeholders in your final reply. The narrator is a recurring channel character, so inventing a persona or look would create an inconsistency the user has to undo.
+**Thumbnail typography** (typeface and text treatment for thumbnail text) lives in a separate channel document the user keeps. If it is attached or in the project, use it; if not, describe the text treatment generically and say so in your reply.
 
 If the user supplies an existing palette, character designs or anchor image for the book, build on those instead of designing new ones.
 
 ## Inputs
 
 - **Required:** the book. Identify the exact work and author.
-- **Optional:** target runtime (default ~22 minutes), video language (default English; write all four files in that language), preferred translation, which characters matter most to them.
+- **Vlogger touch:** how much the narrator sounds like a YouTube host: `light`, `medium` or `high` (scenario guide, section 5, "Vlogger touch").
+- **Optional:** target runtime (default ~22 minutes), video language (default English; write all five files in that language), preferred translation, which characters matter most to them.
 
-Ask a question only if the book is genuinely ambiguous (two well-known works share the title) or the user's request contradicts the format. Otherwise start, and state any assumption at the top of your reply.
+**Always ask for the vlogger touch level** before starting, unless the user has already given it for this book. Ask it as one short question with the three levels (light, medium, high), each with a one-line description, and mark light as recommended. Do not carry a level over from an earlier book unless the user says so.
+
+Otherwise, ask a question only if the book is genuinely ambiguous (two well-known works share the title) or the user's request contradicts the format. Ask any such question together with the vlogger-touch question, then start, and state any assumption at the top of your reply.
 
 ## Workflow
 
@@ -74,7 +80,7 @@ Set up a task list with these steps, since the package takes a while and the use
 python <skill-dir>/scripts/init_book_folder.py <book-slug> <base-dir>
 ```
 
-`<base-dir>` is the working directory, or the user's connected folder if they asked for the package to go there.
+`<base-dir>` is the folder that holds the book folders and `narration-history.md`: `books-assets/` when working in the channel's repository (it has one), otherwise the working directory, or the user's connected folder if they asked for the package to go there.
 
 ### 2. Research the book
 
@@ -89,11 +95,13 @@ If you cannot confirm a line number, give the scene or chapter only. Keep the so
 
 ### 3. Plan
 
-Follow `references/scenario-guide.md` steps 1–3: plot beats, 5–7 key quotes, the opening quote (riddle-like, speaker hidden, paid off by the story), five takeaways, author and origins hooks, recurring characters, the chronological timeline with quote scenes placed where they are spoken, and 35–40 scenes.
+Follow `references/scenario-guide.md` steps 1–3: plot beats, 5–7 key quotes, the opening quote (riddle-like, speaker hidden, paid off by the story), 2–5 takeaways (as many as the book genuinely supports), author and origins hooks, recurring characters, the chronological timeline with quote scenes placed where they are spoken, and 35–40 scenes.
 
 Use **one numbering for everything**: scene 07 in the script is image 07 in the plan, `07-*.png` in `images/` and `07.*` in `voice/`. The Faust guide shows illustration numbers in brackets because that project was renumbered later; new books do not need brackets.
 
 Also pick the three hooks for packaging now (title-thumbnail guide, section 2), so the script and the packaging promise the same things.
+
+**Links to earlier videos.** Read `<base-dir>/video-library.md` if it exists, and compare this book's themes, central question, takeaways and archetypes with each entry, using the three kinds in scenario guide section 7 ("Pointing to earlier videos"). Decide on 0–2 links, each tied to a specific takeaway or to the outro. Choose none rather than force one. If the library does not exist, there is nothing to link yet.
 
 ### 4. Write `01-palette.md`
 
@@ -202,26 +210,90 @@ Reference sheet prompt:
 ### 01 · [Title]
 - Block: Introduction · Type: frame · Characters: [names or none]
 ```text
-[Fixed descriptors of characters present, word for word.] [Scene: setting, action, props, emotion, composition, open area for text if needed.] Match the attached references' drawing technique, texture, palette and character designs, not their composition.
+[Fixed descriptors of characters present, word for word.] [Scene: setting, action, props, emotion, composition.] Match the attached references' drawing technique, texture, palette and character designs, not their composition.
 ```
 
 ### NN · Quote: "[short form]"
 - Block: Story · Type: quote · Characters: …
 - Quote: "[English]" — *[original]* — [speaker], [location]
 ```text
-[Symbolic image with open space for the quote overlay, and where]
+[Symbolic image]
 ```
 ````
 
 Rules that matter most, all from the guides:
 
-- **Types:** `frame` (introduction), `story` (literal moment), `quote` (symbolic metaphor, never a repeat of a plot image, open space for text), `takeaway` (modern universal metaphor), `outro` (mirrors scene 01).
+- **Types:** `frame` (introduction), `story` (literal moment), `quote` (symbolic metaphor, never a repeat of a plot image), `takeaway` (modern universal metaphor), `outro` (mirrors scene 01).
 - **Flat language:** never write shadow, glow, beam, radiant, misty, blurred, smoke billows. Use the flat equivalents in visual-style.md section 2.4. The Faust plan broke this rule and its prompts fought the style.
 - **Character consistency:** paste the fixed descriptor every time a recurring character appears, even if it feels repetitive; the image model has no memory of the previous prompt's wording. Give each age or costume variant its own descriptor.
 - **No text in images**, no copyrighted characters, no identifiable modern people, nothing graphic (show tragedy at the moment before or after, or symbolically).
-- **Narrator scenes:** only if Narrator.md says which scenes show the narrator. Mark them `Type: narrator` and take the description from Narrator.md.
+- **Every scene gets a book illustration**, composed as a full image. The narrator is never generated here, and no prompt leaves space for him or for text; the user adds both as overlays in editing.
 
-### 6. Write `03-script.md`
+### 6. Write `05-narrator.md`
+
+The narrator is the channel's host. His look is fixed by the pose images in `assets/narrator/`, so this file never describes or prompts new narrator images. It sets what he says and which pose is on screen when. Write the persona, lines and calls to action first, so the script can use them, and fill in the on-screen plan once the script exists.
+
+**Persona.** A warm, slightly theatrical host who tells the story to the viewer as a friend: conversational, gently amused, lightly ironic, sincere at the important moments, and modest enough to admit a personal feeling once per video. These traits match the EMOTION notes in `narrator_image_description.md`. Keep him the same in every book; only the tone shifts with the book.
+
+**Vlogger touch.** Write all of the narrator's words at the level the user chose (scenario guide, section 5, "Vlogger touch"): the lines here, and the introduction, takeaways and outro in the script. The storyteller's story scenes are not affected.
+
+**Avoid repetition.** Before writing any narrator line, read `<base-dir>/narration-history.md` if it exists. In this book's welcome, intro, takeaways, outro, invitation and sign-off, do not reuse any line recorded there or a close paraphrase of it, and use a different outro callback approach (scenario guide, section 7) from the last three books. The subscribe line is the one exception; it stays the same. If the file does not exist yet, this is the first recorded book and nothing needs to be avoided.
+
+**Welcome, invitation and sign-off.** Write these for each book, in that book's tone and imagery, so they sound like part of this tale and not a stock formula. Each is short enough to say in one breath. The welcome greets the viewer and leads into the logline, the invitation points to the next tale, and the sign-off is a short, warm goodbye.
+
+**Final-scene calls to action.** The final scene always contains both, in this order, before the invitation and sign-off:
+
+1. **Comments and likes, said creatively.** Invite the viewer to answer the outro's reflective question in the comments and to leave a like, phrased in this book's own imagery and motifs and written fresh for every book. *Faust* examples: "Write your answer in the comments, and sign it in ink, not in blood." / "If this tale lit a small candle for you, leave a like so it can light the way for the next traveller."
+2. **Subscribe and bell, said directly.** A plain, literal call to action with no metaphor: "Please subscribe to the channel and click the bell button, so you never miss a new tale." Keep this wording or a close, equally direct variant. It is never left out, never turned into a figure of speech, and never folded into the sign-off.
+
+**On screen.** The narrator is on screen in every scene he voices: the introduction, the takeaways and the outro. He is never on screen during the story. While he is on screen, the user overlays his pose image on part of the frame, with the scene's illustration playing in the background. This file only says which pose to use when; it does not change the illustrations.
+
+- **Change pose at each beat** (the introduction beats in scenario guide section 5, each takeaway's claim, evidence and application, the outro steps in section 7), roughly every 15–30 seconds. Never change mid-sentence, and do not repeat the same pose twice in a row.
+- **Match the EMOTION to the line.** For example, `fullbody-1.png` or `fullbody-11.png` for the welcome, `fullbody-6.png` or `halfbody-4.png` for the riddle, `fullbody-12.png` for numbering the takeaways, `fullbody-13.png` for the personal moment, `fullbody-9.png` for an ironic aside, and `halfbody-14.png` (pointing at the viewer) for the subscribe call.
+
+````markdown
+# [Book] — Narrator
+
+The channel narrator for this episode: his lines, the final-scene calls to action, and which pose is on screen during the introduction, takeaways and outro. Pose images are in the skill's `assets/narrator/` folder.
+
+## Persona and voice
+Vlogger touch: [light / medium / high]
+
+[Two or three sentences: the fixed persona, and how he leans into this book's tone, e.g. hushed for a gothic tale, playful for a comedy.]
+
+## Lines
+| Line | Text |
+| --- | --- |
+| Welcome | […] |
+| Invitation to the next tale | […] |
+| Sign-off | […] |
+
+## Final-scene calls to action
+Comments and likes, in this book's imagery:
+```text
+[creative invitation]
+```
+Subscribe and bell, direct:
+```text
+Please subscribe to the channel and click the bell button, so you never miss a new tale.
+```
+
+## Links to earlier videos
+[None, and why: e.g. "Library empty" or "Only surface overlap with Faust (both have a love story)". Or, per link:]
+| Scene | Earlier video | Kind of overlap | Why it fits | Line |
+| --- | --- | --- | --- | --- |
+| 35 | Faust | Strong echo: a soul traded for desire | Takeaway 3 is about the price of the bargain | "[…]" |
+
+## On screen
+| Scene | From (first words) | Pose image | Why this pose |
+| --- | --- | --- | --- |
+| 01 | "[opening quote…]" | fullbody-6.png | Reflective, sets the riddle |
+| 02 | "[welcome…]" | fullbody-1.png | Welcoming host |
+| … | | | |
+| [last] | "Please subscribe…" | halfbody-14.png | Addresses the viewer directly |
+````
+
+### 7. Write `03-script.md`
 
 The script is pasted into a text-to-speech tool scene by scene, so the spoken text lives in ```text fences and contains only what should be read aloud. Write story scenes first, then the introduction, then takeaways and outro (scenario guide, step 5), and assemble them in running order.
 
@@ -241,7 +313,7 @@ The script is pasted into a text-to-speech tool scene by scene, so the spoken te
 
 ## Introduction
 
-### 01 · Opening quote and title card
+### 01 · Opening quote
 - Image: 01 · Voice: NARRATOR · ~[seconds] s
 ```text
 "[Opening quote.]"
@@ -266,10 +338,12 @@ Writing for the ear:
 - Inside the fences, plain sentences only: no markdown, no brackets except pause markers, no parentheses, no symbols like `&`, `%`, `/`. Spell out abbreviations.
 - Put every name or foreign word a voice tool might mispronounce in the pronunciation guide.
 - Seconds per scene = words ÷ 140 × 60, rounded.
-- Narrator placeholders `{{NARRATOR_WELCOME}}` and `{{NARRATOR_INVITATION_AND_SIGNOFF}}` go inside the fences where the scenario guide puts those lines, if Narrator.md is not available.
+- The narrator's welcome, invitation and sign-off come from `05-narrator.md` and go where the scenario guide places them.
 - The opening quote is credited to the author, never the character, until the story reveals the speaker. The outro repeats it word for word.
+- Links to earlier videos appear only where `05-narrator.md` places them, word for word, and must read as part of the narrator's thought, not as an inserted ad.
+- The final scene always ends with, in this order: the creative comments-and-likes invitation, the direct "Please subscribe to the channel and click the bell button" call to action, then the invitation and sign-off, all word for word from `05-narrator.md`.
 
-### 7. Write `04-titles-and-thumbnails.md`
+### 8. Write `04-titles-and-thumbnails.md`
 
 Use the Packaging Sheet template in title-thumbnail-guide.md section 7, with two additions:
 
@@ -278,7 +352,9 @@ Use the Packaging Sheet template in title-thumbnail-guide.md section 7, with two
 
 Every title contains the book's title within the first ~40 characters, and no title repeats its paired thumbnail's text.
 
-### 8. Check
+For every link in `05-narrator.md`, plan the matching card (at the estimated timestamp of that line) or end screen element (for an outro link) in the end screen and cards section, so the viewer can click through at the moment the narrator mentions the video.
+
+### 9. Check
 
 ```bash
 python <skill-dir>/scripts/check_book.py <book-folder>
@@ -290,17 +366,71 @@ It reports word counts per voice, estimated runtime, scene and illustration coun
 - every character descriptor is identical wherever it is pasted;
 - every color named in a prompt exists in the palette;
 - no lighting words from visual-style.md section 2.4 slipped into prompts;
-- every hook in the packaging is answered in the script.
+- every hook in the packaging is answered in the script;
+- the narrator's lines and calls to action are identical in `03-script.md` and `05-narrator.md`, and every "From" in its on-screen table appears in that scene's spoken text;
+- narrator poses are planned for every introduction, takeaway and outro scene and for no story scene;
+- every pose image named in `05-narrator.md` exists in `assets/narrator/` and is not marked "do not use yet";
+- no intro, takeaway or outro line repeats or closely paraphrases a line in `narration-history.md`, and the outro callback approach differs from the last three books there;
+- every link to an earlier video is a strong echo or a telling contrast, points to a published video in `video-library.md`, sits in a takeaway or the outro, does not spoil that book, reads naturally when the scene is read aloud, and has a matching card or end screen element in the packaging.
 
-### 9. Deliver
+### 10. Deliver
 
-Zip the folder so the empty subfolders survive, then send the zip and the four documents:
+Zip the folder so the empty subfolders survive, then send the zip and the five documents:
 
 ```bash
 python <skill-dir>/scripts/zip_book.py <book-folder>
 ```
 
-If the user asked for the folder on their computer and it is connected, write it there as well and say where. Keep the reply short: the book folder's name, the totals (scenes, words, minutes), the palette in one line, any assumptions, any placeholders waiting for Narrator.md, and facts you could not verify.
+If the user asked for the folder on their computer and it is connected, write it there as well and say where. Keep the reply short: the book folder's name, the totals (scenes, words, minutes), the palette in one line, any assumptions, and facts you could not verify. Mention the links to earlier videos in one line, or that there are none and why, plus any strong match left out because that video is not marked published. End by saying that once the user approves the script, it will be recorded in `narration-history.md` and `video-library.md`. Do not write to either file yet.
+
+### 11. Record the approved narration
+
+Do this only when the user says the script is approved (for example "approved", "final", "record it"), in this conversation or a later one. Never record a draft.
+
+1. Read the book's `03-script.md` and `05-narrator.md` from disk again, since the user may have edited them after delivery, and take the lines from those files.
+2. Open `<base-dir>/narration-history.md`, or create it with the heading `# Narration history` and the line `Key narrator lines of approved books, oldest first. Read before writing a new book; never reuse these lines.`
+3. If the file already has an entry for this book slug, replace it; otherwise append a new entry at the end in this format, quoting each line exactly as approved:
+
+```markdown
+## [Book] · [book-slug] · approved [YYYY-MM-DD]
+- Vlogger touch: [light / medium / high]
+- Riddle framing (first line after the opening quote): "[…]"
+- Welcome: "[…]"
+- Line before "Once upon a time": "[…]"
+- Takeaway transition: "[…]"
+- Takeaways ([count]): [title 1]; [title 2]; …
+- Personal moment: [what the narrator admitted, in a few words]
+- Outro callback approach: [which way in, from scenario guide section 7]; lead-in: "[…]"
+- Question lead-in and question: "[…]"
+- Comments invitation: "[…]"
+- Like invitation: "[…]"
+- Invitation to the next tale: "[…]"
+- Sign-off: "[…]"
+- Links to earlier videos: [none] or [book: "line"]
+```
+
+4. Open `<base-dir>/video-library.md`, or create it with the heading `# Video library`, the line `The channel's memory: one entry per approved video. Read while planning a new book to find earlier videos worth linking.`, and a `## Theme tags in use` section listing every tag used below. Reuse existing tags where they fit, so overlaps are easy to spot, and add new ones to that list. Then replace or append this book's entry:
+
+```markdown
+## [Book] · [book-slug] · [Author]
+- Status: approved [YYYY-MM-DD] · not yet published
+- Published title: [fill in when published]
+- URL: [fill in when published]
+- Theme tags: [3–6 tags from the list above]
+- Central question: [the outro's reflective question, in plain words]
+- Takeaways: [one line per takeaway: the claim]
+- Archetypes and motifs: [e.g. pact with the devil; charming tempter; double life; ruined innocent]
+- Spoiler to avoid when linking: [the ending or twist]
+- Links to: [earlier videos this one points to, or none]
+- Linked from: [later videos that point here; starts empty]
+```
+
+5. For each earlier video this book links to, add this book to that entry's "Linked from" line.
+6. Tell the user in one line that both entries were added, and where.
+
+### 12. Mark a video as published
+
+When the user says a video is live, or gives its title or URL, update its `video-library.md` entry: set the status to published with the date, and fill in the published title and URL. Only published videos are linked from new books.
 
 ## Production file names
 
