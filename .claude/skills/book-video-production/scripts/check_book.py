@@ -202,6 +202,19 @@ def main() -> int:
         if not 2 <= len(intro) <= 3:
             problems.append(f"Introduction has {len(intro)} scenes (expected 2-3)")
 
+    # Verdict: a narrator scene titled "Verdict…", just before the final scene (scenario guide section 7).
+    verdict = [n for n in order if script[n]["title"].lower().startswith("verdict")]
+    if not verdict:
+        problems.append("No verdict scene (a narrator scene titled 'Verdict: ...' just before the outro)")
+    else:
+        v = verdict[0]
+        if len(order) > 1 and v != order[-2]:
+            problems.append(f"Verdict is scene {v:02d}; it should come just before the outro (scene {order[-2]:02d})")
+        if script[v]["voice"] != "NARRATOR":
+            problems.append(f"Verdict scene {v:02d} should be voiced by the NARRATOR")
+        if not 40 <= script[v]["words"] <= 95:
+            problems.append(f"Verdict scene {v:02d}: {script[v]['words']} words (expected 50-80)")
+
     for num, s in script.items():
         for m in CONFIRM.finditer("\n".join(s["spoken"])):
             problems.append(f"Scene {num:02d}: unconfirmed personal line, settle before approval: \"{m.group(1).strip()}\"")

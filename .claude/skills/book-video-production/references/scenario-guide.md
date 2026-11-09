@@ -58,8 +58,9 @@ Everything else is a beat, not a phrase. That covers the welcome, the framing of
 | 1 | Opening hook | Narrator | 0:00–0:30 | 1 | A riddle quote, cold image, question, surprising fact, mystery object or bold claim that raises one question the video answers (section 4). |
 | 2 | Introduction | Narrator | 0:30–1:30 | 1–2 | Welcome and logline, plus at most one context fact or a structure map, in one of the intro shapes (section 5). Ends with "Once upon a time…". Blocks 1 and 2 together: about 90 seconds, 200–230 words, 2–3 scenes. |
 | 3 | The story | Storyteller | 1:30–19:30 or later | 26–33 | The plot in fairy-tale voice, chronologically, with 4–6 key quotes woven in. |
-| 4 | Takeaways | Narrator | 19:00–22:30 or shorter | 2–5 | Two to five lessons, each grounded in the story. Fewer takeaways leave more time for the story. |
-| 5 | Outro | Narrator | 22:30–23:30 | 1 | Callback to the opening hook, reflective question, call to action, sign-off. |
+| 4 | Takeaways | Narrator | 19:30–22:00 or shorter | 2–5 | Two to five takeaway scenes in one takeaway shape, each grounded in the story, with up to two honest asides (section 7). Fewer takeaways leave more time for the story. |
+| 5 | Verdict | Narrator | 22:00–22:30 | 1 | Should you read it, who it is for, and which edition or translation (section 7). |
+| 6 | Outro | Narrator | 22:30–23:30 | 1 | Callback to the opening hook, reflective question, call to action, sign-off. |
 
 For a book in two or more parts (or with a clear midpoint), split block 3 into sub-headings (e.g. "Part One: from Heaven to the devil's door", "Part One: the pact and Gretchen", "Part Two: the great world"). Give each part a share of screen time proportional to its importance to a general audience, not its page count. In *Faust*, Part One got ~19 scenes and the much longer Part Two got 8.
 
@@ -89,7 +90,7 @@ Before writing anything, list:
 
 ### Step 3 — Allocate illustrations
 
-- One illustration per scene. Introduction 2–3 (including the hook), story ≈ 26–33 (more when there are fewer takeaways), takeaways 2–5, outro 1.
+- One illustration per scene. Introduction 2–3 (including the hook), story ≈ 26–33 (more when there are fewer takeaways), takeaways 2–5, verdict 1, outro 1.
 - If the total exceeds ~40, merge adjacent minor beats. If it falls below ~33, split the densest scenes.
 - Optional extra quotes can reuse an existing image with a slow zoom rather than a new illustration.
 - Every scene gets a full book illustration. The narrator is on screen in the introduction, takeaways and outro as an overlay the user adds in editing, with the illustration behind him; Narrator.md plans his poses. In the story he is heard, not seen.
@@ -276,6 +277,43 @@ Do not use the same shape as the previous book (the "Takeaway shape" line in `na
 
 Typical takeaway material to draw from: the central virtue or drive; the cost to others; the gap between knowledge and life; the divided self; the role of grace, chance or love; the danger of a specific temptation; what the ending reveals.
 
+### Honest asides (optional, 0–2 per video)
+
+A channel that only praises sounds like a brochure. Real readers admit what is hard, dated, disputed or missing, and viewers trust them more for it. An honest aside is one to three sentences, at most about 40 words, that tells the truth about the book or about this retelling.
+
+| Kind | Example |
+| --- | --- |
+| **Hard going** | "Part Two is honestly hard going. Even people who love Faust admit to skimming the classical bits." |
+| **Divided reception** | "When it came out, half the critics called it a masterpiece and the other half called it poison." |
+| **Lost in translation** | "In German, the devil's lines rhyme and bounce. Most English versions can't keep that, and it's a real loss." |
+| **What was cut** | "I've left out the Walpurgis Night entirely. It's a whole wild chapter of its own. If you want a video on it, say so in the comments." |
+| **Dated** | "Gretchen gets very little say in her own story. That's the book's age showing, and it's worth noticing." |
+
+Rules:
+
+- **Where:** in a takeaway, or in the verdict. Never in the hook or framing, never inside a story scene, and never in the last takeaway's claim or the outro's payoff, which land clean.
+- **True, and sourced.** Facts about reception, translation or the text come from the research (step 2). An honest aside is never invented to sound candid.
+- **Whose opinion.** A widely shared view can be stated as such ("many readers find…"). The narrator's own judgement ("I found it hard going") must be in `narrator-bible.md` under Opinions, or be marked `[CONFIRM: …]`.
+- **Generous, never snide.** The channel loves these books. An aside is honest, not a put-down of the book, the author or its readers.
+- **What was cut** is the most useful kind for the channel. It is honest about the retelling and invites a request, which can become a later video.
+- Do not use the same kind of aside as the previous book's (narration history), and never repeat one.
+
+### The verdict (1 scene, 50–80 words)
+
+Every video ends its takeaways with a short, practical verdict, its own scene just before the outro: should the viewer read this book, and how? Viewers value it, and it reliably draws comments.
+
+1. **Who it is for**, and who may struggle with it, in one or two sentences. Be specific ("if you liked the story tonight, Part One alone will give you all of it") rather than generic ("everyone should read this classic").
+2. **How to read it**: which translation or edition, and why, in one sentence. Where it helps, also say where to start, what can be skipped, or that a free public-domain version exists. Name only editions confirmed in the research. If no edition can be recommended with confidence, say what to look for instead ("a modern translation with notes").
+3. **Optional**: one honest aside (above), or one personal reading note from `narrator-bible.md` (for example the creator's habit of reading on the move). A note about reading this particular book needs `[CONFIRM: …]`.
+
+Rules:
+
+- No star ratings, scores or "must-read" hype. No calls to action in the verdict; the outro asks for comments.
+- No spoilers beyond what the video has already told.
+- The verdict is the narrator's own, so match it to the opinions in `narrator-bible.md`. A clear personal judgement the bible does not cover gets `[CONFIRM: …]`.
+- Write it at the book's vlogger level and through the read-aloud pass, like every narrator scene. Do not reuse the previous book's wording (narration history).
+- Its illustration is symbolic and of this book: the book being read or carried in its own world (for example an open book on a seat by a train window, with the book's motifs in the landscape outside). Follow section 8.
+
 ### Outro (1 scene, ~150–180 words; up to ~200 with a link to an earlier video)
 
 1. **Callback**: return to the opening hook through a lead-in written for this book. A quote comes back word for word. An image, question, fact, object or claim comes back in the same words where possible. Do not use a stock opener such as "Do you remember the words we began with?" in every video: it quickly sounds mechanical. Ways in, to vary between books:
@@ -417,7 +455,10 @@ The script tells [Book] as a fairy tale, one passage per scene in timeline order
 [Signpost, worded for this book and shape.] [Claim or angle]. [Evidence]. [What it means for the viewer].
 
 ### [n+1…] · [Remaining takeaway scenes, 2–5 in all]
-[Signpost.] [Claim or angle]. [Evidence]. [What it means.] … for each, with the last scene clearly marked as the last and carrying the deepest meaning.
+[Signpost.] [Claim or angle]. [Evidence]. [What it means.] … for each, with the last scene clearly marked as the last and carrying the deepest meaning. [Up to two honest asides across the takeaways and verdict.]
+
+### [last−1] · Verdict: [short title] [..]
+[Who it is for, and who may struggle.] [Which translation or edition, and why; where to start or what to skip.] [Optional: one honest aside or one personal reading note.] *(50–80 words, no call to action.)*
 
 ### [last] · Outro: [closing image] [..]
 [Lead-in written for this book.] [The hook again: the quote word for word, or the image, question, fact, object or claim.] [Reveal: the speaker, or what the hook really meant.] [Answer to the promise.]
@@ -466,6 +507,8 @@ Each description below is written to paste directly as a prompt. Append the styl
 - [ ] Every story scene orients, shows one event, and ends on a turn.
 - [ ] Every quote scene: setup → quote → plain meaning → link.
 - [ ] Two to five takeaway scenes, as many as the book supports, in one takeaway shape (section 7), different from the previous book's unless the book clearly needs the same one. Each scene has evidence from the story; one personal moment from the narrator.
+- [ ] Honest asides, if any: at most two, true and sourced, generous, of a different kind from the previous book's. The narrator's own judgements are in the narrator bible or marked `[CONFIRM: …]`.
+- [ ] A verdict scene just before the outro, 50–80 words: who the book is for, which edition or translation (confirmed in the research), and no call to action or rating.
 - [ ] The outro returns to the opening hook (a quote word for word), reveals the speaker or the hook's meaning, and answers the promise.
 - [ ] The outro asks for comments and likes in the book's own imagery, then gives a direct, literal "subscribe to the channel and click the bell button" call to action.
 - [ ] The narrator's welcome, invitation, calls to action and sign-off match Narrator.md.

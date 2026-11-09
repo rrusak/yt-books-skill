@@ -152,7 +152,7 @@ Structure:
 1. **First two lines** (shown before "more"): the hook in one sentence, plus the book title, author and a search phrase. These lines also appear in search results.
 2. **A short paragraph** (3–4 sentences) on what the video covers: plot, quotes, lessons. Mention key character names naturally (people search for them).
 3. **Chapters** (see 5.2).
-4. **Key quotes** featured in the video, with the translation credit (e.g. "Quotes from the Bayard Taylor translation, 1870").
+4. **Key quotes** featured in the video, with the translation credit (e.g. "Quotes from the Bayard Taylor translation, 1870"). Then one line, in the narrator's first person, with the edition or translation recommended in the video's verdict and, if one exists, where to find a free public-domain text.
 5. **Links**: the playlist this video belongs to, the previous and next tale, and an invitation to subscribe.
 6. **Hashtags** at the very end (see 5.4).
 

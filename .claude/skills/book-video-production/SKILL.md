@@ -98,6 +98,7 @@ Verify facts before writing; the script is published under the channel's name, a
 - the plot sequence and what happens in each beat, including the ending;
 - character names, relationships and appearance cues given in the text;
 - the author hook (how, when or why the book was written) and the origins hook (what came before and what the author changed);
+- material for honest asides and the verdict: how the book was received (then and now), which parts readers find hard going, what translations lose, and which English translations or editions are well regarded and still available (translator, publisher, year), plus whether a free public-domain text exists;
 - each key quote: exact wording in a public-domain English translation (published before 1929) or your own literal translation, the original-language text, speaker, and location (part, act/chapter/scene, line where the work has line numbers).
 
 If you cannot confirm a line number, give the scene or chapter only. Keep the sources; they go at the end of `01-palette.md`.
@@ -232,7 +233,7 @@ Reference sheet prompt:
 
 Rules that matter most, all from the guides:
 
-- **Types:** `frame` (introduction), `story` (literal moment), `quote` (symbolic metaphor, never a repeat of a plot image), `takeaway` (modern universal metaphor), `outro` (mirrors scene 01).
+- **Types:** `frame` (introduction), `story` (literal moment), `quote` (symbolic metaphor, never a repeat of a plot image), `takeaway` (modern universal metaphor), `verdict` (the book being read or carried in its own world, symbolic), `outro` (mirrors scene 01).
 - **Flat language:** never write shadow, glow, beam, radiant, misty, blurred, smoke billows. Use the flat equivalents in visual-style.md section 2.4. The Faust plan broke this rule and its prompts fought the style.
 - **Character consistency:** paste the fixed descriptor every time a recurring character appears, even if it feels repetitive; the image model has no memory of the previous prompt's wording. Give each age or costume variant its own descriptor.
 - **No text in images**, no copyrighted characters, no identifiable modern people, nothing graphic (show tragedy at the moment before or after, or symbolically).
@@ -267,7 +268,7 @@ The narrator is the channel's host. His look is fixed by the pose images in `ass
 1. **Comments and likes, said creatively.** Invite the viewer to answer the outro's reflective question in the comments and to leave a like, phrased in this book's own imagery and motifs and written fresh for every book. *Faust* examples: "Write your answer in the comments, and sign it in ink, not in blood." / "If this tale lit a small candle for you, leave a like so it can light the way for the next traveller."
 2. **Subscribe and bell, said directly.** A plain, literal call to action with no metaphor: "Please subscribe to the channel and click the bell button, so you never miss a new tale." Keep this wording or a close, equally direct variant. It is never left out, never turned into a figure of speech, and never folded into the sign-off.
 
-**On screen.** The narrator is on screen in every scene he voices: the introduction, the takeaways and the outro. He is never on screen during the story. While he is on screen, the user overlays his pose image on part of the frame, with the scene's illustration playing in the background. This file only says which pose to use when; it does not change the illustrations.
+**On screen.** The narrator is on screen in every scene he voices: the introduction, the takeaways, the verdict and the outro. He is never on screen during the story. While he is on screen, the user overlays his pose image on part of the frame, with the scene's illustration playing in the background. This file only says which pose to use when; it does not change the illustrations.
 
 - **Change pose at each beat** (the introduction beats in scenario guide section 5, each takeaway's claim, evidence and application, the outro steps in section 7), roughly every 15–30 seconds. Never change mid-sentence, and do not repeat the same pose twice in a row.
 - **Match the EMOTION to the line.** For example, `fullbody-1.png` or `fullbody-11.png` for the welcome, `fullbody-6.png` or `halfbody-4.png` for the opening hook and its promise, `fullbody-12.png` for signposting the takeaways, `fullbody-13.png` for the personal moment, `fullbody-9.png` for an ironic aside, and `halfbody-14.png` (pointing at the viewer) for the subscribe call.
@@ -275,7 +276,7 @@ The narrator is the channel's host. His look is fixed by the pose images in `ass
 ````markdown
 # [Book] — Narrator
 
-The channel narrator for this episode: his lines, the final-scene calls to action, and which pose is on screen during the introduction, takeaways and outro. Pose images are in the skill's `assets/narrator/` folder.
+The channel narrator for this episode: his lines, the final-scene calls to action, and which pose is on screen during the introduction, takeaways, verdict and outro. Pose images are in the skill's `assets/narrator/` folder.
 
 ## Persona and voice
 Vlogger touch: [light / medium / high]
@@ -321,7 +322,7 @@ The script is turned into speech scene by scene with ElevenLabs (step 12), so th
 ````markdown
 # [Book] — Narration Script
 
-[N] spoken words, about [M] minutes at 140 words per minute. [n] scenes. The NARRATOR voices the introduction, takeaways and outro; the STORYTELLER voices the story. They can be one voice actor in two registers.
+[N] spoken words, about [M] minutes at 140 words per minute. [n] scenes. The NARRATOR voices the introduction, takeaways, verdict and outro; the STORYTELLER voices the story. They can be one voice actor in two registers.
 
 ## Voice notes
 - `[pause]` ≈ 1 second, `[long pause]` ≈ 2 seconds. The voice generator converts them to the model's pause syntax (`pause_markup` in `voice-config.json`).
@@ -365,6 +366,7 @@ Writing for the ear:
 - The narrator's welcome, invitation and sign-off come from `05-narrator.md` and go where the scenario guide places them.
 - The outro returns to the opening hook and pays it off (scenario guide section 7). If the hook is a quote, it is credited to the author, never the character, until the story reveals the speaker, and the outro repeats it word for word.
 - Links to earlier videos appear only where `05-narrator.md` places them, word for word, and must read as part of the narrator's thought, not as an inserted ad.
+- The verdict is its own NARRATOR scene, just before the outro, with a heading that starts with "Verdict:" (for example `### 36 · Verdict: read Part One first`), so `check_book.py` can find it.
 - The final scene always ends with, in this order: the creative comments-and-likes invitation, the direct "Please subscribe to the channel and click the bell button" call to action, then the invitation and sign-off, all word for word from `05-narrator.md`.
 
 ### 8. Write `04-titles-and-thumbnails.md`
@@ -396,7 +398,8 @@ It reports word counts per voice, estimated runtime, scene and illustration coun
 - the spoken text passes the checklist in `references/spoken-style.md` section 7, and every style warning from `check_book.py` was either fixed or is a deliberate choice;
 - audio tags, capitals and pauses follow the checklist in `references/elevenlabs-v4.md` section 9, with the narrator's tag count matching the book's vlogger level;
 - the narrator's lines and calls to action, including their audio tags, are identical in `03-script.md` and `05-narrator.md`, and every "From" in its on-screen table appears in that scene's spoken text;
-- narrator poses are planned for every introduction, takeaway and outro scene and for no story scene;
+- narrator poses are planned for every introduction, takeaway, verdict and outro scene and for no story scene;
+- honest asides (at most two) and the verdict follow scenario guide section 7. Their facts about reception, translation and editions come from the research, and any personal judgement is in `narrator-bible.md` or marked `[CONFIRM: …]`;
 - every pose image named in `05-narrator.md` exists in `assets/narrator/` and is not marked "do not use yet";
 - no intro, takeaway or outro line repeats or closely paraphrases a line in `narration-history.md`; the opening hook type differs from the previous book's, and the outro callback approach differs from the last three books there;
 - the opening hook is true to the book, does not spoil the ending, and is paid off in the outro;
@@ -435,6 +438,8 @@ Do this only when the user says the script is approved (for example "approved", 
 - Takeaways ([count]): [title 1]; [title 2]; …
 - Takeaway signposts: "[how each takeaway was opened]"
 - Personal moment: [what the narrator admitted, in a few words]
+- Honest asides: [kind: "line"; …] or [none]
+- Verdict: "[…]"
 - Outro callback approach: [which way in, from scenario guide section 7]; lead-in: "[…]"
 - Question lead-in and question: "[…]"
 - Comments invitation: "[…]"
@@ -456,6 +461,8 @@ Do this only when the user says the script is approved (for example "approved", 
 - Takeaways: [shape]; [one line per takeaway scene: the claim, or the angle it adds to the big idea or question]
 - Archetypes and motifs: [e.g. pact with the devil; charming tempter; double life; ruined innocent]
 - Spoiler to avoid when linking: [the ending or twist]
+- Verdict: [who it is for, in a few words]; edition: [translation or edition recommended]
+- Cut from the retelling: [parts left out and offered as a possible video, or none]
 - Links to: [earlier videos this one points to, or none]
 - Linked from: [later videos that point here; starts empty]
 ```
