@@ -391,6 +391,7 @@ It reports word counts per voice, estimated runtime, scene and illustration coun
 - every color named in a prompt exists in the palette;
 - no lighting words from visual-style.md section 2.4 slipped into prompts;
 - every hook in the packaging is answered in the script;
+- the three rituals (scenario guide section 1, "Channel signature") are in place: "Once upon a time…" ends the introduction, the outro asks the closing question, and the final scene has the direct subscribe line. Apart from these, no line's wording, including takeaway signposts, the welcome and the sign-off, matches the same beat in any book in `narration-history.md`;
 - every personal line is covered by `narrator-bible.md` or marked `[CONFIRM: …]`; nothing contradicts the bible or its anecdote log, and nothing states or hints at its "Background";
 - the spoken text passes the checklist in `references/spoken-style.md` section 7, and every style warning from `check_book.py` was either fixed or is a deliberate choice;
 - audio tags, capitals and pauses follow the checklist in `references/elevenlabs-v4.md` section 9, with the narrator's tag count matching the book's vlogger level;
@@ -428,6 +429,7 @@ Do this only when the user says the script is approved (for example "approved", 
 - Line before "Once upon a time": "[…]"
 - Takeaway transition: "[…]"
 - Takeaways ([count]): [title 1]; [title 2]; …
+- Takeaway signposts: "[how each takeaway was opened]"
 - Personal moment: [what the narrator admitted, in a few words]
 - Outro callback approach: [which way in, from scenario guide section 7]; lead-in: "[…]"
 - Question lead-in and question: "[…]"

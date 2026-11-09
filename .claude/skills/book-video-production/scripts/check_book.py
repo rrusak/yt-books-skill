@@ -177,6 +177,17 @@ def main() -> int:
         if "comment" not in final_text:
             problems.append(f"Final scene {last:02d}: no invitation to comment")
 
+    # Ritual: "Once upon a time" ends the introduction, just before the first story scene.
+    order = sorted(script)
+    handoff = [n for n in order if "once upon a time" in " ".join(script[n]["spoken"]).lower()]
+    story = [n for n in order if script[n]["voice"] == "STORYTELLER"]
+    if not handoff:
+        problems.append("No 'Once upon a time...' handoff (channel ritual)")
+    elif story:
+        before_story = [n for n in order if n < story[0]]
+        if before_story and handoff[0] != before_story[-1]:
+            problems.append(f"'Once upon a time...' is in scene {handoff[0]:02d}, not in the last introduction scene ({before_story[-1]:02d})")
+
     for num, s in script.items():
         for m in CONFIRM.finditer("\n".join(s["spoken"])):
             problems.append(f"Scene {num:02d}: unconfirmed personal line, settle before approval: \"{m.group(1).strip()}\"")

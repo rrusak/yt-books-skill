@@ -33,9 +33,21 @@ Wherever this guide says "see Narrator.md", "see Visual Style.md" or "see Book S
 | Words per scene | 60–100 for story scenes; 80–150 for narrator scenes |
 | Voices | **Narrator** (introduction, takeaways, outro) and **storyteller** (the story itself) |
 | Order | Strictly chronological within the story, with key quotes placed where they are spoken |
-| Structural devices | Opening hook (a riddle quote or another type, varied between books), "Once upon a time" handoff, 2–5 takeaways, callback ending |
+| Structural devices | Opening hook (a riddle quote or another type, varied between books), "Once upon a time" handoff, 2–5 takeaways, callback ending. The only fixed rituals are listed under "Channel signature" below. |
 
 Timing formula: `illustrations ≈ runtime in seconds ÷ 37`. Words ≈ `runtime in minutes × 140`.
+
+### Channel signature
+
+Three rituals appear in every video, always in the same place, so regular viewers recognise the channel. They are the only fixed elements.
+
+| Ritual | Where | What stays the same | What varies |
+| --- | --- | --- | --- |
+| **"Once upon a time…"** | The last words of the introduction, handing over to the storyteller | These exact words | The line that leads into them |
+| **The closing question** | The outro, after the hook's payoff (section 7, outro step 5) | One reflective question to the viewer, drawn from the book's central dilemma, which the comments invitation then asks them to answer | The question itself and how it is introduced |
+| **The direct subscribe line** | The final scene (section 7, outro step 7) | A plain, literal call to subscribe and click the bell, with no metaphor | Currently one fixed wording |
+
+Everything else is a beat, not a phrase. That covers the welcome, the framing of the hook, the transitions, the takeaway signposts, the callback lead-in, the invitation and the sign-off. Write each one for this book, and do not let a phrase become a habit across videos. If a line could open or close any video on the channel, rewrite it for this one. Do not add a fourth ritual unless the creator decides to.
 
 ---
 
@@ -162,9 +174,9 @@ The introduction is the narrator speaking directly to the viewer. It runs 400–
 | b. Framing and promise | Say why the hook is strange or worth keeping in mind; ask the viewer to hold on to it; promise the answer by the end. | "A strange thing to say about yourself, isn't it?… by the end you'll know who he was, and whether he was telling the truth." |
 | c. Welcome and logline | The narrator's welcome (see Narrator.md), then the protagonist's lack + the temptation or inciting offer + the title. | "Tonight's story is about a man who knew everything written in books and still felt he knew nothing at all… This is the tale of Doctor Faust." |
 | d. Author hook | One surprising fact that makes the author human and the book special. | "He spent almost his whole life telling it… Sixty years." |
-| e. Origins and expectation | What the story or genre was before, what everyone expected, and the line "X dared to change it." | "Every audience knew how this story ended. Goethe was the one who dared to change it." |
+| e. Origins and expectation | What the story or genre was before, what everyone expected, and how the author broke with it, said in this book's own words. | "Every audience knew how this story ended. Goethe was the one who dared to change it." |
 | f. Structure map | How the book is built, described as a journey; invite the viewer along. | "One long road… and tonight we will walk beside him." |
-| g. Handoff | Switch into the storyteller voice. | "So let us begin, the way all good tales do. Once upon a time…" |
+| g. Handoff | A lead-in written for this book, ending on the ritual "Once upon a time…", which switches into the storyteller voice. | "So let us begin, the way all good tales do. Once upon a time…" |
 
 Writing rules:
 
@@ -223,7 +235,7 @@ The examples show the register only; do not reuse them as lines. How many self-c
 ### Takeaways (2–5 scenes, ~80–100 words each)
 
 - **Transition** (start of the first takeaway): a pause, then a line that turns from story to meaning and names the actual number of takeaways (e.g. "And there our tale ends. *(pause)* … let me leave three things in your hands."). Vary it: start from the story's final image, from the narrator's own reaction, or from a question the ending leaves open.
-- **Numbered openers**: "The first:", "The second:", … and "And the last:" for the final one. This gives the viewer a clear map.
+- **Signposts**: make it clear where each takeaway starts, and that the last one is the last, so the viewer always has a map. Word them for this book: a number, a short spoken title, a question, or a turn of phrase from the story. Do not open every takeaway with the same formula, and do not reuse the previous book's signposts (narration history).
 - **Each takeaway**: claim in one sentence → evidence from one or two specific events or characters → a universal application to the viewer's life.
 - **Callbacks**: reuse earlier quotes inside takeaways where they fit, and point out a surprising detail ("And notice who gave that advice to the young student: the devil himself.").
 - **One personal moment**: once per video, the narrator admits sharing the feeling being discussed. The narrator is the channel's creator, so the moment must be true. Draw it from `narrator-bible.md`, or mark it `[CONFIRM: …]` for the creator to confirm. Never repeat one from its anecdote log.
@@ -341,13 +353,13 @@ The script tells [Book] as a fairy tale, one passage per scene in timeline order
 
 [Framing and promise.]
 
-[Narrator's welcome, from Narrator.md.] [Logline.] This is the tale of [title/protagonist].
+[Narrator's welcome, from Narrator.md.] [Logline, ending on the book's title, worded for this book.]
 
 ### 2 · [Author hook] [02]
 ### 3 · [Origins and expectation] [03]
 ### 4 · [Structure map] [04]
 
-[Structure.] So let us begin, the way all good tales do. Once upon a time…
+[Structure.] [Handoff lead-in, written for this book.] Once upon a time…
 
 ## [Part / Act title]
 
@@ -363,10 +375,10 @@ The script tells [Book] as a fairy tale, one passage per scene in timeline order
 
 ### [n] · [Takeaway 1] [..]
 [Transition from story to meaning, written for this book, naming the number of takeaways.] *(pause)*
-The first: [claim]. [Evidence]. [Application].
+[Signpost, worded for this book.] [Claim]. [Evidence]. [Application].
 
 ### [n+1…] · [Remaining takeaways, up to five in all]
-The second: … / … / And the last: …
+[Signpost.] … for each, with the last one clearly marked as the last.
 
 ### [last] · Outro: [closing image] [..]
 [Lead-in written for this book.] [The hook again: the quote word for word, or the image, question, fact, object or claim.] [Reveal: the speaker, or what the hook really meant.] [Answer to the promise.]
@@ -410,7 +422,8 @@ Each description below is written to paste directly as a prompt. Append the styl
 **Narration**
 
 - [ ] The script opens cold on a hook (section 4) of a different type from the previous book. If it is a quote, it is credited to the author, not the character.
-- [ ] The introduction contains: framing and promise, welcome and logline, author hook, origins and "dared to change it", structure map, "Once upon a time…"
+- [ ] The introduction contains: framing and promise, welcome and logline, author hook, origins and how the author broke with them, structure map, and ends on "Once upon a time…"
+- [ ] The three rituals (section 1, "Channel signature") are in place. Apart from them, no line is a fixed phrase shared with an earlier video.
 - [ ] Every story scene orients, shows one event, and ends on a turn.
 - [ ] Every quote scene: setup → quote → plain meaning → link.
 - [ ] Two to five takeaways, as many as the book supports, each with evidence from the story; one personal moment from the narrator.
