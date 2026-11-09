@@ -74,7 +74,7 @@ Before writing anything, list:
 - **Plot beats**: 20–28 moments that carry the story. Each must be visually distinct (a different place, action or character). Merge beats that would produce near-identical images.
 - **Key quotes**: 5–7 famous or meaningful lines. For each, record the speaker, the location (part, act/scene, line number), the original-language text, and the English translation used.
 - **The opening hook**: its type and wording, chosen with section 4 and of a different type from the previous book. If it is a quote, it is one of the key quotes.
-- **Takeaways, 2–5**: lessons a modern viewer can apply. Each must be supported by at least one concrete event in the story. Choose the number from the book: a tight fable may carry two strong lessons, a sprawling epic five. Never pad with a weak or repeated lesson to reach a number; give the time it frees to the story.
+- **Takeaways, 2–5**: lessons a modern viewer can apply. Each must be supported by at least one concrete event in the story. Choose the number from the book: a tight fable may carry two strong lessons, a sprawling epic five. Never pad with a weak or repeated lesson to reach a number; give the time it frees to the story. Choose the **takeaway shape** (section 7) at the same time, different from the previous book's.
 - **Author hook**: one surprising fact about how, when or why the book was written (Goethe: sixty years, from his twenties to months before his death).
 - **Origins hook**: what existed before the book and what everyone expected (Faust: the puppet-play legend in which the doctor is always damned), and how the author broke with it.
 - **Intro shape**: which of the shapes in section 5 fits, of a different shape from the previous book. Decide which of the author and origins hooks passes the context test, and so goes into the introduction (at most one). Mark the other for a takeaway, or cut it.
@@ -252,14 +252,29 @@ The examples show the register only; do not reuse them as lines. How many self-c
 
 ### Takeaways (2–5 scenes, ~80–100 words each)
 
-- **Transition** (start of the first takeaway): a pause, then a line that turns from story to meaning and names the actual number of takeaways (e.g. "And there our tale ends. *(pause)* … let me leave three things in your hands."). Vary it: start from the story's final image, from the narrator's own reaction, or from a question the ending leaves open.
-- **Signposts**: make it clear where each takeaway starts, and that the last one is the last, so the viewer always has a map. Word them for this book: a number, a short spoken title, a question, or a turn of phrase from the story. Do not open every takeaway with the same formula, and do not reuse the previous book's signposts (narration history).
-- **Each takeaway**: claim in one sentence → evidence from one or two specific events or characters → a universal application to the viewer's life.
+The takeaways turn the story into meaning for the viewer's own life. They always take 2–5 scenes, but they are not always a numbered list. Choose a **takeaway shape** that suits what the book really says.
+
+| Shape | How it is built | Best when | Example (*Faust*) |
+| --- | --- | --- | --- |
+| **Separate lessons** | 2–5 distinct lessons, one per scene: claim, then evidence, then application. | The book teaches several different things, none of which dominates. | Striving is the point; ambition has victims; knowing is not living; we are divided; grace meets effort. |
+| **One big idea** | Scene 1 states one central idea. Each following scene looks at it through one moment or character. The last scene says what it means for us. | One theme runs through the whole book (most novellas and fables). | "Faust's whole life is one wager about striving": the study, Gretchen, the land reclaimed from the sea. |
+| **One question, several answers** | Scene 1 asks a question the book keeps asking. Each scene gives one character's answer, shown by how they lived. The last scene gives the book's own answer. | Several characters embody different positions. | "What makes a life complete?" Wagner: more books. Mephistopheles: pleasure. Gretchen: love. Goethe: the striving itself. |
+| **Where it turned** | 2–4 turning points where the hero chose, each with what that choice cost or won. The last scene draws the lesson from the pattern. | A tragedy or a rise-and-fall with clear decision points. | The poison cup put down; the pact signed; Gretchen abandoned; the old couple's cottage burned. |
+| **Two sides** | Two takeaways that pull against each other, then a last scene that resolves the tension or honestly leaves it open. 2–3 scenes. | The book's meaning is ambiguous or argued over. | Striving made Faust great / striving made him ruthless; and Goethe saves him anyway. |
+
+Do not use the same shape as the previous book (the "Takeaway shape" line in `narration-history.md`). When two fit equally, take the one used least recently. Never force a shape: if a book truly teaches separate lessons, Separate lessons is the right answer, even twice in three books.
+
+**Rules for every shape:**
+
+- **Transition** (start of the first takeaway scene): a pause, then a line that turns from story to meaning and tells the viewer what is coming: how many lessons, one idea, a question, or the turning points (e.g. "And there our tale ends. *(pause)* … let me leave three things in your hands."). Vary it: start from the story's final image, from the narrator's own reaction, or from a question the ending leaves open.
+- **Signposts**: make it clear where each takeaway scene starts, and when the last one has come, so the viewer always has a map. Word them for this book and its shape: a number, a short spoken title, the name of the character or moment being looked at, or a question. Do not open every scene with the same formula, and do not reuse the previous book's signposts (narration history).
+- **Every scene earns its place**: a claim or angle in one sentence, evidence from one or two specific events or characters, and what it means for the viewer's life. In One big idea and One question, the claim is the angle that scene adds.
 - **Callbacks**: reuse earlier quotes inside takeaways where they fit, and point out a surprising detail ("And notice who gave that advice to the young student: the devil himself.").
 - **One personal moment**: once per video, the narrator admits sharing the feeling being discussed. The narrator is the channel's creator, so the moment must be true. Draw it from `narrator-bible.md`, or mark it `[CONFIRM: …]` for the creator to confirm. Never repeat one from its anecdote log.
-- **The last takeaway** is the book's deepest or most surprising meaning, and, where the book has one, connects to how the author changed the expected ending (the origins hook, whether or not the introduction used it).
+- **The last scene** carries the book's deepest or most surprising meaning. Where the book has one, it connects to how the author changed the expected ending (the origins hook, whether or not the introduction used it).
+- **A question shape is not the closing question.** In One question, several answers, the takeaway question is answered by the book. The outro's closing question (a channel ritual) is asked of the viewer and must be different. It may grow out of the first.
 
-Typical takeaway types to draw from: the central virtue or drive; the cost to others; the gap between knowledge and life; the divided self; the role of grace, chance or love; the danger of a specific temptation; what the ending reveals.
+Typical takeaway material to draw from: the central virtue or drive; the cost to others; the gap between knowledge and life; the divided self; the role of grace, chance or love; the danger of a specific temptation; what the ending reveals.
 
 ### Outro (1 scene, ~150–180 words; up to ~200 with a link to an earlier video)
 
@@ -395,12 +410,14 @@ The script tells [Book] as a fairy tale, one passage per scene in timeline order
 
 *Spoken by the narrator, returning after the story ends.*
 
-### [n] · [Takeaway 1] [..]
-[Transition from story to meaning, written for this book, naming the number of takeaways.] *(pause)*
-[Signpost, worded for this book.] [Claim]. [Evidence]. [Application].
+*Takeaway shape: [Separate lessons / One big idea / One question, several answers / Where it turned / Two sides] (section 7).*
 
-### [n+1…] · [Remaining takeaways, up to five in all]
-[Signpost.] … for each, with the last one clearly marked as the last.
+### [n] · [Takeaway 1] [..]
+[Transition from story to meaning, written for this book, saying what is coming: the number of lessons, one idea, a question, or the turning points.] *(pause)*
+[Signpost, worded for this book and shape.] [Claim or angle]. [Evidence]. [What it means for the viewer].
+
+### [n+1…] · [Remaining takeaway scenes, 2–5 in all]
+[Signpost.] [Claim or angle]. [Evidence]. [What it means.] … for each, with the last scene clearly marked as the last and carrying the deepest meaning.
 
 ### [last] · Outro: [closing image] [..]
 [Lead-in written for this book.] [The hook again: the quote word for word, or the image, question, fact, object or claim.] [Reveal: the speaker, or what the hook really meant.] [Answer to the promise.]
@@ -448,7 +465,7 @@ Each description below is written to paste directly as a prompt. Append the styl
 - [ ] The three rituals (section 1, "Channel signature") are in place. Apart from them, no line is a fixed phrase shared with an earlier video.
 - [ ] Every story scene orients, shows one event, and ends on a turn.
 - [ ] Every quote scene: setup → quote → plain meaning → link.
-- [ ] Two to five takeaways, as many as the book supports, each with evidence from the story; one personal moment from the narrator.
+- [ ] Two to five takeaway scenes, as many as the book supports, in one takeaway shape (section 7), different from the previous book's unless the book clearly needs the same one. Each scene has evidence from the story; one personal moment from the narrator.
 - [ ] The outro returns to the opening hook (a quote word for word), reveals the speaker or the hook's meaning, and answers the promise.
 - [ ] The outro asks for comments and likes in the book's own imagery, then gives a direct, literal "subscribe to the channel and click the bell button" call to action.
 - [ ] The narrator's welcome, invitation, calls to action and sign-off match Narrator.md.

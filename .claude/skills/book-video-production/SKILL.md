@@ -104,7 +104,7 @@ If you cannot confirm a line number, give the scene or chapter only. Keep the so
 
 ### 3. Plan
 
-Follow `references/scenario-guide.md` steps 1–3: plot beats, 5–7 key quotes, the opening hook (scenario guide section 4: pick the type that suits the book, not the type the previous book in `narration-history.md` used; a quote keeps its speaker hidden; every hook is paid off in the outro), 2–5 takeaways (as many as the book genuinely supports), author and origins hooks, the intro shape (scenario guide section 5: about 90 seconds, at most one context fact, not the previous book's shape), recurring characters, the chronological timeline with quote scenes placed where they are spoken, and 35–40 scenes.
+Follow `references/scenario-guide.md` steps 1–3: plot beats, 5–7 key quotes, the opening hook (scenario guide section 4: pick the type that suits the book, not the type the previous book in `narration-history.md` used; a quote keeps its speaker hidden; every hook is paid off in the outro), 2–5 takeaways (as many as the book genuinely supports) in a takeaway shape (scenario guide section 7: separate lessons, one big idea, one question with several answers, where it turned, or two sides; not the previous book's shape unless the book clearly needs it), author and origins hooks, the intro shape (scenario guide section 5: about 90 seconds, at most one context fact, not the previous book's shape), recurring characters, the chronological timeline with quote scenes placed where they are spoken, and 35–40 scenes.
 
 Use **one numbering for everything**: scene 07 in the script is image 07 in the plan, `07-*.png` in `images/` and `07.*` in `voice/`. The Faust guide shows illustration numbers in brackets because that project was renumbered later; new books do not need brackets.
 
@@ -270,7 +270,7 @@ The narrator is the channel's host. His look is fixed by the pose images in `ass
 **On screen.** The narrator is on screen in every scene he voices: the introduction, the takeaways and the outro. He is never on screen during the story. While he is on screen, the user overlays his pose image on part of the frame, with the scene's illustration playing in the background. This file only says which pose to use when; it does not change the illustrations.
 
 - **Change pose at each beat** (the introduction beats in scenario guide section 5, each takeaway's claim, evidence and application, the outro steps in section 7), roughly every 15–30 seconds. Never change mid-sentence, and do not repeat the same pose twice in a row.
-- **Match the EMOTION to the line.** For example, `fullbody-1.png` or `fullbody-11.png` for the welcome, `fullbody-6.png` or `halfbody-4.png` for the opening hook and its promise, `fullbody-12.png` for numbering the takeaways, `fullbody-13.png` for the personal moment, `fullbody-9.png` for an ironic aside, and `halfbody-14.png` (pointing at the viewer) for the subscribe call.
+- **Match the EMOTION to the line.** For example, `fullbody-1.png` or `fullbody-11.png` for the welcome, `fullbody-6.png` or `halfbody-4.png` for the opening hook and its promise, `fullbody-12.png` for signposting the takeaways, `fullbody-13.png` for the personal moment, `fullbody-9.png` for an ironic aside, and `halfbody-14.png` (pointing at the viewer) for the subscribe call.
 
 ````markdown
 # [Book] — Narrator
@@ -401,6 +401,7 @@ It reports word counts per voice, estimated runtime, scene and illustration coun
 - no intro, takeaway or outro line repeats or closely paraphrases a line in `narration-history.md`; the opening hook type differs from the previous book's, and the outro callback approach differs from the last three books there;
 - the opening hook is true to the book, does not spoil the ending, and is paid off in the outro;
 - the introduction follows one intro shape (scenario guide section 5), different from the previous book's. It runs about 90 seconds, 200–230 words and never over 240, across 2–3 scenes, with at most one context fact;
+- the takeaways follow one takeaway shape (scenario guide section 7), different from the previous book's unless the book clearly needs the same one. The transition says what is coming, every scene has evidence from the story, the last scene carries the deepest meaning, and any takeaway question differs from the outro's closing question;
 - every link to an earlier video is a strong echo or a telling contrast, points to a published video in `video-library.md`, sits in a takeaway or the outro, does not spoil that book, reads naturally when the scene is read aloud, and has a matching card or end screen element in the packaging.
 
 ### 10. Deliver
@@ -430,6 +431,7 @@ Do this only when the user says the script is approved (for example "approved", 
 - Welcome: "[…]"
 - Line before "Once upon a time": "[…]"
 - Takeaway transition: "[…]"
+- Takeaway shape: [Separate lessons / One big idea / One question, several answers / Where it turned / Two sides]
 - Takeaways ([count]): [title 1]; [title 2]; …
 - Takeaway signposts: "[how each takeaway was opened]"
 - Personal moment: [what the narrator admitted, in a few words]
@@ -451,7 +453,7 @@ Do this only when the user says the script is approved (for example "approved", 
 - URL: [fill in when published]
 - Theme tags: [3–6 tags from the list above]
 - Central question: [the outro's reflective question, in plain words]
-- Takeaways: [one line per takeaway: the claim]
+- Takeaways: [shape]; [one line per takeaway scene: the claim, or the angle it adds to the big idea or question]
 - Archetypes and motifs: [e.g. pact with the devil; charming tempter; double life; ruined innocent]
 - Spoiler to avoid when linking: [the ending or twist]
 - Links to: [earlier videos this one points to, or none]
