@@ -22,6 +22,7 @@ from pathlib import Path
 HEADING = re.compile(r"^#{2,4}\s+(\d{1,3})\s*[·\-—]\s*(.+)$")
 VOICE = re.compile(r"\bVoice\**\s*:\s*\**\s*([A-Za-z]+)", re.IGNORECASE)
 PAUSE = re.compile(r"\[(?:long )?pause[^\]]*\]", re.IGNORECASE)
+TAG = re.compile(r"\[[^\]]*\]")  # pause markers and audio tags are not spoken words
 SUBFOLDERS = ["images", "voice", "thumbnails", "music", "videos"]
 
 
@@ -57,7 +58,7 @@ def parse_scenes(text: str):
 
 
 def word_count(lines):
-    return len(PAUSE.sub(" ", " ".join(lines)).split())
+    return len(TAG.sub(" ", " ".join(lines)).split())
 
 
 def main() -> int:

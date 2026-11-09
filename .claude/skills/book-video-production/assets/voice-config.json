@@ -1,0 +1,31 @@
+{
+  "_help": "Settings for scripts/generate_voice.py. Replace every SET_ME before generating. Voice names under 'voices' must match the 'Voice:' lines in 03-script.md. Keys starting with '_' are ignored.",
+  "model_id": "eleven_v4",
+  "output_format": "mp3_44100_128",
+  "language_code": null,
+  "apply_text_normalization": "auto",
+  "seed": null,
+  "_pause_help": "How [pause] and [long pause] are sent. Ellipses work on every model. Models that support break tags (e.g. eleven_multilingual_v2, eleven_flash_v2_5) can use \"<break time=\\\"1.0s\\\" />\" instead. Eleven v3/v4 do not support break tags.",
+  "pause_markup": {
+    "pause": "...",
+    "long_pause": "... ..."
+  },
+  "_stitch_help": "true sends the neighbouring scenes of the same voice as previous_text/next_text, which smooths tone between scene files. Leave false until the chosen model is confirmed to support it.",
+  "stitch_neighbouring_scenes": false,
+  "voices": {
+    "NARRATOR": {
+      "voice_id": "JzrilcRQTXuC9iVu4v4n",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    },
+    "STORYTELLER": {
+      "voice_id": "JzrilcRQTXuC9iVu4v4n",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 ---
 name: book-video-production
-description: Produce the complete production package for a 20–25 minute YouTube book video told as a fairy tale in the channel's naïve colored-pencil style — a book folder with the color palette, character and scene image prompts, the narration script for voice generation, and title/thumbnail options, plus empty images/, voice/, thumbnails/, music/ and videos/ folders. Use this whenever the user names a book (novel, play, epic, classic) and asks for a video, episode, script, storyboard, illustration prompts, palette, voiceover text, thumbnails or titles for it, or says things like "do the next book", "let's make [book]", "prepare [book] for the channel", even if they ask for only part of the package. Also use it when the user says a book's script is approved (to record it in the narration history and video library), or that a video is published.
+description: Produce the complete production package for a 20–25 minute YouTube book video told as a fairy tale in the channel's naïve colored-pencil style — a book folder with the color palette, character and scene image prompts, the narration script for voice generation, and title/thumbnail options, plus empty images/, voice/, thumbnails/, music/ and videos/ folders. Use this whenever the user names a book (novel, play, epic, classic) and asks for a video, episode, script, storyboard, illustration prompts, palette, voiceover text, thumbnails or titles for it, or says things like "do the next book", "let's make [book]", "prepare [book] for the channel", even if they ask for only part of the package. Also use it when the user says a book's script is approved (to record it in the narration history and video library and generate the per-scene speech with ElevenLabs), asks to generate or redo the voice/speech for a book's scenes, or says a video is published.
 ---
 
 # Book Video Production
@@ -21,13 +21,13 @@ One folder per book, named with a lowercase kebab-case slug of the title (`faust
 ├── 04-titles-and-thumbnails.md    # titles, thumbnails, description, promotion
 ├── 05-narrator.md                 # narrator lines, calls to action, on-screen poses
 ├── images/                        # empty
-├── voice/                         # empty
+├── voice/                         # speech per scene, generated after approval (step 12)
 ├── thumbnails/                    # empty
 ├── music/                         # empty
 └── videos/                        # empty
 ```
 
-The five main documents sit in the root of the book folder. The five subfolders are created empty; the user fills them during production.
+The five main documents sit in the root of the book folder. The five subfolders are created empty. Once the script is approved, the skill fills `voice/` with ElevenLabs speech (step 12); the user fills the rest during production.
 
 Next to the book folders, in the same base directory, sit two shared files, both written only after the user approves a script (step 11):
 
@@ -51,7 +51,9 @@ Read each guide in full before the step that needs it. They are the source of tr
 - `references/scenario-guide.md` — structure, running order, opening-quote technique, narrator introduction beats, fairy-tale voice, quote scenes, takeaways, outro, illustration content rules. Read before planning (step 3).
 - `references/visual-style.md` — channel constants, the master style prompt, flat equivalents for lighting words, palette structure, and the process for building a book's palette and characters. Read before writing `01-palette.md`.
 - `references/title-thumbnail-guide.md` — hooks, three thumbnail types, title formulas, description, chapters, tags, Shorts. Read before writing `04-titles-and-thumbnails.md`.
+- `references/elevenlabs-v4.md` — how to write spoken text for the Eleven v4 voice model: audio tags (which, how many, where), pauses, emphasis, pronunciation, and the tagging pass. Read before writing `05-narrator.md` (step 6) and `03-script.md` (step 7).
 - `assets/narrator/` — the channel narrator's finished pose images (`fullbody-N.png`, `halfbody-N.png`), character sheets, and `narrator_image_description.md`, which describes each pose's framing, gesture and EMOTION. Read the description file before writing `05-narrator.md`. Poses marked "do not use yet" are off limits.
+- `assets/voice-config.json` — ElevenLabs settings for step 12: model, output format, how pause markers are sent, and one voice per `Voice:` name (`NARRATOR`, `STORYTELLER`) with its voice ID and voice settings. Values marked `SET_ME` are still to come from the user.
 - `assets/gothic_bargain_at_midnight.png` — the channel's technique reference image (from *Faust*). Look at it once so your scene descriptions match what the style can draw. The user attaches it in the image generator; it is not copied into the book folder.
 
 ## Channel documents that are not in this skill
@@ -237,6 +239,8 @@ The narrator is the channel's host. His look is fixed by the pose images in `ass
 
 **Vlogger touch.** Write all of the narrator's words at the level the user chose (scenario guide, section 5, "Vlogger touch"): the lines here, and the introduction, takeaways and outro in the script. The storyteller's story scenes are not affected.
 
+**Delivery for the voice model.** The narrator's lines are spoken by ElevenLabs, so write them for the model set in `assets/voice-config.json`, following `references/elevenlabs-v4.md` (by default Eleven v4). Write the words first. Then, in a separate pass, add the audio tags, the ellipses and dashes, and the occasional capitalised word that give the delivery, without changing a word. The narrator's tag density follows the vlogger level. A light touch means a few tags across the whole video, such as a `[chuckles]` on the joke or a `[softly]` on the personal moment. The subscribe line stays plain. Every line in this file carries exactly the tags it will have in the script.
+
 **Avoid repetition.** Before writing any narrator line, read `<base-dir>/narration-history.md` if it exists. In this book's welcome, intro, takeaways, outro, invitation and sign-off, do not reuse any line recorded there or a close paraphrase of it, and use a different outro callback approach (scenario guide, section 7) from the last three books. The subscribe line is the one exception; it stays the same. If the file does not exist yet, this is the first recorded book and nothing needs to be avoided.
 
 **Welcome, invitation and sign-off.** Write these for each book, in that book's tone and imagery, so they sound like part of this tale and not a stock formula. Each is short enough to say in one breath. The welcome greets the viewer and leads into the logline, the invitation points to the next tale, and the sign-off is a short, warm goodbye.
@@ -295,7 +299,7 @@ Please subscribe to the channel and click the bell button, so you never miss a n
 
 ### 7. Write `03-script.md`
 
-The script is pasted into a text-to-speech tool scene by scene, so the spoken text lives in ```text fences and contains only what should be read aloud. Write story scenes first, then the introduction, then takeaways and outro (scenario guide, step 5), and assemble them in running order.
+The script is turned into speech scene by scene with ElevenLabs (step 12), so the spoken text lives in ```text fences and contains only what should be read aloud. Each fence becomes one audio file, read by the voice on its scene's `Voice:` line. Write story scenes first, then the introduction, then takeaways and outro (scenario guide, step 5), and assemble them in running order.
 
 ````markdown
 # [Book] — Narration Script
@@ -303,13 +307,13 @@ The script is pasted into a text-to-speech tool scene by scene, so the spoken te
 [N] spoken words, about [M] minutes at 140 words per minute. [n] scenes. The NARRATOR voices the introduction, takeaways and outro; the STORYTELLER voices the story. They can be one voice actor in two registers.
 
 ## Voice notes
-- `[pause]` ≈ 1 second, `[long pause]` ≈ 2 seconds. Convert to your voice tool's syntax (for example a break tag) or cut the audio there.
+- `[pause]` ≈ 1 second, `[long pause]` ≈ 2 seconds. The voice generator converts them to the model's pause syntax (`pause_markup` in `voice-config.json`).
 - Quotes are read by the voice of the scene they sit in.
 
 ### Pronunciation guide
-| Word | Say it as | Note |
-| --- | --- | --- |
-| Mephistopheles | meh-fis-TOF-uh-leez | English stage pronunciation |
+| Word | Say it as | IPA (for Eleven v4) | Note |
+| --- | --- | --- | --- |
+| Mephistopheles | meh-fis-TOF-uh-leez | /ˌmɛfɪˈstɒfɪliːz/ | English stage pronunciation |
 
 ## Introduction
 
@@ -335,7 +339,8 @@ The script is pasted into a text-to-speech tool scene by scene, so the spoken te
 
 Writing for the ear:
 
-- Inside the fences, plain sentences only: no markdown, no brackets except pause markers, no parentheses, no symbols like `&`, `%`, `/`. Spell out abbreviations.
+- Inside the fences, plain sentences only: no markdown, no parentheses, no symbols like `&`, `%`. Spell out abbreviations. The only brackets are the pause markers and the audio tags allowed by `references/elevenlabs-v4.md`. The only slashes are IPA spellings, used only for a name the model has misread.
+- After the words are final, do the tagging pass from `references/elevenlabs-v4.md` section 7 over every scene: tags, ellipses, dashes and rare capitals, within that guide's counts for the narrator's vlogger level and for the storyteller. Never change a word while tagging. Skip tags entirely if `voice-config.json` names a model other than Eleven v4 or v3.
 - Put every name or foreign word a voice tool might mispronounce in the pronunciation guide.
 - Seconds per scene = words ÷ 140 × 60, rounded.
 - The narrator's welcome, invitation and sign-off come from `05-narrator.md` and go where the scenario guide places them.
@@ -367,7 +372,8 @@ It reports word counts per voice, estimated runtime, scene and illustration coun
 - every color named in a prompt exists in the palette;
 - no lighting words from visual-style.md section 2.4 slipped into prompts;
 - every hook in the packaging is answered in the script;
-- the narrator's lines and calls to action are identical in `03-script.md` and `05-narrator.md`, and every "From" in its on-screen table appears in that scene's spoken text;
+- audio tags, capitals and pauses follow the checklist in `references/elevenlabs-v4.md` section 9, with the narrator's tag count matching the book's vlogger level;
+- the narrator's lines and calls to action, including their audio tags, are identical in `03-script.md` and `05-narrator.md`, and every "From" in its on-screen table appears in that scene's spoken text;
 - narrator poses are planned for every introduction, takeaway and outro scene and for no story scene;
 - every pose image named in `05-narrator.md` exists in `assets/narrator/` and is not marked "do not use yet";
 - no intro, takeaway or outro line repeats or closely paraphrases a line in `narration-history.md`, and the outro callback approach differs from the last three books there;
@@ -381,7 +387,7 @@ Zip the folder so the empty subfolders survive, then send the zip and the five d
 python <skill-dir>/scripts/zip_book.py <book-folder>
 ```
 
-If the user asked for the folder on their computer and it is connected, write it there as well and say where. Keep the reply short: the book folder's name, the totals (scenes, words, minutes), the palette in one line, any assumptions, and facts you could not verify. Mention the links to earlier videos in one line, or that there are none and why, plus any strong match left out because that video is not marked published. End by saying that once the user approves the script, it will be recorded in `narration-history.md` and `video-library.md`. Do not write to either file yet.
+If the user asked for the folder on their computer and it is connected, write it there as well and say where. Keep the reply short: the book folder's name, the totals (scenes, words, minutes), the palette in one line, any assumptions, and facts you could not verify. Mention the links to earlier videos in one line, or that there are none and why, plus any strong match left out because that video is not marked published. End by saying that once the user approves the script, it will be recorded in `narration-history.md` and `video-library.md` and the speech for each scene will be generated with ElevenLabs. Do not write to either file or generate any speech yet.
 
 ### 11. Record the approved narration
 
@@ -389,7 +395,7 @@ Do this only when the user says the script is approved (for example "approved", 
 
 1. Read the book's `03-script.md` and `05-narrator.md` from disk again, since the user may have edited them after delivery, and take the lines from those files.
 2. Open `<base-dir>/narration-history.md`, or create it with the heading `# Narration history` and the line `Key narrator lines of approved books, oldest first. Read before writing a new book; never reuse these lines.`
-3. If the file already has an entry for this book slug, replace it; otherwise append a new entry at the end in this format, quoting each line exactly as approved:
+3. If the file already has an entry for this book slug, replace it; otherwise append a new entry at the end in this format, quoting each line's words exactly as approved, with audio tags and IPA removed (the history compares wording, not delivery):
 
 ```markdown
 ## [Book] · [book-slug] · approved [YYYY-MM-DD]
@@ -426,9 +432,38 @@ Do this only when the user says the script is approved (for example "approved", 
 ```
 
 5. For each earlier video this book links to, add this book to that entry's "Linked from" line.
-6. Tell the user in one line that both entries were added, and where.
+6. Tell the user in one line that both entries were added, and where. Then go straight on to step 12.
 
-### 12. Mark a video as published
+### 12. Generate the voice with ElevenLabs
+
+Do this right after step 11, or whenever the user asks to (re)generate speech for an approved book. Never generate speech for a draft: if the script has changed since approval, or was never approved, ask first. Each request costs ElevenLabs credits, roughly one per character.
+
+**Setup (once per machine).** The script runs in the repo's virtual environment, `.venv` at the repo root (gitignored). If it does not exist, create it and install `requirements.txt` (`elevenlabs` and `python-dotenv`):
+```bash
+python -m venv .venv
+.venv/Scripts/python -m pip install -r requirements.txt   # Windows; on macOS/Linux use .venv/bin/python
+```
+Run `generate_voice.py` with that interpreter, `.venv/Scripts/python` (Windows) or `.venv/bin/python`, in place of `python` in the commands below. The API key lives in the project's `.env` as `ELEVENLABS_API_KEY`; the script loads the nearest `.env` with python-dotenv. If the key is missing or rejected, run `npx -y @elevenlabs/cli@latest onboard init` in the project folder and follow what it prints. Never open, print or ask for the key in chat, and never put it in a file other than `.env`.
+
+1. **Check the voice config.** Read `assets/voice-config.json`. If `model_id` or any voice ID the script uses is still `SET_ME`, stop, tell the user which values are missing, and ask for them (model, a voice for the NARRATOR and one for the STORYTELLER, or one voice for both). Write their answers into the file. Do not pick a model or voice for them.
+2. **Dry run.** No API calls. It lists every scene with its voice and character count, the total characters, and any config problems:
+   ```bash
+   python <skill-dir>/scripts/generate_voice.py <book-folder> --dry-run
+   ```
+   Fix any scene with no `Voice:` line or no spoken text in `03-script.md` before going on.
+3. **Generate.** One request per scene. Files go to `voice/NN.mp3`, or the extension of the configured `output_format`, plus `voice/voice-log.json` (voice, model, characters and time per scene). Scenes whose file already exists are skipped, so an interrupted run can simply be restarted:
+   ```bash
+   python <skill-dir>/scripts/generate_voice.py <book-folder>
+   ```
+4. **Redo single scenes** after the user edits them or dislikes a take. Use `--force` to overwrite:
+   ```bash
+   python <skill-dir>/scripts/generate_voice.py <book-folder> --scenes 7,12-14 --force
+   ```
+5. **Report** in a few lines: how many scenes were generated, total characters, any that failed (with the rerun command), and the folder. Remind the user to listen to the first scenes and to the names in the pronunciation guide. If a name is misread, use its IPA form from the pronunciation guide in that scene's fence (Eleven v4), or a phonetic respelling for other models, and redo only that scene. If a tag is read aloud or produces a sound instead of a delivery, follow `references/elevenlabs-v4.md` section 8.
+
+If the script is edited after generation, regenerate only the scenes whose text changed.
+
+### 13. Mark a video as published
 
 When the user says a video is live, or gives its title or URL, update its `video-library.md` entry: set the status to published with the date, and fill in the published title and URL. Only published videos are linked from new books.
 
@@ -437,7 +472,7 @@ When the user says a video is live, or gives its title or URL, update its `video
 Suggest these when the user asks how to fill the folders, so assets line up with scene numbers:
 
 - `images/NN-short-title.png` (e.g. `images/07-the-earth-spirit.png`), plus `images/anchor.png` and `images/sheet-<character>.png`
-- `voice/NN.mp3` (one file per scene)
+- `voice/NN.mp3` (one file per scene, written by step 12) and `voice/voice-log.json`
 - `thumbnails/thumb-a.png` … `thumb-c.png`
 - `music/` — background tracks with their license notes
 - `videos/<book-slug>-final.mp4`, plus Shorts as `videos/short-1.mp4` …
