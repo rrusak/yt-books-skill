@@ -104,7 +104,7 @@ If you cannot confirm a line number, give the scene or chapter only. Keep the so
 
 ### 3. Plan
 
-Follow `references/scenario-guide.md` steps 1–3: plot beats, 5–7 key quotes, the opening hook (scenario guide section 4: pick the type that suits the book, not the type the previous book in `narration-history.md` used; a quote keeps its speaker hidden; every hook is paid off in the outro), 2–5 takeaways (as many as the book genuinely supports), author and origins hooks, recurring characters, the chronological timeline with quote scenes placed where they are spoken, and 35–40 scenes.
+Follow `references/scenario-guide.md` steps 1–3: plot beats, 5–7 key quotes, the opening hook (scenario guide section 4: pick the type that suits the book, not the type the previous book in `narration-history.md` used; a quote keeps its speaker hidden; every hook is paid off in the outro), 2–5 takeaways (as many as the book genuinely supports), author and origins hooks, the intro shape (scenario guide section 5: about 90 seconds, at most one context fact, not the previous book's shape), recurring characters, the chronological timeline with quote scenes placed where they are spoken, and 35–40 scenes.
 
 Use **one numbering for everything**: scene 07 in the script is image 07 in the plan, `07-*.png` in `images/` and `07.*` in `voice/`. The Faust guide shows illustration numbers in brackets because that project was renumbered later; new books do not need brackets.
 
@@ -344,8 +344,8 @@ The script is turned into speech scene by scene with ElevenLabs (step 12), so th
 
 ## [Part or act title]
 
-### 05 · [Scene title]
-- Image: 05 · Voice: STORYTELLER · ~[seconds] s
+### 04 · [Scene title]
+- Image: 04 · Voice: STORYTELLER · ~[seconds] s
 ```text
 [Orient. Event. Turn.]
 ```
@@ -400,6 +400,7 @@ It reports word counts per voice, estimated runtime, scene and illustration coun
 - every pose image named in `05-narrator.md` exists in `assets/narrator/` and is not marked "do not use yet";
 - no intro, takeaway or outro line repeats or closely paraphrases a line in `narration-history.md`; the opening hook type differs from the previous book's, and the outro callback approach differs from the last three books there;
 - the opening hook is true to the book, does not spoil the ending, and is paid off in the outro;
+- the introduction follows one intro shape (scenario guide section 5), different from the previous book's. It runs about 90 seconds, 200–230 words and never over 240, across 2–3 scenes, with at most one context fact;
 - every link to an earlier video is a strong echo or a telling contrast, points to a published video in `video-library.md`, sits in a takeaway or the outro, does not spoil that book, reads naturally when the scene is read aloud, and has a matching card or end screen element in the packaging.
 
 ### 10. Deliver
@@ -424,6 +425,7 @@ Do this only when the user says the script is approved (for example "approved", 
 ## [Book] · [book-slug] · approved [YYYY-MM-DD]
 - Vlogger touch: [light / medium / high]
 - Opening hook: [type, from scenario guide section 4]: "[the hook]"
+- Intro shape: [Classic / Straight in / Map first / Hook as context], [n] scenes, [words] words; context fact: [author / origins / none]
 - Framing and promise (right after the hook): "[…]"
 - Welcome: "[…]"
 - Line before "Once upon a time": "[…]"

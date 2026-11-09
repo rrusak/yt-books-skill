@@ -30,7 +30,7 @@ Wherever this guide says "see Narrator.md", "see Visual Style.md" or "see Book S
 | Runtime | 20–25 minutes (target ~22–23) |
 | Script length | 3,000–3,300 words (140 words per minute) |
 | Illustrations | 35–40, one roughly every 35–40 seconds |
-| Words per scene | 60–100 for story scenes; 80–150 for narrator scenes |
+| Words per scene | 60–100 for story scenes; 70–150 for narrator scenes |
 | Voices | **Narrator** (introduction, takeaways, outro) and **storyteller** (the story itself) |
 | Order | Strictly chronological within the story, with key quotes placed where they are spoken |
 | Structural devices | Opening hook (a riddle quote or another type, varied between books), "Once upon a time" handoff, 2–5 takeaways, callback ending. The only fixed rituals are listed under "Channel signature" below. |
@@ -56,8 +56,8 @@ Everything else is a beat, not a phrase. That covers the welcome, the framing of
 | # | Block | Voice | Runtime | Scenes | Purpose |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Opening hook | Narrator | 0:00–0:30 | 1 | A riddle quote, cold image, question, surprising fact, mystery object or bold claim that raises one question the video answers (section 4). |
-| 2 | Introduction | Narrator | 0:30–2:30 | 3–4 | Welcome, logline, author, origins, structure. Ends with "Once upon a time…" |
-| 3 | The story | Storyteller | 2:30–19:00 or later | 24–31 | The plot in fairy-tale voice, chronologically, with 4–6 key quotes woven in. |
+| 2 | Introduction | Narrator | 0:30–1:30 | 1–2 | Welcome and logline, plus at most one context fact or a structure map, in one of the intro shapes (section 5). Ends with "Once upon a time…". Blocks 1 and 2 together: about 90 seconds, 200–230 words, 2–3 scenes. |
+| 3 | The story | Storyteller | 1:30–19:30 or later | 26–33 | The plot in fairy-tale voice, chronologically, with 4–6 key quotes woven in. |
 | 4 | Takeaways | Narrator | 19:00–22:30 or shorter | 2–5 | Two to five lessons, each grounded in the story. Fewer takeaways leave more time for the story. |
 | 5 | Outro | Narrator | 22:30–23:30 | 1 | Callback to the opening hook, reflective question, call to action, sign-off. |
 
@@ -77,6 +77,7 @@ Before writing anything, list:
 - **Takeaways, 2–5**: lessons a modern viewer can apply. Each must be supported by at least one concrete event in the story. Choose the number from the book: a tight fable may carry two strong lessons, a sprawling epic five. Never pad with a weak or repeated lesson to reach a number; give the time it frees to the story.
 - **Author hook**: one surprising fact about how, when or why the book was written (Goethe: sixty years, from his twenties to months before his death).
 - **Origins hook**: what existed before the book and what everyone expected (Faust: the puppet-play legend in which the doctor is always damned), and how the author broke with it.
+- **Intro shape**: which of the shapes in section 5 fits, of a different shape from the previous book. Decide which of the author and origins hooks passes the context test, and so goes into the introduction (at most one). Mark the other for a takeaway, or cut it.
 - **Characters**: the book characters who will appear in several images. Make sure each has fixed descriptors in Book Style Sheet — [Book].md before writing prompts.
 
 ### Step 2 — Build the timeline
@@ -88,7 +89,7 @@ Before writing anything, list:
 
 ### Step 3 — Allocate illustrations
 
-- One illustration per scene. Introduction ≈ 4, story ≈ 24–31 (more when there are fewer takeaways), takeaways 2–5, outro 1.
+- One illustration per scene. Introduction 2–3 (including the hook), story ≈ 26–33 (more when there are fewer takeaways), takeaways 2–5, outro 1.
 - If the total exceeds ~40, merge adjacent minor beats. If it falls below ~33, split the densest scenes.
 - Optional extra quotes can reuse an existing image with a slow zoom rather than a new illustration.
 - Every scene gets a full book illustration. The narrator is on screen in the introduction, takeaways and outro as an overlay the user adds in editing, with the illustration behind him; Narrator.md plans his poses. In the story he is heard, not seen.
@@ -166,24 +167,41 @@ On screen and in the script, credit the quote to the **author and book**, not th
 
 ## 5. The narrator introduction
 
-The introduction is the narrator speaking directly to the viewer. It runs 400–500 words across 4 scenes. The narrator's persona, tone and welcome come from Narrator.md; this section defines only the beats and their order.
+The introduction is the narrator speaking directly to the viewer, from the first word of the hook to "Once upon a time…". It lasts **about 90 seconds: 200–230 words, never more than 240, across 2–3 scenes**. By about the one-minute mark the viewer knows the book, its hero, the central conflict and why this video is worth their time. Everything that does not serve that moves to a takeaway or is cut. The time saved goes to the story. The narrator's persona, tone and welcome come from Narrator.md; this section defines the beats and how to arrange them.
 
-| Beat | Content | Example (Faust) |
-| --- | --- | --- |
-| a. Hook | The opening hook (section 4), then *(pause)*. | "Part of that Power, not understood…" |
-| b. Framing and promise | Say why the hook is strange or worth keeping in mind; ask the viewer to hold on to it; promise the answer by the end. | "A strange thing to say about yourself, isn't it?… by the end you'll know who he was, and whether he was telling the truth." |
-| c. Welcome and logline | The narrator's welcome (see Narrator.md), then the protagonist's lack + the temptation or inciting offer + the title. | "Tonight's story is about a man who knew everything written in books and still felt he knew nothing at all… This is the tale of Doctor Faust." |
-| d. Author hook | One surprising fact that makes the author human and the book special. | "He spent almost his whole life telling it… Sixty years." |
-| e. Origins and expectation | What the story or genre was before, what everyone expected, and how the author broke with it, said in this book's own words. | "Every audience knew how this story ended. Goethe was the one who dared to change it." |
-| f. Structure map | How the book is built, described as a journey; invite the viewer along. | "One long road… and tonight we will walk beside him." |
-| g. Handoff | A lead-in written for this book, ending on the ritual "Once upon a time…", which switches into the storyteller voice. | "So let us begin, the way all good tales do. Once upon a time…" |
+### Beats
 
-Writing rules:
+| Beat | Content | Required? | Example (Faust) |
+| --- | --- | --- | --- |
+| a. Hook | The opening hook (section 4), then *(pause)*. | Always | "Part of that Power, not understood…" |
+| b. Framing and promise | Say why the hook is strange or worth keeping in mind; ask the viewer to hold on to it; promise the answer by the end. One to three sentences. | Always | "A strange thing to say about yourself, isn't it?… by the end you'll know who he was, and whether he was telling the truth." |
+| c. Welcome and logline | The narrator's welcome (see Narrator.md), in one breath. Then the protagonist's lack, the temptation or inciting offer, and the title, in at most three sentences. | Always | "Tonight's story is about a man who knew everything written in books and still felt he knew nothing at all… This is the tale of Doctor Faust." |
+| d. Context fact | **One** fact from outside the story: about the author (how, when or why the book was written) or about its origins (what came before, and how the author broke with it). Two or three sentences. | Optional | "He spent almost his whole life telling it… Sixty years." |
+| e. Structure map | How the book is built, when that helps the viewer follow: two parts, a frame story, several narrators, a long time span. One or two sentences. | Optional | "Two parts: a small story of the heart, then a whole world." |
+| f. Handoff | A lead-in written for this book, ending on the ritual "Once upon a time…". | Always | "So let us begin, the way all good tales do. Once upon a time…" |
 
-- Speak to "you"; use "we" for the shared journey ("what we will discover together").
-- Use one or two rhetorical questions, never more (a few more are allowed at the medium and high vlogger touch, below).
+**The context test.** Use a context fact only if a viewer would repeat it to a friend the next day. Use at most one in the introduction, never both an author fact and an origins fact. A strong second fact goes into a takeaway, where it can serve as evidence. A weak one is cut. If the hook is itself a surprising fact about the book, that is the context; skip beat d.
+
+### Intro shapes
+
+Arrange the beats in one of these shapes. Pick the one that suits the book's hook and material.
+
+| Shape | Scenes and beats | Words | Best when |
+| --- | --- | --- | --- |
+| **Classic** | 1: hook, framing · 2: welcome, logline · 3: context fact or map, handoff | 210–230 | The book has one context fact worth telling, and the hook does not cover it. |
+| **Straight in** | 1: hook, framing · 2: welcome, logline, handoff | 160–200 | The hook is strong, and the book needs no context to enjoy. The story starts fastest. |
+| **Map first** | 1: hook, framing · 2: welcome, logline, map · 3: context fact (optional), handoff | 200–230 | The book's structure is unusual, or long enough that the viewer needs a map: several parts, a frame story, decades of time. |
+| **Hook as context** | 1: hook (a surprising fact about the book or its author), framing · 2: welcome, logline, handoff | 170–210 | The opening hook is a surprising fact, so the context is already told. |
+
+Do not use the same shape as the previous book (the "Intro shape" line in `narration-history.md`). When two fit equally, take the one used least recently. Every shape keeps the order hook → framing → welcome → … → "Once upon a time…".
+
+### Writing rules
+
+- Speak to "you"; use "we" for the shared journey ("what we'll find out together").
+- Use one rhetorical question, two at most (a few more at the medium and high vlogger touch, below).
 - Each scene ends on a turn or open question that pulls into the next.
 - Do not summarise the plot. Tease the central conflict only.
+- The welcome is one short line. Never spend more than one sentence before the logline on greeting the viewer.
 
 ### Vlogger touch
 
@@ -239,7 +257,7 @@ The examples show the register only; do not reuse them as lines. How many self-c
 - **Each takeaway**: claim in one sentence → evidence from one or two specific events or characters → a universal application to the viewer's life.
 - **Callbacks**: reuse earlier quotes inside takeaways where they fit, and point out a surprising detail ("And notice who gave that advice to the young student: the devil himself.").
 - **One personal moment**: once per video, the narrator admits sharing the feeling being discussed. The narrator is the channel's creator, so the moment must be true. Draw it from `narrator-bible.md`, or mark it `[CONFIRM: …]` for the creator to confirm. Never repeat one from its anecdote log.
-- **The last takeaway** is the book's deepest or most surprising meaning, and connects to how the author changed the expected ending (the origins hook from the introduction).
+- **The last takeaway** is the book's deepest or most surprising meaning, and, where the book has one, connects to how the author changed the expected ending (the origins hook, whether or not the introduction used it).
 
 Typical takeaway types to draw from: the central virtue or drive; the cost to others; the gap between knowledge and life; the divided self; the role of grace, chance or love; the danger of a specific temptation; what the ending reveals.
 
@@ -353,17 +371,21 @@ The script tells [Book] as a fairy tale, one passage per scene in timeline order
 
 [Framing and promise.]
 
-[Narrator's welcome, from Narrator.md.] [Logline, ending on the book's title, worded for this book.]
+### 2 · [Welcome and logline] [02]
 
-### 2 · [Author hook] [02]
-### 3 · [Origins and expectation] [03]
-### 4 · [Structure map] [04]
+[Narrator's welcome, from Narrator.md.] [Logline, ending on the book's title, worded for this book.] [Straight in, Hook as context: handoff here.]
 
-[Structure.] [Handoff lead-in, written for this book.] Once upon a time…
+### 3 · [Context fact or structure map] [03]
+
+*Only in the Classic and Map first shapes.*
+
+[One context fact, or the structure map.] [Handoff lead-in, written for this book.] Once upon a time…
+
+*Introduction total: about 90 seconds, 200–230 words, 2–3 scenes (section 5).*
 
 ## [Part / Act title]
 
-### 5 · [Scene title] [05]
+### 4 · [Scene title] [04]
 [Orient. Event. Turn.]
 
 ### N · Quote: "[quote]" [NN]
@@ -422,7 +444,7 @@ Each description below is written to paste directly as a prompt. Append the styl
 **Narration**
 
 - [ ] The script opens cold on a hook (section 4) of a different type from the previous book. If it is a quote, it is credited to the author, not the character.
-- [ ] The introduction contains: framing and promise, welcome and logline, author hook, origins and how the author broke with them, structure map, and ends on "Once upon a time…"
+- [ ] The introduction follows one intro shape (section 5), different from the previous book's. It has hook, framing and promise, welcome and logline, at most one context fact, and ends on "Once upon a time…". It runs about 90 seconds (200–230 words, never over 240) across 2–3 scenes.
 - [ ] The three rituals (section 1, "Channel signature") are in place. Apart from them, no line is a fixed phrase shared with an earlier video.
 - [ ] Every story scene orients, shows one event, and ends on a turn.
 - [ ] Every quote scene: setup → quote → plain meaning → link.

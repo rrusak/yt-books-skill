@@ -12,6 +12,8 @@ Reads 02-illustrations.md and 03-script.md from the folder root and reports:
 - whether the five production subfolders and 05-narrator.md exist;
 - whether the final scene invites comments and asks viewers to subscribe and click the bell;
 - personal lines still marked [CONFIRM: ...] (narrator-bible.md, truth rules);
+- the "Once upon a time" handoff ending the introduction, and the introduction's length
+  (about 90 seconds: 200-230 words, never over 240, in 2-3 scenes);
 - style warnings from references/spoken-style.md: banned phrases, lists of three,
   "not X, but Y", long narrator sentences and written connectors.
 
@@ -187,6 +189,18 @@ def main() -> int:
         before_story = [n for n in order if n < story[0]]
         if before_story and handoff[0] != before_story[-1]:
             problems.append(f"'Once upon a time...' is in scene {handoff[0]:02d}, not in the last introduction scene ({before_story[-1]:02d})")
+
+    # Introduction: everything before the first story scene, about 90 seconds (scenario guide section 5).
+    if story:
+        intro = [n for n in order if n < story[0]]
+        intro_words = sum(script[n]["words"] for n in intro)
+        print(f"Introduction: {len(intro)} scene(s), {intro_words} words, ~{intro_words / wpm * 60:.0f} s")
+        if intro_words > 240:
+            problems.append(f"Introduction is {intro_words} words (~{intro_words / wpm * 60:.0f} s); keep it to 200-230, never over 240")
+        elif intro_words < 150:
+            problems.append(f"Introduction is only {intro_words} words; check that hook, framing, welcome and logline are all there")
+        if not 2 <= len(intro) <= 3:
+            problems.append(f"Introduction has {len(intro)} scenes (expected 2-3)")
 
     for num, s in script.items():
         for m in CONFIRM.finditer("\n".join(s["spoken"])):
