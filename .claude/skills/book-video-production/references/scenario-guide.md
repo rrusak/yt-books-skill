@@ -183,13 +183,13 @@ The narrator speaks to camera like a real person, a YouTube host rather than a r
 | **Medium** | Clearly a host talking to you. Everything in light, plus: a personal aside or reaction in most narrator scenes, short fragments for rhythm ("Rich. Charming. Barely more than a boy."), two or three light jokes across the narrator blocks, a few direct check-ins with the viewer ("be honest", "you know the type"), and modern everyday comparisons in the takeaways. Up to three rhetorical questions in the introduction. |
 | **High** | Openly vlog-style, still warm and never loud. Everything in medium, plus: a quick, chatty rhythm, frequent direct address, small self-aware moments about the video itself ("stick with me, this part's worth it"), reactions to the story ("I mean, come on, Dorian"), and humour in every narrator block. Up to four rhetorical questions in the introduction. The callback, the payoff of the opening hook and the last takeaway still land sincerely. |
 
-The examples show the register only; do not reuse them as lines.
+The examples show the register only; do not reuse them as lines. How many self-corrections, fillers and spoken openers each level allows, and the read-aloud pass every narrator scene goes through, are in `spoken-style.md` (sections 3 and 4).
 
 ---
 
 ## 6. The story narration (fairy-tale voice)
 
-**Voice.** Third person, past tense, the cadence of a told tale. Plain words, concrete images, short-to-medium sentences with occasional longer, rolling ones. No modern slang, no academic vocabulary, no critical commentary inside the story; interpretation belongs to the takeaways.
+**Voice.** Third person, past tense, the cadence of a told tale. Plain words, concrete images, short-to-medium sentences with occasional longer, rolling ones. No modern slang, no academic vocabulary, no critical commentary inside the story; interpretation belongs to the takeaways. Keep to `spoken-style.md` section 5: no stock AI phrases, lists of three rationed, and most scenes ending on an event or image rather than a moral.
 
 **Each scene passage (60–100 words):**
 
@@ -226,7 +226,7 @@ The examples show the register only; do not reuse them as lines.
 - **Numbered openers**: "The first:", "The second:", … and "And the last:" for the final one. This gives the viewer a clear map.
 - **Each takeaway**: claim in one sentence → evidence from one or two specific events or characters → a universal application to the viewer's life.
 - **Callbacks**: reuse earlier quotes inside takeaways where they fit, and point out a surprising detail ("And notice who gave that advice to the young student: the devil himself.").
-- **One personal moment**: once per video, the narrator admits sharing the feeling being discussed.
+- **One personal moment**: once per video, the narrator admits sharing the feeling being discussed. The narrator is the channel's creator, so the moment must be true. Draw it from `narrator-bible.md`, or mark it `[CONFIRM: …]` for the creator to confirm. Never repeat one from its anecdote log.
 - **The last takeaway** is the book's deepest or most surprising meaning, and connects to how the author changed the expected ending (the origins hook from the introduction).
 
 Typical takeaway types to draw from: the central virtue or drive; the cost to others; the gap between knowledge and life; the divided self; the role of grace, chance or love; the danger of a specific temptation; what the ending reveals.

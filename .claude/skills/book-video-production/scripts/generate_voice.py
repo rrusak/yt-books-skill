@@ -30,7 +30,7 @@ from elevenlabs import ElevenLabs, VoiceSettings
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
-from check_book import parse_scenes  # noqa: E402
+from check_book import CONFIRM, parse_scenes  # noqa: E402
 
 DEFAULT_CONFIG = SCRIPT_DIR.parent / "assets" / "voice-config.json"
 LONG_PAUSE = re.compile(r"\[long pause[^\]]*\]", re.IGNORECASE)
@@ -151,6 +151,7 @@ def main() -> int:
     if stripped:
         print(f"Model does not support audio tags: tags are removed before sending ({len(stripped)} scene(s)).")
     jobs = []
+    unconfirmed = []
     for n in order:
         if n not in wanted:
             continue
@@ -161,6 +162,10 @@ def main() -> int:
             continue
         if not texts[n]:
             print(f"Scene {n:02d}: no spoken text, skipped")
+            continue
+        if CONFIRM.search("\n".join(s["spoken"])):
+            print(f"Scene {n:02d}: has an unconfirmed [CONFIRM: ...] personal line, skipped. Settle it in 03-script.md first.")
+            unconfirmed.append(n)
             continue
         if out.exists() and not flags["--force"]:
             print(f"Scene {n:02d}: {out.name} exists, skipped (use --force to redo)")
